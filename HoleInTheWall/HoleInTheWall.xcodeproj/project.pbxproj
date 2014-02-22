@@ -21,6 +21,8 @@
 		6BB21DD018B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
 		6BB21DD818B82001005EEDA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB21DD618B82001005EEDA1 /* InfoPlist.strings */; };
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
+		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
+		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		6BB21DD518B82001005EEDA1 /* HoleInTheWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoleInTheWallTests-Info.plist"; sourceTree = "<group>"; };
 		6BB21DD718B82001005EEDA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleInTheWallTests.m; sourceTree = "<group>"; };
+		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
+		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */,
 				6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */,
 				6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */,
 				6BB21DAF18B82001005EEDA1 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		6BB21DAD18B82001005EEDA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D222469E18B8227A00D0FB43 /* SpriteKit.framework */,
 				6BB21DAE18B82001005EEDA1 /* Foundation.framework */,
 				6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */,
 				6BB21DB218B82001005EEDA1 /* UIKit.framework */,
@@ -117,6 +124,8 @@
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
 				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
+				D22246A018B822B100D0FB43 /* SSGameScene.h */,
+				D22246A118B822B100D0FB43 /* SSGameScene.m */,
 				6BB21DC618B82001005EEDA1 /* Images.xcassets */,
 				6BB21DB518B82001005EEDA1 /* Supporting Files */,
 			);
@@ -252,6 +261,7 @@
 			files = (
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
+				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
 				6BB21DC518B82001005EEDA1 /* JWCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +471,7 @@
 				6BB21DDF18B82001005EEDA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BB21DE018B82001005EEDA1 /* Build configuration list for PBXNativeTarget "HoleInTheWallTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +480,7 @@
 				6BB21DE218B82001005EEDA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
