@@ -7,6 +7,7 @@
 //
 
 #import "JWCViewController.h"
+#import "JWCScene.h"
 
 @interface JWCViewController ()
 
@@ -17,13 +18,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.view = [SKView new];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillLayoutSubviews
+{
+    // Testing wall
+    SKView *gameView = (SKView *)self.view;
+    
+    JWCScene *scene = [JWCScene sceneWithSize:gameView.frame.size];
+    scene.scaleMode = SKSceneScaleModeFill;
+    
+    [gameView presentScene:scene];
 }
 
 @end
