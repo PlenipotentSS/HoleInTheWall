@@ -124,8 +124,8 @@
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
 				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
-				D22246A018B822B100D0FB43 /* SSGameScene.h */,
-				D22246A118B822B100D0FB43 /* SSGameScene.m */,
+				6BB21DE618B823C0005EEDA1 /* JWC */,
+				6BB21DE518B8233F005EEDA1 /* Steven */,
 				6BB21DC618B82001005EEDA1 /* Images.xcassets */,
 				6BB21DB518B82001005EEDA1 /* Supporting Files */,
 			);
@@ -159,6 +159,22 @@
 				6BB21DD618B82001005EEDA1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6BB21DE518B8233F005EEDA1 /* Steven */ = {
+			isa = PBXGroup;
+			children = (
+				D22246A018B822B100D0FB43 /* SSGameScene.h */,
+				D22246A118B822B100D0FB43 /* SSGameScene.m */,
+			);
+			name = Steven;
+			sourceTree = "<group>";
+		};
+		6BB21DE618B823C0005EEDA1 /* JWC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = JWC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
