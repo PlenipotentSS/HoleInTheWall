@@ -56,6 +56,7 @@
     [self.playerShape removeFromParent];
     [self.wall removeAllActions];
     [self.wall setScale:.2];
+    [self.wall.holeInWall setScale:1];
 }
 
 - (void)update:(CFTimeInterval)currentTime

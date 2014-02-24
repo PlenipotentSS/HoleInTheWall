@@ -30,9 +30,10 @@
 - (void)startMovingWithDuration:(CGFloat)duration
 {
     SKAction *moveForwardAction = [SKAction scaleTo:1 duration:duration];
-
+    SKAction *holeScaleAction = [SKAction scaleTo:5 duration:1];
+    
     [self runAction:moveForwardAction completion:^{
-        
+        [self.holeInWall runAction:holeScaleAction];
     }];
 }
 
