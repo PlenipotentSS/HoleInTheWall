@@ -11,6 +11,9 @@
 
 @interface JWCHole : SKSpriteNode
 
+/**
+ * Returns a hole with given shape and a size of 1.1*shapeSize.
+ */
 - (instancetype)initWithShapeType:(JWCShapeType)holeShape shapeSize:(CGSize)shapeSize;
 
 @property (nonatomic) JWCShapeType shapeType;

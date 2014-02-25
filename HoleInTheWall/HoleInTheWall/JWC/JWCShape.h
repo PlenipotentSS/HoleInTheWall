@@ -14,6 +14,9 @@
 @property (nonatomic) JWCShapeType shapeType;
 @property (nonatomic) NSData *jsonData;
 
+/**
+ * Returns a shape using the proper file based on the shapeType, and with size.
+ */
 - (instancetype)initWithShapeType:(JWCShapeType)shapeType size:(CGSize)size;
 
 @end
