@@ -12,12 +12,15 @@
 @interface JWCWall : SKSpriteNode
 
 /**
- * Creates a wall with initial scale, positioned at center of screen, with a random initial hole.
+ * Creates a wall with initial scale, positioned at center of screen, with a random
+ * initial hole;
  */
 - (instancetype)initWithScale:(CGFloat)scale;
 
 /**
- *  Currently a recursive method that causes the wall to start scaling to the size of the screen. When it reaches this point it quickly scales to offscreen and then calls itself, starting the process again.
+ *  Currently a recursive method that causes the wall to start scaling to the size 
+ *  of the screen. When it reaches this point it quickly scales to offscreen and then
+ *  calls itself, starting the process again.
  */
 - (void)startMovingWithDuration:(CGFloat)duration;
 
