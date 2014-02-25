@@ -19,6 +19,7 @@
 {
     [super viewDidLoad];
     self.view = [SKView new];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,9 +10,9 @@
 #define HoleInTheWall_JWCShapeType_h
 
 typedef enum : int {
-    JWCShapeTypeSquare = 4,
-    JWCShapeTypeTriangle = 3,
-    JWCShapeTypeCircle = 0
+    JWCShapeTypeSquare = 0,
+    JWCShapeTypeTriangle = 1,
+    JWCShapeTypeRectangle = 2
 } JWCShapeType;
 
 #endif
