@@ -9,14 +9,9 @@
 #import "JWCShape.h"
 
 @interface JWCShape ()
-
 {
     NSString *_shapeFilePath;
 }
-
-@property (nonatomic) NSMutableArray *shapePoints;
-@property (nonatomic) NSMutableArray *jsonArray;
-
 @end
 
 @implementation JWCShape
@@ -32,8 +27,9 @@
             self = [super initWithImageNamed:@"square.png"];
             _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"Square" ofType:@"json"];
             break;
-        case JWCShapeTypeCircle:
-            
+        case JWCShapeTypeRectangle:
+            self = [super initWithImageNamed:@"rectangle.png"];
+            _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"Rectangle" ofType:@"json"];
             break;
         default:
             break;
@@ -41,19 +37,7 @@
     
     if (self) {
         self.shapeType = shapeType;
-        
-        NSData *jsonData = [NSData dataWithContentsOfFile:_shapeFilePath];
-        self.jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-        for (NSArray *pointArray in self.jsonArray) {
-            NSNumber *xNumber = [pointArray firstObject];
-            CGFloat xPoint = xNumber.floatValue;
-            
-            NSString *yNumber = [pointArray lastObject];
-            CGFloat yPoint = yNumber.floatValue;
-            
-            NSValue *currentPoint = [NSValue valueWithCGPoint:CGPointMake(xPoint, yPoint)];
-            [self.shapePoints addObject:currentPoint];
-        }
+        self.jsonData = [NSData dataWithContentsOfFile:_shapeFilePath];
         
         self.color = [UIColor colorWithRed:0.000 green:0.367 blue:0.911 alpha:0.590];
         self.size = size;
@@ -61,11 +45,6 @@
     return self;
 }
 
-- (NSMutableArray *)shapePoints
-{
-    if (!_shapePoints) {
-        _shapePoints = [NSMutableArray new];
-    }
-    return _shapePoints;
-}
+
 @end
+

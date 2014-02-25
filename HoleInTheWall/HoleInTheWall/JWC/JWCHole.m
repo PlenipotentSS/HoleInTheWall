@@ -21,8 +21,8 @@
             case JWCShapeTypeTriangle:
                 self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
                 break;
-            case JWCShapeTypeCircle:
-                
+            case JWCShapeTypeRectangle:
+                self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
                 break;
             default:
                 break;

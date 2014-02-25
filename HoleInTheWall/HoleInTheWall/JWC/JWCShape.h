@@ -12,6 +12,7 @@
 @interface JWCShape : SKSpriteNode
 
 @property (nonatomic) JWCShapeType shapeType;
+@property (nonatomic) NSData *jsonData;
 
 - (instancetype)initWithShapeType:(JWCShapeType)shapeType size:(CGSize)size;
 
