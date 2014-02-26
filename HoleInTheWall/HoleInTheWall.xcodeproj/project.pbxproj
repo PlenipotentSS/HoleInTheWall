@@ -64,6 +64,8 @@
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
 		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
+		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
+		D2A974BC18BDADD500720098 /* skulls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974BA18BDADD500720098 /* skulls.png */; };
 		D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAF24418BC1139006C0F0C /* SSViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +178,8 @@
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
 		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		D2A974BA18BDADD500720098 /* skulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skulls.png; sourceTree = "<group>"; };
 		D2BAF24318BC1139006C0F0C /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SS/SSViewController.h; sourceTree = "<group>"; };
 		D2BAF24418BC1139006C0F0C /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SS/SSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -377,8 +381,6 @@
 				6BB21DBD18B82001005EEDA1 /* JWCAppDelegate.h */,
 				6BB21DBE18B82001005EEDA1 /* JWCAppDelegate.m */,
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
-				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
-				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
 				3EC4F35918BD795300E80C64 /* Resources */,
 				3EC4F35318BD735A00E80C64 /* Matt */,
 				6BB21DE618B823C0005EEDA1 /* JWC */,
@@ -436,6 +438,8 @@
 			children = (
 				6B3D5FE518BA7C04006E4305 /* JSONShapes */,
 				6B3D603718BA9D69006E4305 /* ShapeImages */,
+				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
+				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
 				6B3D603D18BA9DF7006E4305 /* JWCShapeType.h */,
 				6B3D5FEC18BA7C7C006E4305 /* JWCScene.h */,
 				6B3D5FED18BA7C7C006E4305 /* JWCScene.m */,
@@ -452,6 +456,8 @@
 		D2A9741118BC6ABE00720098 /* testwalls */ = {
 			isa = PBXGroup;
 			children = (
+				D2A974B918BDADD500720098 /* food.png */,
+				D2A974BA18BDADD500720098 /* skulls.png */,
 				D2A974AA18BD45B500720098 /* bluewalls.png */,
 			);
 			name = testwalls;
@@ -506,7 +512,7 @@
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
 					6BB21DAA18B82001005EEDA1 = {
-						DevelopmentTeam = UQCRLH6BPC;
+						DevelopmentTeam = 2S283D3328;
 					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
@@ -539,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
+				D2A974BC18BDADD500720098 /* skulls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
 				6B24A89E18BD746600974D81 /* square1.json in Resources */,
@@ -551,6 +558,7 @@
 				6B24A8A018BD746600974D81 /* square3.json in Resources */,
 				6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */,
 				6B24A8A418BD746600974D81 /* triangle2.json in Resources */,
+				D2A974BB18BDADD500720098 /* food.png in Resources */,
 				6B24A89F18BD746600974D81 /* square2.json in Resources */,
 				6B54EB7918BC0B5C00EE5604 /* P.json in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,

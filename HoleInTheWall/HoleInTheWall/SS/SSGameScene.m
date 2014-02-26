@@ -15,6 +15,17 @@
 @property (nonatomic) CGFloat zScale;
 @property (nonatomic) SKView *backgroundView;
 
+@property (nonatomic) CGFloat minX;
+@property (nonatomic) CGFloat maxX;
+
+@property (nonatomic) CGFloat minY;
+@property (nonatomic) CGFloat maxY;
+
+@property (nonatomic) CGFloat midX;
+@property (nonatomic) CGFloat midY;
+
+@property (nonatomic) SKSpriteNode *backgroundNode;
+
 @end
 
 @implementation SSGameScene
@@ -22,10 +33,34 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
+        
+        
+        self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
+        self.backgroundNode.anchorPoint = CGPointMake(.5f,.5f);
+        self.backgroundNode.position = CGPointZero;
+        [self addChild:self.backgroundNode];
+        
+        self.minX = CGRectGetMinX(self.frame);
+        self.maxX = CGRectGetMaxX(self.frame);
+        
+        self.minY = CGRectGetMinY(self.frame);
+        self.maxY = CGRectGetMaxY(self.frame);
+        
+        self.midX = CGRectGetMidX(self.frame);
+        self.midY = CGRectGetMidY(self.frame);
+        
         [self createShapes];
-        self.backgroundColor = [UIColor whiteColor];
+        
+        for (SKSpriteNode *node in self.children) {
+            node.anchorPoint = CGPointMake(1.f,1.f);
+        }
     }
     return self;
+}
+
+-(void) addBackgroundImage:(UIImage*) image
+{
+    
 }
 
 -(void) createShapes
@@ -102,11 +137,10 @@
     CGContextFillRect(context, theFrame);
     
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)+2*widthOffset);
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)-widthOffset);
+    CGContextMoveToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.maxX, self.maxY);
+    CGContextAddLineToPoint(context, self.maxX, self.minY);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY-widthOffset-8);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -159,11 +193,10 @@
     CGContextFillRect(context, theFrame);
     
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)+2*widthOffset);
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)-widthOffset);
+    CGContextMoveToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.maxX, self.maxY);
+    CGContextAddLineToPoint(context, self.maxX, self.minY);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY-widthOffset-8);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -217,12 +250,11 @@
     
     CGFloat heightOffset = 20;
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)-heightOffset/2);
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
+    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.minX, self.maxY);
+    CGContextAddLineToPoint(context, self.minX, self.minY);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-heightOffset/2-8);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -276,12 +308,11 @@
     
     CGFloat heightOffset = 20;
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)-heightOffset/2);
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
+    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.minX, self.maxY);
+    CGContextAddLineToPoint(context, self.minX, self.minY);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-heightOffset/2-8);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
 
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -335,12 +366,11 @@
     
     CGFloat heightOffset = 20;
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
+    CGContextMoveToPoint(context, self.minX, self.maxY);
+    CGContextAddLineToPoint(context, self.maxX, self.maxY);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
     CGContextSetLineWidth(context, 0.5f);
@@ -394,12 +424,11 @@
     
     CGFloat heightOffset = 20;
     CGFloat widthOffset = 10;
-    CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)+heightOffset);
-    CGContextAddLineToPoint(context, CGRectGetMinX(frame), CGRectGetMaxY(frame));
+    CGContextMoveToPoint(context, self.minX, self.maxY);
+    CGContextAddLineToPoint(context, self.maxX, self.maxY);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
     CGContextSetLineWidth(context, 0.5f);
@@ -454,11 +483,11 @@
     
     CGFloat widthOffset = 10;
     CGRect frame = theFrame;
-    CGContextMoveToPoint(context, CGRectGetMinX(frame) + CGRectGetWidth(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context,CGRectGetMinX(frame), CGRectGetMinY(frame));
-    CGContextAddLineToPoint(context,CGRectGetMidX(frame)-widthOffset, CGRectGetMidY(frame)-widthOffset);
-    CGContextAddLineToPoint(context,CGRectGetMidX(frame)+widthOffset, CGRectGetMidY(frame)-widthOffset);
-    CGContextAddLineToPoint(context,CGRectGetMinX(frame) + CGRectGetWidth(frame), CGRectGetMinY(frame));
+    CGContextMoveToPoint(context, self.minX + CGRectGetWidth(frame), self.minY);
+    CGContextAddLineToPoint(context,self.minX, self.minY);
+    CGContextAddLineToPoint(context,self.midX-widthOffset, self.midY-widthOffset);
+    CGContextAddLineToPoint(context,self.midX+widthOffset, self.midY-widthOffset);
+    CGContextAddLineToPoint(context,self.minX + CGRectGetWidth(frame), self.minY);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -517,19 +546,19 @@
 {
     /* Called when a touch begins */
     
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+//    for (UITouch *touch in touches) {
+//        CGPoint location = [touch locationInNode:self];
+//        
+//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+//        
+//        sprite.position = location;
+//        
+//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+//        
+//        [sprite runAction:[SKAction repeatActionForever:action]];
+//        
+//        [self addChild:sprite];
+//    }
 }
 
 @end
