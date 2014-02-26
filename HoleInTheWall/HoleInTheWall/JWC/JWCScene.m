@@ -9,9 +9,20 @@
 #import "JWCScene.h"
 #import "JWCShapeType.h"
 
-@interface JWCScene ()
+#import "WTMGlyphDetector.h"
+
+@interface JWCScene () <WTMGlyphDelegate>
+{
+    BOOL _glyphDetected;
+    BOOL _wallScaling;
+}
+
 
 @property (nonatomic) JWCShape *playerShape;
+@property (nonatomic) JWCHole *currentHole;
+
+@property (nonatomic) NSMutableArray *glyphs;
+@property (nonatomic) WTMGlyphDetector *glyphDetector;
 
 @end
 
@@ -22,41 +33,84 @@
     if (self = [super initWithSize:size]) {
         self.anchorPoint = CGPointMake(0.5, 0.5);
         
-        //TODO: Set the shape based on player gesture
-        self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:CGSizeMake(150, 150)];
+        [self setupGlyphCollection];
         
-        JWCHole *hole = [[JWCHole alloc] initWithShapeType:self.playerShape.shapeType
-                                                 shapeSize:self.playerShape.size];
-        
-        self.wall = [[JWCWall alloc] initWithScale:.2
-                                           andHole:hole
-                                      withPosition:CGPointZero];
-        self.wall.hidden = YES;
+        self.wall = [[JWCWall alloc] initWithScale:.2];
         [self addChild:self.wall];
+        
+        [self.wall startMovingWithDuration:6];
+        _wallScaling = YES;
     }
+    
     return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.wall.hidden = NO;
-    self.playerShape.position = [[touches anyObject] locationInNode:self];
-    [self addChild:self.playerShape];
-    [self.wall startMovingWithDuration:1];
+    CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
+    [self.glyphDetector addPoint:touchPoint];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.playerShape.position = [[touches anyObject] locationInNode:self];
+    if (!_glyphDetected) {
+        CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
+        [self.glyphDetector addPoint:touchPoint];
+    } else {
+        self.playerShape.position = [[touches anyObject] locationInNode:self];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.wall.hidden = YES;
-    [self.playerShape removeFromParent];
-    [self.wall removeAllActions];
-    [self.wall setScale:.2];
-    [self.wall.holeInWall setScale:1];
+    if (!_glyphDetected) {
+        [self.glyphDetector addPoint:[[touches anyObject] locationInView:self.view]];
+        [self.glyphDetector detectGlyph];
+    } else {
+        _glyphDetected = NO;
+        [self.playerShape removeFromParent];
+    }
+}
+
+#pragma mark - Glyph Setup
+- (void)setupGlyphCollection
+{
+    self.glyphDetector = [WTMGlyphDetector detector];
+    self.glyphDetector.delegate = self;
+    
+    [self addGlyphWithJSONFileName:@"square" withShapeName:@"square"];
+    [self addGlyphWithJSONFileName:@"triangle" withShapeName:@"triangle"];
+    [self addGlyphWithJSONFileName:@"circle" withShapeName:@"circle"];
+}
+
+- (void)addGlyphWithJSONFileName:(NSString *)fileName withShapeName:(NSString *)shapeName
+{
+    NSString *glyphFilePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+    NSData *glyphData = [NSData dataWithContentsOfFile:glyphFilePath];
+    
+    [self.glyphDetector addGlyphFromJSON:glyphData name:shapeName];
+}
+
+- (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score
+{
+    if (!_glyphDetected) {
+        _glyphDetected = YES;
+        [self.glyphDetector reset];
+        
+        NSLog(@"%@, %f", glyph.name, score);
+        if ([glyph.name isEqualToString:@"square"]) {
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:CGSizeMake(150, 150)];
+            self.playerShape.position = CGPointZero;
+        } else if ([glyph.name isEqualToString:@"triangle"]) {
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeTriangle size:CGSizeMake(150, 150)];
+            self.playerShape.position = CGPointZero;
+        } else if ([glyph.name isEqualToString:@"circle"]) {
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:CGSizeMake(150, 150)];
+            self.playerShape.position = CGPointZero;
+        }
+        
+        [self addChild:self.playerShape];
+    }
 }
 
 - (void)update:(CFTimeInterval)currentTime

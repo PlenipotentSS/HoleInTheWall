@@ -7,15 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B24A87418BD563D00974D81 /* lightbulb.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87118BD563D00974D81 /* lightbulb.json */; };
+		6B24A87518BD563D00974D81 /* pentagon.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87218BD563D00974D81 /* pentagon.json */; };
+		6B24A87918BD564F00974D81 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87618BD564F00974D81 /* circle.png */; };
+		6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87718BD564F00974D81 /* lightbulb.png */; };
+		6B24A87B18BD564F00974D81 /* pentagon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87818BD564F00974D81 /* pentagon.png */; };
+		6B24A88018BD59C800974D81 /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87E18BD59C800974D81 /* V.json */; };
+		6B24A88118BD59C800974D81 /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87F18BD59C800974D81 /* W.json */; };
+		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
+		6B24A88618BD69B400974D81 /* square.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88318BD69B400974D81 /* square.json */; };
+		6B24A88718BD69B400974D81 /* triangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle.json */; };
 		6B3D5FE018BA763C006E4305 /* JWCHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FDD18BA763C006E4305 /* JWCHole.m */; };
 		6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FDF18BA763C006E4305 /* JWCWall.m */; };
 		6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE318BA775B006E4305 /* JWCShape.m */; };
-		6B3D5FE918BA7C04006E4305 /* RectangleSkinny.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE618BA7C04006E4305 /* RectangleSkinny.json */; };
-		6B3D5FEA18BA7C04006E4305 /* Square.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE718BA7C04006E4305 /* Square.json */; };
-		6B3D5FEB18BA7C04006E4305 /* Triangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE818BA7C04006E4305 /* Triangle.json */; };
+		6B3D5FE918BA7C04006E4305 /* rectangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE618BA7C04006E4305 /* rectangle.json */; };
 		6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FED18BA7C7C006E4305 /* JWCScene.m */; };
 		6B3D603B18BA9D69006E4305 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D603918BA9D69006E4305 /* triangle.png */; };
 		6B3D603F18BAA466006E4305 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D603E18BAA466006E4305 /* square.png */; };
+		6B54EB6C18BC0B5C00EE5604 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB3F18BC0B5C00EE5604 /* CDataScanner.m */; };
+		6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB4018BC0B5C00EE5604 /* D.json */; };
+		6B54EB6E18BC0B5C00EE5604 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4318BC0B5C00EE5604 /* CFilteringJSONSerializer.m */; };
+		6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4518BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m */; };
+		6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4718BC0B5C00EE5604 /* CJSONSerialization.m */; };
+		6B54EB7118BC0B5C00EE5604 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4918BC0B5C00EE5604 /* CJSONSerializedData.m */; };
+		6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4C18BC0B5C00EE5604 /* CDataScanner_Extensions.m */; };
+		6B54EB7318BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4E18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m */; };
+		6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5118BC0B5C00EE5604 /* CJSONDeserializer.m */; };
+		6B54EB7518BC0B5C00EE5604 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5318BC0B5C00EE5604 /* CJSONScanner.m */; };
+		6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5518BC0B5C00EE5604 /* CJSONSerializer.m */; };
+		6B54EB7718BC0B5C00EE5604 /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5718BC0B5C00EE5604 /* N.json */; };
+		6B54EB7818BC0B5C00EE5604 /* ndollar.js in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5818BC0B5C00EE5604 /* ndollar.js */; };
+		6B54EB7918BC0B5C00EE5604 /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5918BC0B5C00EE5604 /* P.json */; };
+		6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5A18BC0B5C00EE5604 /* protractor-chi2010.pdf */; };
+		6B54EB7B18BC0B5C00EE5604 /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5B18BC0B5C00EE5604 /* T.json */; };
+		6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5D18BC0B5C00EE5604 /* WTMDetectionResult.m */; };
+		6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6018BC0B5C00EE5604 /* WTMGlyph.m */; };
+		6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6218BC0B5C00EE5604 /* WTMGlyphDefaults.m */; };
+		6B54EB7F18BC0B5C00EE5604 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6518BC0B5C00EE5604 /* WTMGlyphDetector.m */; };
+		6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6718BC0B5C00EE5604 /* WTMGlyphStroke.m */; };
+		6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */; };
+		6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */; };
+		6B54EB8618BC2D5E00EE5604 /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB8518BC2D5E00EE5604 /* rectangle.png */; };
 		6BB21DAF18B82001005EEDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DAE18B82001005EEDA1 /* Foundation.framework */; };
 		6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */; };
 		6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
@@ -48,20 +80,72 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B24A87118BD563D00974D81 /* lightbulb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightbulb.json; sourceTree = "<group>"; };
+		6B24A87218BD563D00974D81 /* pentagon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pentagon.json; sourceTree = "<group>"; };
+		6B24A87618BD564F00974D81 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		6B24A87718BD564F00974D81 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		6B24A87818BD564F00974D81 /* pentagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pentagon.png; sourceTree = "<group>"; };
+		6B24A87E18BD59C800974D81 /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		6B24A87F18BD59C800974D81 /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
+		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
+		6B24A88318BD69B400974D81 /* square.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square.json; sourceTree = "<group>"; };
+		6B24A88418BD69B400974D81 /* triangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle.json; sourceTree = "<group>"; };
 		6B3D5FDC18BA763C006E4305 /* JWCHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCHole.h; path = JWC/JWCHole.h; sourceTree = "<group>"; };
 		6B3D5FDD18BA763C006E4305 /* JWCHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCHole.m; path = JWC/JWCHole.m; sourceTree = "<group>"; };
 		6B3D5FDE18BA763C006E4305 /* JWCWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCWall.h; path = JWC/JWCWall.h; sourceTree = "<group>"; };
 		6B3D5FDF18BA763C006E4305 /* JWCWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCWall.m; path = JWC/JWCWall.m; sourceTree = "<group>"; };
 		6B3D5FE218BA775B006E4305 /* JWCShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCShape.h; path = JWC/JWCShape.h; sourceTree = "<group>"; };
 		6B3D5FE318BA775B006E4305 /* JWCShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCShape.m; path = JWC/JWCShape.m; sourceTree = "<group>"; };
-		6B3D5FE618BA7C04006E4305 /* RectangleSkinny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RectangleSkinny.json; sourceTree = "<group>"; };
-		6B3D5FE718BA7C04006E4305 /* Square.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Square.json; sourceTree = "<group>"; };
-		6B3D5FE818BA7C04006E4305 /* Triangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Triangle.json; sourceTree = "<group>"; };
+		6B3D5FE618BA7C04006E4305 /* rectangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rectangle.json; sourceTree = "<group>"; };
 		6B3D5FEC18BA7C7C006E4305 /* JWCScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCScene.h; path = JWC/JWCScene.h; sourceTree = "<group>"; };
 		6B3D5FED18BA7C7C006E4305 /* JWCScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCScene.m; path = JWC/JWCScene.m; sourceTree = "<group>"; };
 		6B3D603918BA9D69006E4305 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		6B3D603D18BA9DF7006E4305 /* JWCShapeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JWCShapeType.h; path = JWC/JWCShapeType.h; sourceTree = "<group>"; };
 		6B3D603E18BAA466006E4305 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
+		6B54EB3E18BC0B5C00EE5604 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		6B54EB3F18BC0B5C00EE5604 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		6B54EB4018BC0B5C00EE5604 /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		6B54EB4218BC0B5C00EE5604 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		6B54EB4318BC0B5C00EE5604 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		6B54EB4418BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		6B54EB4518BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		6B54EB4618BC0B5C00EE5604 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		6B54EB4718BC0B5C00EE5604 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		6B54EB4818BC0B5C00EE5604 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		6B54EB4918BC0B5C00EE5604 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		6B54EB4B18BC0B5C00EE5604 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		6B54EB4C18BC0B5C00EE5604 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		6B54EB4D18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		6B54EB4E18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		6B54EB5018BC0B5C00EE5604 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		6B54EB5118BC0B5C00EE5604 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		6B54EB5218BC0B5C00EE5604 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		6B54EB5318BC0B5C00EE5604 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		6B54EB5418BC0B5C00EE5604 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		6B54EB5518BC0B5C00EE5604 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		6B54EB5618BC0B5C00EE5604 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		6B54EB5718BC0B5C00EE5604 /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; };
+		6B54EB5818BC0B5C00EE5604 /* ndollar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ndollar.js; sourceTree = "<group>"; };
+		6B54EB5918BC0B5C00EE5604 /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		6B54EB5A18BC0B5C00EE5604 /* protractor-chi2010.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "protractor-chi2010.pdf"; sourceTree = "<group>"; };
+		6B54EB5B18BC0B5C00EE5604 /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		6B54EB5C18BC0B5C00EE5604 /* WTMDetectionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMDetectionResult.h; sourceTree = "<group>"; };
+		6B54EB5D18BC0B5C00EE5604 /* WTMDetectionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMDetectionResult.m; sourceTree = "<group>"; };
+		6B54EB5E18BC0B5C00EE5604 /* WTMGlyph-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WTMGlyph-Prefix.pch"; sourceTree = "<group>"; };
+		6B54EB5F18BC0B5C00EE5604 /* WTMGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyph.h; sourceTree = "<group>"; };
+		6B54EB6018BC0B5C00EE5604 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
+		6B54EB6118BC0B5C00EE5604 /* WTMGlyphDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDefaults.h; sourceTree = "<group>"; };
+		6B54EB6218BC0B5C00EE5604 /* WTMGlyphDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDefaults.m; sourceTree = "<group>"; };
+		6B54EB6318BC0B5C00EE5604 /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
+		6B54EB6418BC0B5C00EE5604 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
+		6B54EB6518BC0B5C00EE5604 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
+		6B54EB6618BC0B5C00EE5604 /* WTMGlyphStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphStroke.h; sourceTree = "<group>"; };
+		6B54EB6718BC0B5C00EE5604 /* WTMGlyphStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphStroke.m; sourceTree = "<group>"; };
+		6B54EB6818BC0B5C00EE5604 /* WTMGlyphTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphTemplate.h; sourceTree = "<group>"; };
+		6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTemplate.m; sourceTree = "<group>"; };
+		6B54EB6A18BC0B5C00EE5604 /* WTMGlyphUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphUtilities.h; sourceTree = "<group>"; };
+		6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
+		6B54EB8518BC2D5E00EE5604 /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rectangle.png; path = ../../JSONShapes/rectangle.png; sourceTree = "<group>"; };
 		6BB21DAB18B82001005EEDA1 /* HoleInTheWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleInTheWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB21DAE18B82001005EEDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,9 +203,14 @@
 		6B3D5FE518BA7C04006E4305 /* JSONShapes */ = {
 			isa = PBXGroup;
 			children = (
-				6B3D5FE618BA7C04006E4305 /* RectangleSkinny.json */,
-				6B3D5FE718BA7C04006E4305 /* Square.json */,
-				6B3D5FE818BA7C04006E4305 /* Triangle.json */,
+				6B24A87118BD563D00974D81 /* lightbulb.json */,
+				6B24A87218BD563D00974D81 /* pentagon.json */,
+				6B24A88218BD69B400974D81 /* circle.json */,
+				6B24A88318BD69B400974D81 /* square.json */,
+				6B24A88418BD69B400974D81 /* triangle.json */,
+				6B24A87E18BD59C800974D81 /* V.json */,
+				6B24A87F18BD59C800974D81 /* W.json */,
+				6B3D5FE618BA7C04006E4305 /* rectangle.json */,
 			);
 			path = JSONShapes;
 			sourceTree = "<group>";
@@ -130,10 +219,88 @@
 			isa = PBXGroup;
 			children = (
 				6B3D603E18BAA466006E4305 /* square.png */,
+				6B24A87618BD564F00974D81 /* circle.png */,
+				6B24A87718BD564F00974D81 /* lightbulb.png */,
+				6B24A87818BD564F00974D81 /* pentagon.png */,
+				6B54EB8518BC2D5E00EE5604 /* rectangle.png */,
 				6B3D603918BA9D69006E4305 /* triangle.png */,
 			);
 			name = ShapeImages;
 			path = JWC/ShapeImages;
+			sourceTree = "<group>";
+		};
+		6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */ = {
+			isa = PBXGroup;
+			children = (
+				6B54EB3E18BC0B5C00EE5604 /* CDataScanner.h */,
+				6B54EB3F18BC0B5C00EE5604 /* CDataScanner.m */,
+				6B54EB4018BC0B5C00EE5604 /* D.json */,
+				6B54EB4118BC0B5C00EE5604 /* Experimental */,
+				6B54EB4A18BC0B5C00EE5604 /* Extensions */,
+				6B54EB4F18BC0B5C00EE5604 /* JSON */,
+				6B54EB5718BC0B5C00EE5604 /* N.json */,
+				6B54EB5818BC0B5C00EE5604 /* ndollar.js */,
+				6B54EB5918BC0B5C00EE5604 /* P.json */,
+				6B54EB5A18BC0B5C00EE5604 /* protractor-chi2010.pdf */,
+				6B54EB5B18BC0B5C00EE5604 /* T.json */,
+				6B54EB5C18BC0B5C00EE5604 /* WTMDetectionResult.h */,
+				6B54EB5D18BC0B5C00EE5604 /* WTMDetectionResult.m */,
+				6B54EB5E18BC0B5C00EE5604 /* WTMGlyph-Prefix.pch */,
+				6B54EB5F18BC0B5C00EE5604 /* WTMGlyph.h */,
+				6B54EB6018BC0B5C00EE5604 /* WTMGlyph.m */,
+				6B54EB6118BC0B5C00EE5604 /* WTMGlyphDefaults.h */,
+				6B54EB6218BC0B5C00EE5604 /* WTMGlyphDefaults.m */,
+				6B54EB6318BC0B5C00EE5604 /* WTMGlyphDelegate.h */,
+				6B54EB6418BC0B5C00EE5604 /* WTMGlyphDetector.h */,
+				6B54EB6518BC0B5C00EE5604 /* WTMGlyphDetector.m */,
+				6B54EB6618BC0B5C00EE5604 /* WTMGlyphStroke.h */,
+				6B54EB6718BC0B5C00EE5604 /* WTMGlyphStroke.m */,
+				6B54EB6818BC0B5C00EE5604 /* WTMGlyphTemplate.h */,
+				6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */,
+				6B54EB6A18BC0B5C00EE5604 /* WTMGlyphUtilities.h */,
+				6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */,
+			);
+			path = WTMGlyph;
+			sourceTree = "<group>";
+		};
+		6B54EB4118BC0B5C00EE5604 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				6B54EB4218BC0B5C00EE5604 /* CFilteringJSONSerializer.h */,
+				6B54EB4318BC0B5C00EE5604 /* CFilteringJSONSerializer.m */,
+				6B54EB4418BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.h */,
+				6B54EB4518BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m */,
+				6B54EB4618BC0B5C00EE5604 /* CJSONSerialization.h */,
+				6B54EB4718BC0B5C00EE5604 /* CJSONSerialization.m */,
+				6B54EB4818BC0B5C00EE5604 /* CJSONSerializedData.h */,
+				6B54EB4918BC0B5C00EE5604 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		6B54EB4A18BC0B5C00EE5604 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B54EB4B18BC0B5C00EE5604 /* CDataScanner_Extensions.h */,
+				6B54EB4C18BC0B5C00EE5604 /* CDataScanner_Extensions.m */,
+				6B54EB4D18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.h */,
+				6B54EB4E18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B54EB4F18BC0B5C00EE5604 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6B54EB5018BC0B5C00EE5604 /* CJSONDeserializer.h */,
+				6B54EB5118BC0B5C00EE5604 /* CJSONDeserializer.m */,
+				6B54EB5218BC0B5C00EE5604 /* CJSONScanner.h */,
+				6B54EB5318BC0B5C00EE5604 /* CJSONScanner.m */,
+				6B54EB5418BC0B5C00EE5604 /* CJSONSerializer.h */,
+				6B54EB5518BC0B5C00EE5604 /* CJSONSerializer.m */,
+				6B54EB5618BC0B5C00EE5604 /* JSONRepresentation.h */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		6BB21DA218B82001005EEDA1 = {
@@ -187,6 +354,8 @@
 		6BB21DB518B82001005EEDA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B3D5FE518BA7C04006E4305 /* JSONShapes */,
+				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
 				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
 				6BB21DB718B82001005EEDA1 /* InfoPlist.strings */,
 				6BB21DBA18B82001005EEDA1 /* main.m */,
@@ -229,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				6B3D603718BA9D69006E4305 /* ShapeImages */,
-				6B3D5FE518BA7C04006E4305 /* JSONShapes */,
 				6B3D603D18BA9DF7006E4305 /* JWCShapeType.h */,
 				6B3D5FEC18BA7C7C006E4305 /* JWCScene.h */,
 				6B3D5FED18BA7C7C006E4305 /* JWCScene.m */,
@@ -299,6 +467,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
+					6BB21DAA18B82001005EEDA1 = {
+						DevelopmentTeam = UQCRLH6BPC;
+					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
 					};
@@ -311,6 +482,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6BB21DA218B82001005EEDA1;
 			productRefGroup = 6BB21DAC18B82001005EEDA1 /* Products */;
@@ -331,12 +503,23 @@
 				6B3D5FEB18BA7C04006E4305 /* Triangle.json in Resources */,
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
-				6B3D5FE918BA7C04006E4305 /* RectangleSkinny.json in Resources */,
+				6B24A88718BD69B400974D81 /* triangle.json in Resources */,
+				6B24A87418BD563D00974D81 /* lightbulb.json in Resources */,
+				6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */,
+				6B54EB8618BC2D5E00EE5604 /* rectangle.png in Resources */,
+				6B24A88618BD69B400974D81 /* square.json in Resources */,
+				6B3D5FE918BA7C04006E4305 /* rectangle.json in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
+				6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */,
+				6B24A87518BD563D00974D81 /* pentagon.json in Resources */,
+				6B54EB7918BC0B5C00EE5604 /* P.json in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,
 				6B3D603B18BA9D69006E4305 /* triangle.png in Resources */,
+				6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */,
+				6B24A88018BD59C800974D81 /* V.json in Resources */,
+				6B24A88518BD69B400974D81 /* circle.json in Resources */,
 				6B3D603F18BAA466006E4305 /* square.png in Resources */,
-				6B3D5FEA18BA7C04006E4305 /* Square.json in Resources */,
+				6B24A88118BD59C800974D81 /* W.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,13 +539,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
+				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
 				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
+				6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */,
+				6B54EB6C18BC0B5C00EE5604 /* CDataScanner.m in Sources */,
+				6B54EB7F18BC0B5C00EE5604 /* WTMGlyphDetector.m in Sources */,
+				6B54EB6E18BC0B5C00EE5604 /* CFilteringJSONSerializer.m in Sources */,
+				6B54EB7318BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m in Sources */,
 				6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */,
+				6B54EB7518BC0B5C00EE5604 /* CJSONScanner.m in Sources */,
+				6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */,
 				6BB21DC518B82001005EEDA1 /* JWCViewController.m in Sources */,
+				6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */,
+				6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */,
+				6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */,
+				6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */,
+				6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */,
+				6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */,
+				6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */,
 				6B3D5FE018BA763C006E4305 /* JWCHole.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,10 +689,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -503,10 +705,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -10,19 +10,16 @@
 
 @implementation JWCWall
 
-- (instancetype)initWithScale:(CGFloat)scale andHole:(JWCHole *)hole withPosition:(CGPoint)holePosition
+- (instancetype)initWithScale:(CGFloat)scale
 {
     if (self = [super init]) {
-        self.holeInWall = hole;
-        self.holeInWall.position = holePosition;
+        [self generateHole];
         
         self.size = CGSizeMake(320, 568);
         self.position = CGPointZero;
         self.color = [UIColor blueColor];
         self.xScale = scale;
         self.yScale = scale;
-        
-        [self addChild:self.holeInWall];
     }
     return self;
 }
@@ -30,11 +27,44 @@
 - (void)startMovingWithDuration:(CGFloat)duration
 {
     SKAction *moveForwardAction = [SKAction scaleTo:1 duration:duration];
-    SKAction *holeScaleAction = [SKAction scaleTo:5 duration:1];
+    SKAction *scaleOffAction = [SKAction scaleTo:5 duration:.1];
     
     [self runAction:moveForwardAction completion:^{
-        [self.holeInWall runAction:holeScaleAction];
+        [self runAction:scaleOffAction completion:^{
+            [self generateHole];
+            [self setScale:.2];
+            [self startMovingWithDuration:5];
+        }];
+        
     }];
+}
+
+- (void)generateHole
+{
+    if ([self.children containsObject:self.holeInWall]) {
+        [self.holeInWall removeFromParent];
+    }
+    
+    int randomHole = rand() % 3;
+    NSLog(@"%i", randomHole);
+    
+    switch (randomHole) {
+        case 0:
+            self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeSquare
+                                                       shapeSize:CGSizeMake(160, 160)];
+            break;
+        case 1:
+            self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeTriangle
+                                                       shapeSize:CGSizeMake(160, 160)];
+            break;
+        case 2:
+            self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeRectangle
+                                                       shapeSize:CGSizeMake(100, 250)];
+            break;
+    }
+    
+    self.holeInWall.position = CGPointZero;
+    [self addChild:self.holeInWall];
 }
 
 @end
