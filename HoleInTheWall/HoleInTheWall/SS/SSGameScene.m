@@ -36,8 +36,8 @@
         
         
         self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
-        self.backgroundNode.anchorPoint = CGPointMake(.5f,.5f);
-        self.backgroundNode.position = CGPointZero;
+        self.backgroundNode.position = CGPointMake(160, 284);
+        self.backgroundNode.size = self.frame.size;
         [self addChild:self.backgroundNode];
         
         self.minX = CGRectGetMinX(self.frame);

@@ -40,6 +40,8 @@
         
         [self.wall startMovingWithDuration:6];
         _wallScaling = YES;
+        
+        self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
     }
     
     return self;

@@ -15,9 +15,10 @@
     if (self = [super init]) {
         [self generateHole];
         
+        self = [JWCWall spriteNodeWithImageNamed:@"skulls"];
+        
         self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
-        self.color = [UIColor blueColor];
         self.xScale = scale;
         self.yScale = scale;
     }
