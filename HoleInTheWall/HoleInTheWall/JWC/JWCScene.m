@@ -47,14 +47,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint touchPoint = [[touches anyObject] locationInNode:self];
+    CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
     [self.glyphDetector addPoint:touchPoint];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!_glyphDetected) {
-        CGPoint touchPoint = [[touches anyObject] locationInNode:self];
+        CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
         [self.glyphDetector addPoint:touchPoint];
     } else {
         self.playerShape.position = [[touches anyObject] locationInNode:self];
@@ -64,6 +64,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (!_glyphDetected) {
+        [self.glyphDetector addPoint:[[touches anyObject] locationInView:self.view]];
         [self.glyphDetector detectGlyph];
     } else {
         _glyphDetected = NO;
@@ -77,19 +78,17 @@
     self.glyphDetector = [WTMGlyphDetector detector];
     self.glyphDetector.delegate = self;
     
-    NSString *glyphSquareFilePath = [[NSBundle mainBundle] pathForResource:@"Square" ofType:@"json"];
-    NSData *glyphSqaureData = [NSData dataWithContentsOfFile:glyphSquareFilePath];
+    [self addGlyphWithJSONFileName:@"square" withShapeName:@"square"];
+    [self addGlyphWithJSONFileName:@"triangle" withShapeName:@"triangle"];
+    [self addGlyphWithJSONFileName:@"circle" withShapeName:@"circle"];
+}
+
+- (void)addGlyphWithJSONFileName:(NSString *)fileName withShapeName:(NSString *)shapeName
+{
+    NSString *glyphFilePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+    NSData *glyphData = [NSData dataWithContentsOfFile:glyphFilePath];
     
-    NSString *glyphTriangleFilePath = [[NSBundle mainBundle] pathForResource:@"Triangle" ofType:@"json"];
-    NSData *glyphTriangleData = [NSData dataWithContentsOfFile:glyphTriangleFilePath];
-    
-    NSString *glyphRectangleFilePath = [[NSBundle mainBundle] pathForResource:@"Rectangle" ofType:@"json"];
-    NSData *glyphRectangleData = [NSData dataWithContentsOfFile:glyphRectangleFilePath];
-    
-    [self.glyphDetector addGlyphFromJSON:glyphSqaureData name:@"square"];
-    [self.glyphDetector addGlyphFromJSON:glyphTriangleData name:@"triangle"];
-    [self.glyphDetector addGlyphFromJSON:glyphRectangleData name:@"rectangle"];
-    
+    [self.glyphDetector addGlyphFromJSON:glyphData name:shapeName];
 }
 
 - (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score
@@ -98,11 +97,15 @@
         _glyphDetected = YES;
         [self.glyphDetector reset];
         
+        NSLog(@"%@, %f", glyph.name, score);
         if ([glyph.name isEqualToString:@"square"]) {
             self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:CGSizeMake(150, 150)];
             self.playerShape.position = CGPointZero;
         } else if ([glyph.name isEqualToString:@"triangle"]) {
             self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeTriangle size:CGSizeMake(150, 150)];
+            self.playerShape.position = CGPointZero;
+        } else if ([glyph.name isEqualToString:@"circle"]) {
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:CGSizeMake(150, 150)];
             self.playerShape.position = CGPointZero;
         }
         

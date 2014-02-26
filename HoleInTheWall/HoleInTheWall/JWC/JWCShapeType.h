@@ -12,7 +12,10 @@
 typedef enum : int {
     JWCShapeTypeSquare = 0,
     JWCShapeTypeTriangle = 1,
-    JWCShapeTypeRectangle = 2
+    JWCShapeTypeRectangle = 2,
+    JWCShapeTypeCircle = 3,
+    JWCShapeTypeV = 4,
+    JWCShapeTypeW = 5
 } JWCShapeType;
 
 #endif
