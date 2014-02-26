@@ -78,8 +78,13 @@
     self.glyphDetector = [WTMGlyphDetector detector];
     self.glyphDetector.delegate = self;
     
-    [self addGlyphWithJSONFileName:@"square" withShapeName:@"square"];
-    [self addGlyphWithJSONFileName:@"triangle" withShapeName:@"triangle"];
+    for (int i = 1; i < 6; i++) {
+        NSString *sqaureFileName = [NSString stringWithFormat:@"square%d",i];
+        [self addGlyphWithJSONFileName:sqaureFileName withShapeName:@"square"];
+        
+        NSString *triangleFileName = [NSString stringWithFormat:@"triangle%d",i];
+        [self addGlyphWithJSONFileName:triangleFileName withShapeName:@"triangle"];
+    }
     [self addGlyphWithJSONFileName:@"circle" withShapeName:@"circle"];
 }
 
@@ -98,6 +103,7 @@
         [self.glyphDetector reset];
         
         NSLog(@"%@, %f", glyph.name, score);
+        
         if ([glyph.name isEqualToString:@"square"]) {
             self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:CGSizeMake(150, 150)];
             self.playerShape.position = CGPointZero;

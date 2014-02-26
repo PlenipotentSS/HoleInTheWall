@@ -26,6 +26,9 @@
                 self = [JWCHole spriteNodeWithImageNamed:@"rectangle"];
                 self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
                 break;
+            case JWCShapeTypeCircle:
+                self = [JWCHole spriteNodeWithImageNamed:@"circle"];
+                self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
             default:
                 break;
         }

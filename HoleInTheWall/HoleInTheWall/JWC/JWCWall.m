@@ -15,7 +15,7 @@
     if (self = [super init]) {
         [self generateHole];
         
-        self.size = CGSizeMake(320, 568);
+        self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
         self.color = [UIColor blueColor];
         self.xScale = scale;
@@ -45,21 +45,25 @@
         [self.holeInWall removeFromParent];
     }
     
-    int randomHole = rand() % 3;
+    int randomHole = arc4random() % 4;
     NSLog(@"%i", randomHole);
     
     switch (randomHole) {
         case 0:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeSquare
-                                                       shapeSize:CGSizeMake(160, 160)];
+                                                       shapeSize:CGSizeMake(150, 160)];
             break;
         case 1:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeTriangle
-                                                       shapeSize:CGSizeMake(160, 160)];
+                                                       shapeSize:CGSizeMake(150, 160)];
             break;
         case 2:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeRectangle
                                                        shapeSize:CGSizeMake(100, 250)];
+            break;
+        case 3:
+            self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeCircle
+                                                       shapeSize:CGSizeMake(150, 150)];
             break;
     }
     
