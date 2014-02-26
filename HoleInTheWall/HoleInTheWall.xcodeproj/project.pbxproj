@@ -12,7 +12,6 @@
 		6B24A87B18BD564F00974D81 /* pentagon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87818BD564F00974D81 /* pentagon.png */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
-		6B24A89C18BD746600974D81 /* rectangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88B18BD746600974D81 /* rectangle.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
 		6B24A89F18BD746600974D81 /* square2.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88E18BD746600974D81 /* square2.json */; };
 		6B24A8A018BD746600974D81 /* square3.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88F18BD746600974D81 /* square3.json */; };
@@ -85,7 +84,6 @@
 		6B24A87818BD564F00974D81 /* pentagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pentagon.png; sourceTree = "<group>"; };
 		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		6B24A88418BD69B400974D81 /* triangle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle1.json; sourceTree = "<group>"; };
-		6B24A88B18BD746600974D81 /* rectangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rectangle.json; sourceTree = "<group>"; };
 		6B24A88D18BD746600974D81 /* square1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square1.json; sourceTree = "<group>"; };
 		6B24A88E18BD746600974D81 /* square2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square2.json; sourceTree = "<group>"; };
 		6B24A88F18BD746600974D81 /* square3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square3.json; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				6B24A88218BD69B400974D81 /* circle.json */,
-				6B24A88B18BD746600974D81 /* rectangle.json */,
 				6B24A88D18BD746600974D81 /* square1.json */,
 				6B24A88E18BD746600974D81 /* square2.json */,
 				6B24A88F18BD746600974D81 /* square3.json */,
@@ -508,7 +505,6 @@
 				6B24A89F18BD746600974D81 /* square2.json in Resources */,
 				6B54EB7918BC0B5C00EE5604 /* P.json in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,
-				6B24A89C18BD746600974D81 /* rectangle.json in Resources */,
 				6B3D603B18BA9D69006E4305 /* triangle.png in Resources */,
 				6B24A8A218BD746600974D81 /* square5.json in Resources */,
 				6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */,
