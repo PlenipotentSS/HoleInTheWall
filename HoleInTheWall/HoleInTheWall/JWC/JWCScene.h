@@ -8,8 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "JWCWall.h"
+#import "SSGameScene.h"
 
-@interface JWCScene : SKScene
+@interface JWCScene : SSGameScene
 
 @property (nonatomic) JWCWall *wall;
 
