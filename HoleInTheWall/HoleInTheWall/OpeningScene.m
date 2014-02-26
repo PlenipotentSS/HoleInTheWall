@@ -85,7 +85,7 @@
     
 }
 
-- (void)scaleWall
+- (void)scaleWallLabel
 {
     SKAction *scaleWall = [SKAction scaleTo:23 duration:2.4];
     [self.wallLabel runAction:scaleWall completion:^{
