@@ -66,6 +66,9 @@
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
+		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
+		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
+		D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAF24418BC1139006C0F0C /* SSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,10 @@
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
+		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
+		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D2BAF24318BC1139006C0F0C /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SS/SSViewController.h; sourceTree = "<group>"; };
+		D2BAF24418BC1139006C0F0C /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SS/SSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */,
 				D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */,
 				6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */,
 				6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */,
@@ -196,6 +204,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC4F35318BD735A00E80C64 /* Matt */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4F35418BD738000E80C64 /* OpeningScene.h */,
+				3EC4F35518BD738000E80C64 /* OpeningScene.m */,
+				3EC4F35B18BD7CE900E80C64 /* JWCOpeningSceneViewController.h */,
+				3EC4F35C18BD7CE900E80C64 /* JWCOpeningSceneViewController.m */,
+			);
+			name = Matt;
+			sourceTree = "<group>";
+		};
+		3EC4F35918BD795300E80C64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4F35A18BD795900E80C64 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3EC4F35A18BD795900E80C64 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3EC4F35718BD790100E80C64 /* pincoyablack.otf */,
+				3EC4F35E18BD7FA200E80C64 /* Prisma.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		6B3D5FE518BA7C04006E4305 /* JSONShapes */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +359,7 @@
 		6BB21DAD18B82001005EEDA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2A974B318BD734B00720098 /* CoreImage.framework */,
 				D222469E18B8227A00D0FB43 /* SpriteKit.framework */,
 				6BB21DAE18B82001005EEDA1 /* Foundation.framework */,
 				6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */,
@@ -340,6 +377,8 @@
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
 				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
+				3EC4F35918BD795300E80C64 /* Resources */,
+				3EC4F35318BD735A00E80C64 /* Matt */,
 				6BB21DE618B823C0005EEDA1 /* JWC */,
 				6BB21DE518B8233F005EEDA1 /* Steven */,
 				6BB21DC618B82001005EEDA1 /* Images.xcassets */,
@@ -381,8 +420,11 @@
 		6BB21DE518B8233F005EEDA1 /* Steven */ = {
 			isa = PBXGroup;
 			children = (
+				D2A9741118BC6ABE00720098 /* testwalls */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
+				D2BAF24318BC1139006C0F0C /* SSViewController.h */,
+				D2BAF24418BC1139006C0F0C /* SSViewController.m */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -403,6 +445,14 @@
 				6B3D5FE318BA775B006E4305 /* JWCShape.m */,
 			);
 			name = JWC;
+			sourceTree = "<group>";
+		};
+		D2A9741118BC6ABE00720098 /* testwalls */ = {
+			isa = PBXGroup;
+			children = (
+				D2A974AA18BD45B500720098 /* bluewalls.png */,
+			);
+			name = testwalls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,10 +536,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B54EB7B18BC0B5C00EE5604 /* T.json in Resources */,
-				6B54EB7718BC0B5C00EE5604 /* N.json in Resources */,
-				6B24A87918BD564F00974D81 /* circle.png in Resources */,
-				6B24A87B18BD564F00974D81 /* pentagon.png in Resources */,
+				6B3D5FEB18BA7C04006E4305 /* Triangle.json in Resources */,
+				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
 				6B24A89E18BD746600974D81 /* square1.json in Resources */,
@@ -533,8 +581,7 @@
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
-				6B54EB7818BC0B5C00EE5604 /* ndollar.js in Sources */,
-				6B54EB7118BC0B5C00EE5604 /* CJSONSerializedData.m in Sources */,
+				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
 				6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */,
@@ -547,9 +594,11 @@
 				6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */,
 				6BB21DC518B82001005EEDA1 /* JWCViewController.m in Sources */,
 				6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */,
+				3EC4F35618BD738000E80C64 /* OpeningScene.m in Sources */,
 				6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */,
 				6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */,
 				6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */,
+				3EC4F35D18BD7CE900E80C64 /* JWCOpeningSceneViewController.m in Sources */,
 				6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */,
 				6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */,
 				6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */,
