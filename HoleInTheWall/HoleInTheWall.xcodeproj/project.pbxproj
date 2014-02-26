@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B24A87918BD564F00974D81 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87618BD564F00974D81 /* circle.png */; };
 		6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87718BD564F00974D81 /* lightbulb.png */; };
-		6B24A87B18BD564F00974D81 /* pentagon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87818BD564F00974D81 /* pentagon.png */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
@@ -21,6 +19,8 @@
 		6B24A8A518BD746600974D81 /* triangle3.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A89418BD746600974D81 /* triangle3.json */; };
 		6B24A8A618BD746600974D81 /* triangle4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A89518BD746600974D81 /* triangle4.json */; };
 		6B24A8A718BD746600974D81 /* triangle5.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A89618BD746600974D81 /* triangle5.json */; };
+		6B24A8AC18BD95A800974D81 /* OpeningScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B24A8AB18BD95A800974D81 /* OpeningScene.m */; };
+		6B24A8AF18BD95BA00974D81 /* JWCOpeningSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */; };
 		6B3D5FE018BA763C006E4305 /* JWCHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FDD18BA763C006E4305 /* JWCHole.m */; };
 		6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FDF18BA763C006E4305 /* JWCWall.m */; };
 		6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE318BA775B006E4305 /* JWCShape.m */; };
@@ -32,17 +32,13 @@
 		6B54EB6E18BC0B5C00EE5604 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4318BC0B5C00EE5604 /* CFilteringJSONSerializer.m */; };
 		6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4518BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m */; };
 		6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4718BC0B5C00EE5604 /* CJSONSerialization.m */; };
-		6B54EB7118BC0B5C00EE5604 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4918BC0B5C00EE5604 /* CJSONSerializedData.m */; };
 		6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4C18BC0B5C00EE5604 /* CDataScanner_Extensions.m */; };
 		6B54EB7318BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4E18BC0B5C00EE5604 /* NSDictionary_JSONExtensions.m */; };
 		6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5118BC0B5C00EE5604 /* CJSONDeserializer.m */; };
 		6B54EB7518BC0B5C00EE5604 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5318BC0B5C00EE5604 /* CJSONScanner.m */; };
 		6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5518BC0B5C00EE5604 /* CJSONSerializer.m */; };
-		6B54EB7718BC0B5C00EE5604 /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5718BC0B5C00EE5604 /* N.json */; };
-		6B54EB7818BC0B5C00EE5604 /* ndollar.js in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5818BC0B5C00EE5604 /* ndollar.js */; };
 		6B54EB7918BC0B5C00EE5604 /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5918BC0B5C00EE5604 /* P.json */; };
 		6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5A18BC0B5C00EE5604 /* protractor-chi2010.pdf */; };
-		6B54EB7B18BC0B5C00EE5604 /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB5B18BC0B5C00EE5604 /* T.json */; };
 		6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB5D18BC0B5C00EE5604 /* WTMDetectionResult.m */; };
 		6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6018BC0B5C00EE5604 /* WTMGlyph.m */; };
 		6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6218BC0B5C00EE5604 /* WTMGlyphDefaults.m */; };
@@ -96,6 +92,12 @@
 		6B24A89418BD746600974D81 /* triangle3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle3.json; sourceTree = "<group>"; };
 		6B24A89518BD746600974D81 /* triangle4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle4.json; sourceTree = "<group>"; };
 		6B24A89618BD746600974D81 /* triangle5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle5.json; sourceTree = "<group>"; };
+		6B24A8AA18BD95A800974D81 /* OpeningScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningScene.h; sourceTree = "<group>"; };
+		6B24A8AB18BD95A800974D81 /* OpeningScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningScene.m; sourceTree = "<group>"; };
+		6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWCOpeningSceneViewController.h; sourceTree = "<group>"; };
+		6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWCOpeningSceneViewController.m; sourceTree = "<group>"; };
+		6B24A8B018BD95CD00974D81 /* pincoyablack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pincoyablack.otf; sourceTree = "<group>"; };
+		6B24A8B118BD95CD00974D81 /* Prisma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Prisma.ttf; sourceTree = "<group>"; };
 		6B3D5FDC18BA763C006E4305 /* JWCHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCHole.h; path = JWC/JWCHole.h; sourceTree = "<group>"; };
 		6B3D5FDD18BA763C006E4305 /* JWCHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCHole.m; path = JWC/JWCHole.m; sourceTree = "<group>"; };
 		6B3D5FDE18BA763C006E4305 /* JWCWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCWall.h; path = JWC/JWCWall.h; sourceTree = "<group>"; };
@@ -207,10 +209,10 @@
 		3EC4F35318BD735A00E80C64 /* Matt */ = {
 			isa = PBXGroup;
 			children = (
-				3EC4F35418BD738000E80C64 /* OpeningScene.h */,
-				3EC4F35518BD738000E80C64 /* OpeningScene.m */,
-				3EC4F35B18BD7CE900E80C64 /* JWCOpeningSceneViewController.h */,
-				3EC4F35C18BD7CE900E80C64 /* JWCOpeningSceneViewController.m */,
+				6B24A8AA18BD95A800974D81 /* OpeningScene.h */,
+				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
+				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
+				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
 			);
 			name = Matt;
 			sourceTree = "<group>";
@@ -218,6 +220,8 @@
 		3EC4F35918BD795300E80C64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6B24A8B018BD95CD00974D81 /* pincoyablack.otf */,
+				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 				3EC4F35A18BD795900E80C64 /* Fonts */,
 			);
 			name = Resources;
@@ -226,8 +230,6 @@
 		3EC4F35A18BD795900E80C64 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				3EC4F35718BD790100E80C64 /* pincoyablack.otf */,
-				3EC4F35E18BD7FA200E80C64 /* Prisma.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -536,7 +538,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B3D5FEB18BA7C04006E4305 /* Triangle.json in Resources */,
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
@@ -583,6 +584,7 @@
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
 				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
+				6B24A8AC18BD95A800974D81 /* OpeningScene.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
 				6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */,
 				6B54EB6C18BC0B5C00EE5604 /* CDataScanner.m in Sources */,
@@ -592,13 +594,12 @@
 				6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */,
 				6B54EB7518BC0B5C00EE5604 /* CJSONScanner.m in Sources */,
 				6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */,
+				6B24A8AF18BD95BA00974D81 /* JWCOpeningSceneViewController.m in Sources */,
 				6BB21DC518B82001005EEDA1 /* JWCViewController.m in Sources */,
 				6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */,
-				3EC4F35618BD738000E80C64 /* OpeningScene.m in Sources */,
 				6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */,
 				6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */,
 				6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */,
-				3EC4F35D18BD7CE900E80C64 /* JWCOpeningSceneViewController.m in Sources */,
 				6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */,
 				6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */,
 				6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */,
