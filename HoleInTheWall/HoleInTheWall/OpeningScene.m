@@ -66,6 +66,7 @@
     return self;
 }
 
+
 - (void)performSKActions
 {
     SKAction *moveForwardAction = [SKAction scaleTo:1 duration:0.5];
