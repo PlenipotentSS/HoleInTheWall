@@ -32,6 +32,9 @@
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
+		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
+		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
+		D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAF24418BC1139006C0F0C /* SSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,10 @@
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
+		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
+		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D2BAF24318BC1139006C0F0C /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SS/SSViewController.h; sourceTree = "<group>"; };
+		D2BAF24418BC1139006C0F0C /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SS/SSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */,
 				D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */,
 				6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */,
 				6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */,
@@ -150,6 +158,7 @@
 		6BB21DAD18B82001005EEDA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2A974B318BD734B00720098 /* CoreImage.framework */,
 				D222469E18B8227A00D0FB43 /* SpriteKit.framework */,
 				6BB21DAE18B82001005EEDA1 /* Foundation.framework */,
 				6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */,
@@ -207,8 +216,11 @@
 		6BB21DE518B8233F005EEDA1 /* Steven */ = {
 			isa = PBXGroup;
 			children = (
+				D2A9741118BC6ABE00720098 /* testwalls */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
+				D2BAF24318BC1139006C0F0C /* SSViewController.h */,
+				D2BAF24418BC1139006C0F0C /* SSViewController.m */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -229,6 +241,14 @@
 				6B3D5FE318BA775B006E4305 /* JWCShape.m */,
 			);
 			name = JWC;
+			sourceTree = "<group>";
+		};
+		D2A9741118BC6ABE00720098 /* testwalls */ = {
+			isa = PBXGroup;
+			children = (
+				D2A974AA18BD45B500720098 /* bluewalls.png */,
+			);
+			name = testwalls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3D5FEB18BA7C04006E4305 /* Triangle.json in Resources */,
+				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B3D5FE918BA7C04006E4305 /* RectangleSkinny.json in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
@@ -337,6 +358,7 @@
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
+				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
 				6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */,
