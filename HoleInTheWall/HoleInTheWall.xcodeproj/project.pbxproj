@@ -65,6 +65,7 @@
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
+		D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */; };
 		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
 		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
@@ -179,6 +180,8 @@
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
+		D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCheckForCollision.h; sourceTree = "<group>"; };
+		D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCheckForCollision.m; sourceTree = "<group>"; };
 		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
@@ -216,10 +219,10 @@
 			children = (
 				6B24A8AA18BD95A800974D81 /* OpeningScene.h */,
 				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
+				D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */,
+				D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
 				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
-				3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */,
-				3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */,
 			);
 			name = Matt;
 			sourceTree = "<group>";
@@ -598,9 +601,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */,
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
-				3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,

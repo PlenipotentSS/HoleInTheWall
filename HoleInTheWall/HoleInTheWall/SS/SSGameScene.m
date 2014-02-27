@@ -37,8 +37,7 @@
         
         self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
         self.backgroundNode.size = self.frame.size;
-        self.backgroundNode.anchorPoint = CGPointMake(.5f,.5f);
-        self.backgroundNode.position = CGPointZero;
+        self.backgroundNode.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         [self addChild:self.backgroundNode];
         
         self.minX = CGRectGetMinX(self.frame);
@@ -52,6 +51,7 @@
         
         [self createShapes];
         
+//        self.backgroundNode.anchorPoint = CGPointMake(.5f,.5f);
         for (SKSpriteNode *node in self.children) {
             node.anchorPoint = CGPointMake(1.f,1.f);
         }
