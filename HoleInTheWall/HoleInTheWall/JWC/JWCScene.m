@@ -103,7 +103,7 @@
     if (!_glyphDetected) {
         _glyphDetected = YES;
         [self.glyphDetector reset];
-        
+            
         NSLog(@"%@, %f", glyph.name, score);
         
         if ([glyph.name isEqualToString:@"square"]) {
