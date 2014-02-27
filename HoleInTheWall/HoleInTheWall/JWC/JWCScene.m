@@ -11,8 +11,11 @@
 #import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
 
-@interface JWCScene () <WTMGlyphDelegate>
+#import <GameCenterManager/GameCenterManager.h>
+
+@interface JWCScene () <WTMGlyphDelegate, GameCenterManagerDelegate>
 {
+    int _wallsPassed;
     BOOL _glyphDetected;
     BOOL _wallScaling;
 }
@@ -43,6 +46,8 @@
         
         self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
     }
+    
+    [GameCenterManager sharedManager].delegate = self;
     
     return self;
 }
@@ -125,8 +130,6 @@
 
 - (void)update:(CFTimeInterval)currentTime
 {
-
-    
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
         MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
         
@@ -145,13 +148,29 @@
             
             SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
             [self.playerShape runAction:group];
-
-
+        } else {
+            [self reportScore];
+            _wallsPassed++;
         }
         
     }
-    
-    
+}
+
+- (void)reportScore
+{
+    [[GameCenterManager sharedManager] saveAndReportScore:100
+                                              leaderboard:@"com.jeffwritescode.holeinthewall.hiscore" sortOrder:GameCenterSortOrderHighToLow];
+    if (_wallsPassed > 5) {
+        [[GameCenterManager sharedManager] saveAndReportAchievement:@"com.jeffwritescode.holeinthewall.collisions" percentComplete:100.0 shouldDisplayNotification:YES];
+    }
+}
+
+- (void)gameCenterManager:(GameCenterManager *)manager
+         authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    [self.view.window.rootViewController presentViewController:gameCenterLoginController animated:YES completion:^{
+        NSLog(@"Login Stuff Happened");
+    }];
 }
 
 @end
