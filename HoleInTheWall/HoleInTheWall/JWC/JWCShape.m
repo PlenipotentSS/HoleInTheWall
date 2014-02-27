@@ -27,21 +27,9 @@
             self = [super initWithImageNamed:@"square.png"];
             _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"square" ofType:@"json"];
             break;
-        case JWCShapeTypeRectangle:
-            self = [super initWithImageNamed:@"rectangle.png"];
-            _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"rectangle" ofType:@"json"];
-            break;
         case JWCShapeTypeCircle:
             self = [super initWithImageNamed:@"circle.png"];
             _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"circle" ofType:@"json"];
-            break;
-        case JWCShapeTypeV:
-            self = [super initWithImageNamed:@"rectangle.png"];
-            _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"V" ofType:@"json"];
-            break;
-        case JWCShapeTypeW:
-            self = [super initWithImageNamed:@"rectangle.png"];
-            _shapeFilePath = [[NSBundle mainBundle] pathForResource:@"W" ofType:@"json"];
             break;
         default:
             break;
