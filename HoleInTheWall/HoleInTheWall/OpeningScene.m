@@ -66,6 +66,7 @@
     return self;
 }
 
+
 - (void)performSKActions
 {
     SKAction *moveForwardAction = [SKAction scaleTo:1 duration:0.5];
@@ -77,14 +78,14 @@
     [self.holeLabel runAction:moveInHoleLabel completion:^{
         [self.inTheLabel runAction:moveInInTheLabel completion:^{
             self.wallLabel.hidden = NO;
-            [self performSelector:@selector(scaleWall) withObject:nil afterDelay:.5];
+            [self performSelector:@selector(scaleWallLabel) withObject:nil afterDelay:.5];
             
         }];
     }];
     
 }
 
-- (void)scaleWall
+- (void)scaleWallLabel
 {
     SKAction *scaleWall = [SKAction scaleTo:23 duration:2.4];
     [self.wallLabel runAction:scaleWall completion:^{
