@@ -8,7 +8,7 @@
 
 #import "JWCScene.h"
 #import "JWCShapeType.h"
-
+#import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
 
 @interface JWCScene () <WTMGlyphDelegate>
@@ -117,6 +117,8 @@
             self.playerShape.position = CGPointZero;
         }
         
+        
+        
         [self addChild:self.playerShape];
     }
 }
@@ -124,6 +126,32 @@
 - (void)update:(CFTimeInterval)currentTime
 {
 
+    
+    if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
+        MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
+        
+        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
+            
+            float xValue = (arc4random() % (int)self.size.width) * 2;
+            float yValue = (arc4random() % (int)self.size.height) * 2;
+            
+            SKAction *rotation1 = [SKAction rotateByAngle: M_PI/4.0 duration:0];
+            SKAction *sendToPoint = [SKAction moveTo:CGPointMake(xValue, yValue) duration:1.0];
+            SKAction *scalePlayerSHape = [SKAction scaleBy:3 duration:1.0];
+            SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:2.0];
+
+            
+            SKAction *actions = [SKAction sequence:@[rotation1,rotation1,rotation1,rotation1,rotation1,rotation1,rotation1]];
+            
+            SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
+            [self.playerShape runAction:group];
+
+
+        }
+        
+    }
+    
+    
 }
 
 @end

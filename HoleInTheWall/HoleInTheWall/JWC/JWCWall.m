@@ -69,6 +69,8 @@
             break;
     }
     
+    
+    
     self.holeInWall.position = CGPointZero;
 
     [self addChild:self.holeInWall];

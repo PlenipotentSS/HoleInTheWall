@@ -221,6 +221,8 @@
 				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
 				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
+				3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */,
+				3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */,
 			);
 			name = Matt;
 			sourceTree = "<group>";
@@ -229,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				6B24A8B018BD95CD00974D81 /* pincoyablack.otf */,
-				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 				3EC4F35A18BD795900E80C64 /* Fonts */,
 			);
 			name = Resources;
@@ -238,6 +239,7 @@
 		3EC4F35A18BD795900E80C64 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -525,7 +527,7 @@
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
 					6BB21DAA18B82001005EEDA1 = {
-						DevelopmentTeam = UQCRLH6BPC;
+						DevelopmentTeam = 6SZK592LX3;
 					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
@@ -603,6 +605,7 @@
 			files = (
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
