@@ -36,6 +36,7 @@
         
         
         self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
+        self.backgroundNode.size = self.frame.size;
         self.backgroundNode.anchorPoint = CGPointMake(.5f,.5f);
         self.backgroundNode.position = CGPointZero;
         [self addChild:self.backgroundNode];
@@ -60,7 +61,8 @@
 
 -(void) addBackgroundImage:(UIImage*) image
 {
-    
+    SKTexture *backgroundTexture = [SKTexture textureWithImage:image];
+    [self.backgroundNode setTexture:backgroundTexture];
 }
 
 -(void) createShapes

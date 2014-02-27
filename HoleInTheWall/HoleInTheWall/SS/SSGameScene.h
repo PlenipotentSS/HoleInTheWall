@@ -10,4 +10,12 @@
 
 @interface SSGameScene : SKScene
 
+/**
+ *
+ * add image to background
+ * @param UIImage image
+ *
+**/
+-(void) addBackgroundImage:(UIImage*) image;
+
 @end

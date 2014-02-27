@@ -66,7 +66,6 @@
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
 		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
 		D2A974BC18BDADD500720098 /* skulls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974BA18BDADD500720098 /* skulls.png */; };
-		D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAF24418BC1139006C0F0C /* SSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,8 +179,6 @@
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		D2A974BA18BDADD500720098 /* skulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skulls.png; sourceTree = "<group>"; };
-		D2BAF24318BC1139006C0F0C /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SS/SSViewController.h; sourceTree = "<group>"; };
-		D2BAF24418BC1139006C0F0C /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SS/SSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,8 +424,6 @@
 				D2A9741118BC6ABE00720098 /* testwalls */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
-				D2BAF24318BC1139006C0F0C /* SSViewController.h */,
-				D2BAF24418BC1139006C0F0C /* SSViewController.m */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -590,7 +585,6 @@
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
-				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				6B24A8AC18BD95A800974D81 /* OpeningScene.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
