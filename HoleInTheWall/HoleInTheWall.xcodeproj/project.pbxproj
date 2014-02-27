@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */; };
 		6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87718BD564F00974D81 /* lightbulb.png */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCheckForCollision.h; sourceTree = "<group>"; };
+		3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCheckForCollision.m; sourceTree = "<group>"; };
 		6B24A87618BD564F00974D81 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		6B24A87718BD564F00974D81 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
 		6B24A87818BD564F00974D81 /* pentagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pentagon.png; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
 				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
+				3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */,
+				3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */,
 			);
 			name = Matt;
 			sourceTree = "<group>";
@@ -225,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				6B24A8B018BD95CD00974D81 /* pincoyablack.otf */,
-				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 				3EC4F35A18BD795900E80C64 /* Fonts */,
 			);
 			name = Resources;
@@ -234,6 +238,7 @@
 		3EC4F35A18BD795900E80C64 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -512,7 +517,7 @@
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
 					6BB21DAA18B82001005EEDA1 = {
-						DevelopmentTeam = UQCRLH6BPC;
+						DevelopmentTeam = 6SZK592LX3;
 					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
@@ -587,6 +592,7 @@
 			files = (
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,

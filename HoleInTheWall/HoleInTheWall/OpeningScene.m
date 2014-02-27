@@ -78,7 +78,7 @@
     [self.holeLabel runAction:moveInHoleLabel completion:^{
         [self.inTheLabel runAction:moveInInTheLabel completion:^{
             self.wallLabel.hidden = NO;
-            [self performSelector:@selector(scaleWall) withObject:nil afterDelay:.5];
+            [self performSelector:@selector(scaleWallLabel) withObject:nil afterDelay:.5];
             
         }];
     }];
