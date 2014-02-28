@@ -47,7 +47,6 @@
 		6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C018BECAD60098232E /* trianglemask.png */; };
 		6BAFC2C518BED6A60098232E /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C318BED6A60098232E /* square.png */; };
 		6BAFC2C618BED6A60098232E /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C418BED6A60098232E /* triangle.png */; };
-		6BAFC2C818BEDCB20098232E /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C718BEDCB20098232E /* circle.png */; };
 		6BAFC2CA18BEDCDA0098232E /* circlemask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C918BEDCDA0098232E /* circlemask.png */; };
 		6BB21DAF18B82001005EEDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DAE18B82001005EEDA1 /* Foundation.framework */; };
 		6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */; };
@@ -64,6 +63,9 @@
 		6BB21DD818B82001005EEDA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB21DD618B82001005EEDA1 /* InfoPlist.strings */; };
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
 		6BFF482918C0202000D5F628 /* spacescape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482818C0202000D5F628 /* spacescape.png */; };
+		6BFF482C18C0233A00D5F628 /* townscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482B18C0233A00D5F628 /* townscape.jpg */; };
+		6BFF482E18C026AA00D5F628 /* vegetablescape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */; };
+		6BFF483218C0277E00D5F628 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF483118C0277E00D5F628 /* circle.png */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
 		D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */; };
@@ -158,7 +160,6 @@
 		6BAFC2C018BECAD60098232E /* trianglemask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trianglemask.png; path = JWC/shapemaskimages/trianglemask.png; sourceTree = "<group>"; };
 		6BAFC2C318BED6A60098232E /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		6BAFC2C418BED6A60098232E /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
-		6BAFC2C718BEDCB20098232E /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		6BAFC2C918BEDCDA0098232E /* circlemask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circlemask.png; path = JWC/shapemaskimages/circlemask.png; sourceTree = "<group>"; };
 		6BB21DAB18B82001005EEDA1 /* HoleInTheWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleInTheWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB21DAE18B82001005EEDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,6 +181,9 @@
 		6BB21DD718B82001005EEDA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleInTheWallTests.m; sourceTree = "<group>"; };
 		6BFF482818C0202000D5F628 /* spacescape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacescape.png; sourceTree = "<group>"; };
+		6BFF482B18C0233A00D5F628 /* townscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = townscape.jpg; sourceTree = "<group>"; };
+		6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vegetablescape.jpg; sourceTree = "<group>"; };
+		6BFF483118C0277E00D5F628 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		7920F700CE3C4F34833D363E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
@@ -355,8 +359,8 @@
 		6BAFC2C218BED6A60098232E /* ShapeImages */ = {
 			isa = PBXGroup;
 			children = (
+				6BFF483118C0277E00D5F628 /* circle.png */,
 				6BAFC2C318BED6A60098232E /* square.png */,
-				6BAFC2C718BEDCB20098232E /* circle.png */,
 				6BAFC2C418BED6A60098232E /* triangle.png */,
 			);
 			name = ShapeImages;
@@ -479,6 +483,8 @@
 		6BFF482518C01F4E00D5F628 /* Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */,
+				6BFF482B18C0233A00D5F628 /* townscape.jpg */,
 				6BFF482818C0202000D5F628 /* spacescape.png */,
 			);
 			name = Wallpapers;
@@ -584,13 +590,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFF483218C0277E00D5F628 /* circle.png in Resources */,
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				D2A974BC18BDADD500720098 /* skulls.png in Resources */,
-				6BAFC2C818BEDCB20098232E /* circle.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
+				6BFF482C18C0233A00D5F628 /* townscape.jpg in Resources */,
 				6BAFC2C518BED6A60098232E /* square.png in Resources */,
 				6B24A89E18BD746600974D81 /* square1.json in Resources */,
+				6BFF482E18C026AA00D5F628 /* vegetablescape.jpg in Resources */,
 				6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */,
 				6B24A8A618BD746600974D81 /* triangle4.json in Resources */,
 				6BFF482918C0202000D5F628 /* spacescape.png in Resources */,
