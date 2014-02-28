@@ -29,6 +29,7 @@
  */
 - (void)generateHole;
 
+@property (nonatomic) CGPoint holeCenter;
 @property (nonatomic) JWCHole *holeInWall;
 
 @end

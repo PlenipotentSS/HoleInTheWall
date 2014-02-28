@@ -132,7 +132,7 @@
 {
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
         MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
-        
+    
         if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
             
             float xValue = (arc4random() % (int)self.size.width) * 2;
@@ -158,19 +158,12 @@
 
 - (void)reportScore
 {
-    [[GameCenterManager sharedManager] saveAndReportScore:100
-                                              leaderboard:@"com.jeffwritescode.holeinthewall.hiscore" sortOrder:GameCenterSortOrderHighToLow];
-    if (_wallsPassed > 5) {
-        [[GameCenterManager sharedManager] saveAndReportAchievement:@"com.jeffwritescode.holeinthewall.collisions" percentComplete:100.0 shouldDisplayNotification:YES];
-    }
-}
-
-- (void)gameCenterManager:(GameCenterManager *)manager
-         authenticateUser:(UIViewController *)gameCenterLoginController
-{
-    [self.view.window.rootViewController presentViewController:gameCenterLoginController animated:YES completion:^{
-        NSLog(@"Login Stuff Happened");
-    }];
+    // TODO: Implement this with our real achievement name
+//    [[GameCenterManager sharedManager] saveAndReportScore:100
+//                                              leaderboard:@"com.jeffwritescode.holeinthewall.hiscore" sortOrder:GameCenterSortOrderHighToLow];
+//    if (_wallsPassed > 5) {
+//        [[GameCenterManager sharedManager] saveAndReportAchievement:@"com.jeffwritescode.holeinthewall.collisions" percentComplete:100.0 shouldDisplayNotification:YES];
+//    }
 }
 
 @end
