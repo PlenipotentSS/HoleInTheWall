@@ -407,6 +407,7 @@
 				6BB21DBE18B82001005EEDA1 /* JWCAppDelegate.m */,
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				3EC4F35918BD795300E80C64 /* Resources */,
+				6BFF482A18C0211000D5F628 /* iPad */,
 				3EC4F35318BD735A00E80C64 /* Matt */,
 				6BB21DE618B823C0005EEDA1 /* JWC */,
 				6BB21DE518B8233F005EEDA1 /* Steven */,
@@ -486,6 +487,13 @@
 				6BFF482818C0202000D5F628 /* spacescape.png */,
 			);
 			name = Wallpapers;
+			sourceTree = "<group>";
+		};
+		6BFF482A18C0211000D5F628 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		D2A9741118BC6ABE00720098 /* testwalls */ = {
@@ -819,8 +827,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -836,8 +846,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
