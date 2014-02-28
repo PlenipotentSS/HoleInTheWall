@@ -557,7 +557,7 @@
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
 					6BB21DAA18B82001005EEDA1 = {
-						DevelopmentTeam = UQCRLH6BPC;
+						DevelopmentTeam = 2S283D3328;
 					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
