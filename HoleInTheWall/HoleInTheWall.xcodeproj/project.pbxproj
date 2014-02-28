@@ -63,7 +63,6 @@
 		6BB21DD018B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
 		6BB21DD818B82001005EEDA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB21DD618B82001005EEDA1 /* InfoPlist.strings */; };
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
-		6BFF482418C00F1900D5F628 /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF482318C00F1900D5F628 /* UIImage+ProportionalFill.m */; };
 		6BFF482918C0202000D5F628 /* spacescape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482818C0202000D5F628 /* spacescape.png */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
@@ -180,8 +179,6 @@
 		6BB21DD518B82001005EEDA1 /* HoleInTheWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoleInTheWallTests-Info.plist"; sourceTree = "<group>"; };
 		6BB21DD718B82001005EEDA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleInTheWallTests.m; sourceTree = "<group>"; };
-		6BFF482218C00F1900D5F628 /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
-		6BFF482318C00F1900D5F628 /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
 		6BFF482818C0202000D5F628 /* spacescape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacescape.png; sourceTree = "<group>"; };
 		7920F700CE3C4F34833D363E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -421,8 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				6BFF482518C01F4E00D5F628 /* Wallpapers */,
-				6BFF482218C00F1900D5F628 /* UIImage+ProportionalFill.h */,
-				6BFF482318C00F1900D5F628 /* UIImage+ProportionalFill.m */,
 				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
 				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
 				6BB21DB718B82001005EEDA1 /* InfoPlist.strings */,
@@ -684,7 +679,6 @@
 				6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */,
 				6B54EB7518BC0B5C00EE5604 /* CJSONScanner.m in Sources */,
 				6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */,
-				6BFF482418C00F1900D5F628 /* UIImage+ProportionalFill.m in Sources */,
 				6B24A8AF18BD95BA00974D81 /* JWCOpeningSceneViewController.m in Sources */,
 				6BB21DC518B82001005EEDA1 /* JWCViewController.m in Sources */,
 				6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */,
