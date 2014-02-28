@@ -35,7 +35,7 @@
     if (self = [super initWithSize:size]) {
         
         
-        self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
+        self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"spacescape"];
         self.backgroundNode.size = self.frame.size;
         self.backgroundNode.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         [self addChild:self.backgroundNode];
