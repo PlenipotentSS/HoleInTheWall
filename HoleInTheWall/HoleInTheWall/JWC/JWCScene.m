@@ -143,6 +143,7 @@
     
         if (!_collisionChecked && [collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
             _collisionChecked = YES;
+            
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
             
@@ -162,6 +163,7 @@
                 [self removeShadow];
             }
         } else {
+            [self.wall setZPosition:2.f];
             [self reportScore];
             _wallsPassed++;
         }
