@@ -30,8 +30,8 @@
 {
     if (self = [super init]) {
         
-        self = [JWCWall spriteNodeWithImageNamed:@"bluewalls"];
-        self.wallImage = [UIImage imageNamed:@"bluewalls"];
+        self = [JWCWall spriteNodeWithImageNamed:@"random_grey_variations_@2X"];
+        self.wallImage = [UIImage imageNamed:@"random_grey_variations_@2X"];
         self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
         self.xScale = scale;
