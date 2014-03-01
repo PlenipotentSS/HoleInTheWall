@@ -18,6 +18,8 @@
     int _wallsPassed;
     BOOL _glyphDetected;
     BOOL _wallScaling;
+    
+    BOOL _shadowRemoved;
 }
 
 
@@ -65,6 +67,7 @@
         [self.glyphDetector addPoint:touchPoint];
     } else {
         self.playerShape.position = [[touches anyObject] locationInNode:self];
+        [self moveShadowWithReferencePoint:[[touches anyObject] locationInNode:self]];
     }
 }
 
@@ -76,6 +79,7 @@
     } else {
         _glyphDetected = NO;
         [self.playerShape removeFromParent];
+        [self removeShadow];
     }
 }
 
@@ -125,6 +129,8 @@
         
         
         [self addChild:self.playerShape];
+        [self addShadowForReferencePoint:CGPointZero];
+        _shadowRemoved = YES;
     }
 }
 
@@ -148,6 +154,11 @@
             
             SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
             [self.playerShape runAction:group];
+            
+            if (self.playerShape.parent && !_shadowRemoved) {
+                _shadowRemoved = NO;
+                [self removeShadow];
+            }
         } else {
             [self reportScore];
             _wallsPassed++;

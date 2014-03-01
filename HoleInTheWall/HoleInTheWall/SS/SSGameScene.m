@@ -37,7 +37,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.backgroundImage = [UIImage imageNamed:@"vegetablescape.jpg"];
+        self.backgroundImage = [UIImage imageNamed:@"spacescape"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
