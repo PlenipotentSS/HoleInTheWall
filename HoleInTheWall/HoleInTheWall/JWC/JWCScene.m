@@ -20,6 +20,7 @@
     BOOL _wallScaling;
     
     BOOL _shadowRemoved;
+    BOOL _collisionChecked;
 }
 
 
@@ -110,6 +111,7 @@
 - (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
     if (!_glyphDetected) {
+        _collisionChecked = NO;
         _glyphDetected = YES;
         [self.glyphDetector reset];
             
@@ -139,8 +141,9 @@
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
         MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
     
-        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
-            
+        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall] &&
+            !_collisionChecked) {
+            _collisionChecked = YES;
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
             
