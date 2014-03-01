@@ -24,7 +24,11 @@
 @property (nonatomic) CGFloat midX;
 @property (nonatomic) CGFloat midY;
 
+@property (nonatomic) CGRect backgroundFrame;
+
 @property (nonatomic) SKSpriteNode *backgroundNode;
+@property (nonatomic) SKSpriteNode *shapeShadow;
+@property (nonatomic) UIImage *backgroundImage;
 
 @end
 
@@ -33,12 +37,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        
-        
-        self.backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"food"];
-        self.backgroundNode.position = CGPointMake(160, 284);
-        self.backgroundNode.size = self.frame.size;
-        [self addChild:self.backgroundNode];
+        self.backgroundImage = [UIImage imageNamed:@"spacescape"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
@@ -49,75 +48,163 @@
         self.midX = CGRectGetMidX(self.frame);
         self.midY = CGRectGetMidY(self.frame);
         
-        [self createShapes];
+        self.backgroundFrame = self.frame;
         
-        for (SKSpriteNode *node in self.children) {
-            node.anchorPoint = CGPointMake(1.f,1.f);
-        }
+        [self addShadowWithSize:CGSizeMake(150.f, 50.f)];
+        
+        [self createBackground];
     }
     return self;
 }
 
--(void) addBackgroundImage:(UIImage*) image
+-(void) addShadowWithSize:(CGSize) size
 {
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    UIColor* clear = [UIColor clearColor];
+    UIColor* shadow = [UIColor colorWithWhite:0.f alpha:.5];
+    NSArray* shadowColors = [NSArray arrayWithObjects:
+                                (id)shadow.CGColor,
+                                (id)clear.CGColor, nil];
+    CGFloat shadowLocations[] = {0.6, 1};
+    CGGradientRef shadowGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)shadowColors, shadowLocations);
+    
+    CGAffineTransform scaleT = CGAffineTransformMakeScale(3.f, 1.0);
+    CGContextScaleCTM(context, scaleT.a, scaleT.d);
+    
+    CGAffineTransform invScaleT = CGAffineTransformInvert(scaleT);
+
+    CGPoint invS = CGPointMake(invScaleT.a, invScaleT.d);
+    
+    CGPoint centerShadow =CGPointMake(size.width/2 *invS.x, size.height/2*invS.y);
+    
+    CGContextDrawRadialGradient(context, shadowGradient, centerShadow, 0.f, centerShadow, size.height/2, kCGGradientDrawsBeforeStartLocation);
+    
+    UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(context);
+    
+    SKTexture *shadowTexture = [SKTexture textureWithImage:shadowImage];
+    self.shapeShadow = [SKSpriteNode spriteNodeWithTexture:shadowTexture];
+    self.backgroundNode.anchorPoint = CGPointMake(1.f,1.f);
+    self.shapeShadow.position = CGPointMake(0.f, -CGRectGetHeight(self.frame)/2+15.f);
     
 }
 
--(void) createShapes
+-(void) addShadowForReferencePoint: (CGPoint) shapeLocation
+{
+    [self addChild:self.shapeShadow];
+    CGPoint thisLocation = shapeLocation;
+    thisLocation.y = -CGRectGetHeight(self.frame)/2+15.f;
+    self.shapeShadow.position = thisLocation;
+    [self.shapeShadow setZPosition:-.5];
+    [self.shapeShadow setXScale:1];
+}
+
+-(void) removeShadow {
+    [self.shapeShadow removeFromParent];
+
+}
+
+-(void) shadowMoveFollowingHit
+{
+    SKAction *moveAction = [SKAction moveToY:-CGRectGetHeight(self.frame) duration:1.f];
+    SKAction *removeFromParent = [SKAction runBlock:^{
+        [self.shapeShadow removeFromParent];
+    }];
+    SKAction *shadowActions = [SKAction sequence:@[moveAction,removeFromParent]];
+    [self.shapeShadow runAction:shadowActions];
+}
+
+-(void) moveShadowWithReferencePoint: (CGPoint) shapeLocation
+{
+    CGPoint thisLocation = shapeLocation;
+    thisLocation.y = -CGRectGetHeight(self.frame)/2+15.f;
+    CGFloat xScale =-shapeLocation.y/200;
+    if (-.5 < xScale && xScale < .75) {
+        [self.shapeShadow setXScale:1+xScale];
+        if ( xScale <0 ) {
+            [self.shapeShadow setYScale:1+xScale];
+        }
+    }
+    
+    self.shapeShadow.position = thisLocation;
+}
+
+-(void) createBackground
 {
     
     //ceiling
     UIImage *ceiling = [self makeCeiling];
-    SKTexture *texture = [SKTexture textureWithImage:ceiling];
-    SKSpriteNode *bg = [SKSpriteNode spriteNodeWithTexture:texture];
-    bg.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bg];
-    
+
     //floor
     UIImage *floor1 = [self makeFloor1];
-    SKTexture *textureF1 = [SKTexture textureWithImage:floor1];
-    SKSpriteNode *bgF1 = [SKSpriteNode spriteNodeWithTexture:textureF1];
-    bgF1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgF1];
-    
-    
     UIImage *floor2 = [self makeFloor2];
-    SKTexture *textureF2 = [SKTexture textureWithImage:floor2];
-    SKSpriteNode *bgF2 = [SKSpriteNode spriteNodeWithTexture:textureF2];
-    bgF2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgF2];
-    
+
     //left wall
     UIImage *leftWall1 = [self makeLeftWall1];
-    SKTexture *textureLW1 = [SKTexture textureWithImage:leftWall1];
-    SKSpriteNode *bgLW1 = [SKSpriteNode spriteNodeWithTexture:textureLW1];
-    bgLW1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgLW1];
-    
-    
     UIImage *leftWall2 = [self makeLeftWall2];
-    SKTexture *textureLW2 = [SKTexture textureWithImage:leftWall2];
-    SKSpriteNode *bgLW2 = [SKSpriteNode spriteNodeWithTexture:textureLW2];
-    bgLW2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgLW2];
     
     //right wall
     UIImage *rightWall1 = [self makeRightWall1];
-    SKTexture *textureRW1 = [SKTexture textureWithImage:rightWall1];
-    SKSpriteNode *bgRW1 = [SKSpriteNode spriteNodeWithTexture:textureRW1];
-    bgRW1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgRW1];
-    
     UIImage *rightWall2 = [self makeRightWall2];
-    SKTexture *textureRW2 = [SKTexture textureWithImage:rightWall2];
-    SKSpriteNode *bgRW2 = [SKSpriteNode spriteNodeWithTexture:textureRW2];
-    bgRW2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:bgRW2];
+    
+    NSArray *images = @[self.backgroundImage,ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
+    
+    UIImage *background = [self combineImages:images];
+    SKTexture *backgroundTexture = [SKTexture textureWithImage:background];
+    if (self.backgroundNode) {
+        [self.backgroundNode removeFromParent];
+    }
+    self.backgroundNode = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
+    self.backgroundNode.position = CGPointMake(CGRectGetMidX(self.backgroundFrame), CGRectGetMidY(self.backgroundFrame));
+    self.backgroundNode.anchorPoint = CGPointMake(1.f,1.f);
+    [self.backgroundNode setZPosition:-1];
+    [self addChild:self.backgroundNode];
+}
+
+-(void) changeBackgroundImage:(UIImage*) image
+{
+    if (image) {
+        self.minX = 0.f;
+        self.maxX = CGRectGetMaxX(self.backgroundFrame);
+        
+        self.minY = 0.f;
+        self.maxY = CGRectGetMaxY(self.backgroundFrame);
+        
+        self.midX = CGRectGetMaxX(self.backgroundFrame)/2;
+        self.midY = CGRectGetMaxY(self.backgroundFrame)/2;
+        
+        [self.backgroundNode removeFromParent];
+        self.backgroundNode.anchorPoint = CGPointZero;
+        _backgroundImage = image;
+        [self createBackground];
+        self.backgroundNode.position = CGPointMake(self.midX, self.midY);
+    } else {
+        NSLog(@"attempting to add background with nil image");
+    }
+}
+
+-(UIImage*) combineImages:(NSArray*) images
+{
+    CGSize finalImageSize = CGSizeMake(CGRectGetWidth(self.backgroundFrame), CGRectGetHeight(self.backgroundFrame));
+    UIGraphicsBeginImageContext(finalImageSize);
+    [[UIColor clearColor] setFill];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextFillRect(context, self.backgroundFrame);
+    
+    for (UIImage *image in images) {
+        [image drawInRect:self.backgroundFrame];
+    }
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(context);
+    return newImage;
 }
 
 -(UIImage*) makeRightWall2
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -173,7 +260,7 @@
 
 -(UIImage*) makeRightWall1
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -229,7 +316,7 @@
 
 -(UIImage*) makeLeftWall1
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -287,7 +374,7 @@
 
 -(UIImage*) makeLeftWall2
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -345,7 +432,7 @@
 
 -(UIImage*) makeFloor2
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -403,7 +490,7 @@
 
 -(UIImage*) makeFloor1
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -462,7 +549,7 @@
 
 -(UIImage*) makeCeiling
 {
-    CGRect theFrame = self.frame;
+    CGRect theFrame = self.backgroundFrame;
     
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -540,25 +627,6 @@
     
     // returns new image with mask applied
     return maskedImage;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    /* Called when a touch begins */
-    
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//        
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//        
-//        sprite.position = location;
-//        
-//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-//        
-//        [sprite runAction:[SKAction repeatActionForever:action]];
-//        
-//        [self addChild:sprite];
-//    }
 }
 
 @end

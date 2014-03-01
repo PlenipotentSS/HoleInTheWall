@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */; };
-		6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A87718BD564F00974D81 /* lightbulb.png */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
@@ -26,8 +24,6 @@
 		6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FDF18BA763C006E4305 /* JWCWall.m */; };
 		6B3D5FE418BA775B006E4305 /* JWCShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FE318BA775B006E4305 /* JWCShape.m */; };
 		6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3D5FED18BA7C7C006E4305 /* JWCScene.m */; };
-		6B3D603B18BA9D69006E4305 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D603918BA9D69006E4305 /* triangle.png */; };
-		6B3D603F18BAA466006E4305 /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3D603E18BAA466006E4305 /* square.png */; };
 		6B54EB6C18BC0B5C00EE5604 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB3F18BC0B5C00EE5604 /* CDataScanner.m */; };
 		6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B54EB4018BC0B5C00EE5604 /* D.json */; };
 		6B54EB6E18BC0B5C00EE5604 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB4318BC0B5C00EE5604 /* CFilteringJSONSerializer.m */; };
@@ -47,6 +43,11 @@
 		6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6718BC0B5C00EE5604 /* WTMGlyphStroke.m */; };
 		6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */; };
 		6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */; };
+		6BACD95F18BEB6530096B126 /* squaremask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BACD95E18BEB6530096B126 /* squaremask.png */; };
+		6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C018BECAD60098232E /* trianglemask.png */; };
+		6BAFC2C518BED6A60098232E /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C318BED6A60098232E /* square.png */; };
+		6BAFC2C618BED6A60098232E /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C418BED6A60098232E /* triangle.png */; };
+		6BAFC2CA18BEDCDA0098232E /* circlemask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C918BEDCDA0098232E /* circlemask.png */; };
 		6BB21DAF18B82001005EEDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DAE18B82001005EEDA1 /* Foundation.framework */; };
 		6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */; };
 		6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
@@ -61,13 +62,18 @@
 		6BB21DD018B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
 		6BB21DD818B82001005EEDA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB21DD618B82001005EEDA1 /* InfoPlist.strings */; };
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
+		6BFF482918C0202000D5F628 /* spacescape.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482818C0202000D5F628 /* spacescape.png */; };
+		6BFF482C18C0233A00D5F628 /* townscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482B18C0233A00D5F628 /* townscape.jpg */; };
+		6BFF482E18C026AA00D5F628 /* vegetablescape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */; };
+		6BFF483218C0277E00D5F628 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF483118C0277E00D5F628 /* circle.png */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
+		D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */; };
 		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
 		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
 		D2A974BC18BDADD500720098 /* skulls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974BA18BDADD500720098 /* skulls.png */; };
-		D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAF24418BC1139006C0F0C /* SSViewController.m */; };
+		D454FF273D16437DBB23F350 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7920F700CE3C4F34833D363E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +87,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCheckForCollision.h; sourceTree = "<group>"; };
-		3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCheckForCollision.m; sourceTree = "<group>"; };
-		6B24A87618BD564F00974D81 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
-		6B24A87718BD564F00974D81 /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
-		6B24A87818BD564F00974D81 /* pentagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pentagon.png; sourceTree = "<group>"; };
 		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		6B24A88418BD69B400974D81 /* triangle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle1.json; sourceTree = "<group>"; };
 		6B24A88D18BD746600974D81 /* square1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square1.json; sourceTree = "<group>"; };
@@ -111,9 +112,7 @@
 		6B3D5FE318BA775B006E4305 /* JWCShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCShape.m; path = JWC/JWCShape.m; sourceTree = "<group>"; };
 		6B3D5FEC18BA7C7C006E4305 /* JWCScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCScene.h; path = JWC/JWCScene.h; sourceTree = "<group>"; };
 		6B3D5FED18BA7C7C006E4305 /* JWCScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCScene.m; path = JWC/JWCScene.m; sourceTree = "<group>"; };
-		6B3D603918BA9D69006E4305 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		6B3D603D18BA9DF7006E4305 /* JWCShapeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JWCShapeType.h; path = JWC/JWCShapeType.h; sourceTree = "<group>"; };
-		6B3D603E18BAA466006E4305 /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
 		6B54EB3E18BC0B5C00EE5604 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		6B54EB3F18BC0B5C00EE5604 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		6B54EB4018BC0B5C00EE5604 /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
@@ -157,6 +156,11 @@
 		6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTemplate.m; sourceTree = "<group>"; };
 		6B54EB6A18BC0B5C00EE5604 /* WTMGlyphUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphUtilities.h; sourceTree = "<group>"; };
 		6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
+		6BACD95E18BEB6530096B126 /* squaremask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squaremask.png; path = JWC/shapemaskimages/squaremask.png; sourceTree = "<group>"; };
+		6BAFC2C018BECAD60098232E /* trianglemask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trianglemask.png; path = JWC/shapemaskimages/trianglemask.png; sourceTree = "<group>"; };
+		6BAFC2C318BED6A60098232E /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
+		6BAFC2C418BED6A60098232E /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		6BAFC2C918BEDCDA0098232E /* circlemask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circlemask.png; path = JWC/shapemaskimages/circlemask.png; sourceTree = "<group>"; };
 		6BB21DAB18B82001005EEDA1 /* HoleInTheWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleInTheWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB21DAE18B82001005EEDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,15 +180,21 @@
 		6BB21DD518B82001005EEDA1 /* HoleInTheWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoleInTheWallTests-Info.plist"; sourceTree = "<group>"; };
 		6BB21DD718B82001005EEDA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleInTheWallTests.m; sourceTree = "<group>"; };
+		6BFF482818C0202000D5F628 /* spacescape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacescape.png; sourceTree = "<group>"; };
+		6BFF482B18C0233A00D5F628 /* townscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = townscape.jpg; sourceTree = "<group>"; };
+		6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vegetablescape.jpg; sourceTree = "<group>"; };
+		6BFF483118C0277E00D5F628 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		7920F700CE3C4F34833D363E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
+		D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCheckForCollision.h; sourceTree = "<group>"; };
+		D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCheckForCollision.m; sourceTree = "<group>"; };
 		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		D2A974BA18BDADD500720098 /* skulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skulls.png; sourceTree = "<group>"; };
-		D2BAF24318BC1139006C0F0C /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SS/SSViewController.h; sourceTree = "<group>"; };
-		D2BAF24418BC1139006C0F0C /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SS/SSViewController.m; sourceTree = "<group>"; };
+		ECA1F79F0D3D4B78A9B60630 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +207,7 @@
 				6BB21DB118B82001005EEDA1 /* CoreGraphics.framework in Frameworks */,
 				6BB21DB318B82001005EEDA1 /* UIKit.framework in Frameworks */,
 				6BB21DAF18B82001005EEDA1 /* Foundation.framework in Frameworks */,
+				D454FF273D16437DBB23F350 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,10 +229,10 @@
 			children = (
 				6B24A8AA18BD95A800974D81 /* OpeningScene.h */,
 				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
+				D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */,
+				D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
 				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
-				3EC4F36018BEA05500E80C64 /* MMRCheckForCollision.h */,
-				3EC4F36118BEA05500E80C64 /* MMRCheckForCollision.m */,
 			);
 			name = Matt;
 			sourceTree = "<group>";
@@ -259,19 +270,6 @@
 				6B24A89618BD746600974D81 /* triangle5.json */,
 			);
 			path = JSONShapes;
-			sourceTree = "<group>";
-		};
-		6B3D603718BA9D69006E4305 /* ShapeImages */ = {
-			isa = PBXGroup;
-			children = (
-				6B3D603E18BAA466006E4305 /* square.png */,
-				6B24A87618BD564F00974D81 /* circle.png */,
-				6B24A87718BD564F00974D81 /* lightbulb.png */,
-				6B24A87818BD564F00974D81 /* pentagon.png */,
-				6B3D603918BA9D69006E4305 /* triangle.png */,
-			);
-			name = ShapeImages;
-			path = JWC/ShapeImages;
 			sourceTree = "<group>";
 		};
 		6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */ = {
@@ -348,6 +346,27 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		6BACD96018BEB65E0096B126 /* MaskImages */ = {
+			isa = PBXGroup;
+			children = (
+				6BAFC2C018BECAD60098232E /* trianglemask.png */,
+				6BAFC2C918BEDCDA0098232E /* circlemask.png */,
+				6BACD95E18BEB6530096B126 /* squaremask.png */,
+			);
+			name = MaskImages;
+			sourceTree = "<group>";
+		};
+		6BAFC2C218BED6A60098232E /* ShapeImages */ = {
+			isa = PBXGroup;
+			children = (
+				6BFF483118C0277E00D5F628 /* circle.png */,
+				6BAFC2C318BED6A60098232E /* square.png */,
+				6BAFC2C418BED6A60098232E /* triangle.png */,
+			);
+			name = ShapeImages;
+			path = JWC/ShapeImages;
+			sourceTree = "<group>";
+		};
 		6BB21DA218B82001005EEDA1 = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +374,7 @@
 				6BB21DD318B82001005EEDA1 /* HoleInTheWallTests */,
 				6BB21DAD18B82001005EEDA1 /* Frameworks */,
 				6BB21DAC18B82001005EEDA1 /* Products */,
+				ECA1F79F0D3D4B78A9B60630 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,6 +396,7 @@
 				6BB21DB018B82001005EEDA1 /* CoreGraphics.framework */,
 				6BB21DB218B82001005EEDA1 /* UIKit.framework */,
 				6BB21DCD18B82001005EEDA1 /* XCTest.framework */,
+				7920F700CE3C4F34833D363E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -387,6 +408,7 @@
 				6BB21DBE18B82001005EEDA1 /* JWCAppDelegate.m */,
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				3EC4F35918BD795300E80C64 /* Resources */,
+				6BFF482A18C0211000D5F628 /* iPad */,
 				3EC4F35318BD735A00E80C64 /* Matt */,
 				6BB21DE618B823C0005EEDA1 /* JWC */,
 				6BB21DE518B8233F005EEDA1 /* Steven */,
@@ -399,6 +421,7 @@
 		6BB21DB518B82001005EEDA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BFF482518C01F4E00D5F628 /* Wallpapers */,
 				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
 				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
 				6BB21DB718B82001005EEDA1 /* InfoPlist.strings */,
@@ -432,8 +455,6 @@
 				D2A9741118BC6ABE00720098 /* testwalls */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
-				D2BAF24318BC1139006C0F0C /* SSViewController.h */,
-				D2BAF24418BC1139006C0F0C /* SSViewController.m */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -441,8 +462,9 @@
 		6BB21DE618B823C0005EEDA1 /* JWC */ = {
 			isa = PBXGroup;
 			children = (
+				6BAFC2C218BED6A60098232E /* ShapeImages */,
+				6BACD96018BEB65E0096B126 /* MaskImages */,
 				6B3D5FE518BA7C04006E4305 /* JSONShapes */,
-				6B3D603718BA9D69006E4305 /* ShapeImages */,
 				6BB21DC318B82001005EEDA1 /* JWCViewController.h */,
 				6BB21DC418B82001005EEDA1 /* JWCViewController.m */,
 				6B3D603D18BA9DF7006E4305 /* JWCShapeType.h */,
@@ -456,6 +478,23 @@
 				6B3D5FE318BA775B006E4305 /* JWCShape.m */,
 			);
 			name = JWC;
+			sourceTree = "<group>";
+		};
+		6BFF482518C01F4E00D5F628 /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				6BFF482D18C026AA00D5F628 /* vegetablescape.jpg */,
+				6BFF482B18C0233A00D5F628 /* townscape.jpg */,
+				6BFF482818C0202000D5F628 /* spacescape.png */,
+			);
+			name = Wallpapers;
+			sourceTree = "<group>";
+		};
+		6BFF482A18C0211000D5F628 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		D2A9741118BC6ABE00720098 /* testwalls */ = {
@@ -475,9 +514,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BB21DDD18B82001005EEDA1 /* Build configuration list for PBXNativeTarget "HoleInTheWall" */;
 			buildPhases = (
+				87FA51411FC64615AF84B9C2 /* Check Pods Manifest.lock */,
 				6BB21DA718B82001005EEDA1 /* Sources */,
 				6BB21DA818B82001005EEDA1 /* Frameworks */,
 				6BB21DA918B82001005EEDA1 /* Resources */,
+				7D3AF0C6AE67490DB541267F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -517,7 +558,7 @@
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
 					6BB21DAA18B82001005EEDA1 = {
-						DevelopmentTeam = 6SZK592LX3;
+						DevelopmentTeam = 2S283D3328;
 					};
 					6BB21DCB18B82001005EEDA1 = {
 						TestTargetID = 6BB21DAA18B82001005EEDA1;
@@ -549,29 +590,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFF483218C0277E00D5F628 /* circle.png in Resources */,
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				D2A974BC18BDADD500720098 /* skulls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
+				6BFF482C18C0233A00D5F628 /* townscape.jpg in Resources */,
+				6BAFC2C518BED6A60098232E /* square.png in Resources */,
 				6B24A89E18BD746600974D81 /* square1.json in Resources */,
+				6BFF482E18C026AA00D5F628 /* vegetablescape.jpg in Resources */,
 				6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */,
 				6B24A8A618BD746600974D81 /* triangle4.json in Resources */,
+				6BFF482918C0202000D5F628 /* spacescape.png in Resources */,
 				6B24A8A518BD746600974D81 /* triangle3.json in Resources */,
 				6B24A8A718BD746600974D81 /* triangle5.json in Resources */,
 				6B24A8A118BD746600974D81 /* square4.json in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
 				6B24A8A018BD746600974D81 /* square3.json in Resources */,
+				6BAFC2C618BED6A60098232E /* triangle.png in Resources */,
 				6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */,
 				6B24A8A418BD746600974D81 /* triangle2.json in Resources */,
+				6BAFC2CA18BEDCDA0098232E /* circlemask.png in Resources */,
 				D2A974BB18BDADD500720098 /* food.png in Resources */,
 				6B24A89F18BD746600974D81 /* square2.json in Resources */,
 				6B54EB7918BC0B5C00EE5604 /* P.json in Resources */,
+				6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,
-				6B3D603B18BA9D69006E4305 /* triangle.png in Resources */,
 				6B24A8A218BD746600974D81 /* square5.json in Resources */,
-				6B24A87A18BD564F00974D81 /* lightbulb.png in Resources */,
 				6B24A88518BD69B400974D81 /* circle.json in Resources */,
-				6B3D603F18BAA466006E4305 /* square.png in Resources */,
+				6BACD95F18BEB6530096B126 /* squaremask.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,18 +632,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D3AF0C6AE67490DB541267F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87FA51411FC64615AF84B9C2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6BB21DA718B82001005EEDA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */,
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
-				3EC4F36218BEA05500E80C64 /* MMRCheckForCollision.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,
-				D2BAF24518BC1139006C0F0C /* SSViewController.m in Sources */,
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				6B24A8AC18BD95A800974D81 /* OpeningScene.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
@@ -741,6 +820,7 @@
 		};
 		6BB21DDE18B82001005EEDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA1F79F0D3D4B78A9B60630 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -749,14 +829,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		6BB21DDF18B82001005EEDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA1F79F0D3D4B78A9B60630 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -765,8 +848,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoleInTheWall/HoleInTheWall-Prefix.pch";
 				INFOPLIST_FILE = "HoleInTheWall/HoleInTheWall-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

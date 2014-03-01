@@ -7,12 +7,13 @@
 //
 
 #import "JWCAppDelegate.h"
+#import <GameCenterManager/GameCenterManager.h>
 
 @implementation JWCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[GameCenterManager sharedManager] setupManager];
     return YES;
 }
 							

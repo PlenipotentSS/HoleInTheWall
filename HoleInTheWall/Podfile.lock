@@ -1,0 +1,13 @@
+PODS:
+  - GameCenterManager (5.3):
+    - Reachability
+  - Reachability (3.1.1)
+
+DEPENDENCIES:
+  - GameCenterManager
+
+SPEC CHECKSUMS:
+  GameCenterManager: a01ccfa425f831624bc2738f2fc7572ce5a40723
+  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
+
+COCOAPODS: 0.29.0

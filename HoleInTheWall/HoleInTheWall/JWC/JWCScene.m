@@ -11,10 +11,16 @@
 #import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
 
-@interface JWCScene () <WTMGlyphDelegate>
+#import <GameCenterManager/GameCenterManager.h>
+
+@interface JWCScene () <WTMGlyphDelegate, GameCenterManagerDelegate>
 {
+    int _wallsPassed;
     BOOL _glyphDetected;
     BOOL _wallScaling;
+    
+    BOOL _shadowRemoved;
+    BOOL _collisionChecked;
 }
 
 
@@ -44,6 +50,8 @@
         self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
     }
     
+    [GameCenterManager sharedManager].delegate = self;
+    
     return self;
 }
 
@@ -60,6 +68,7 @@
         [self.glyphDetector addPoint:touchPoint];
     } else {
         self.playerShape.position = [[touches anyObject] locationInNode:self];
+        [self moveShadowWithReferencePoint:[[touches anyObject] locationInNode:self]];
     }
 }
 
@@ -71,6 +80,7 @@
     } else {
         _glyphDetected = NO;
         [self.playerShape removeFromParent];
+        [self removeShadow];
     }
 }
 
@@ -101,9 +111,10 @@
 - (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
     if (!_glyphDetected) {
+        _collisionChecked = NO;
         _glyphDetected = YES;
         [self.glyphDetector reset];
-        
+            
         NSLog(@"%@, %f", glyph.name, score);
         
         if ([glyph.name isEqualToString:@"square"]) {
@@ -120,18 +131,19 @@
         
         
         [self addChild:self.playerShape];
+        [self addShadowForReferencePoint:CGPointZero];
+        _shadowRemoved = YES;
     }
 }
 
 - (void)update:(CFTimeInterval)currentTime
 {
-
-    
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
         MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
-        
-        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
-            
+    
+        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall] &&
+            !_collisionChecked) {
+            _collisionChecked = YES;
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
             
@@ -145,13 +157,27 @@
             
             SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
             [self.playerShape runAction:group];
-
-
+            
+            if (self.playerShape.parent && !_shadowRemoved) {
+                _shadowRemoved = NO;
+                [self removeShadow];
+            }
+        } else {
+            [self reportScore];
+            _wallsPassed++;
         }
         
     }
-    
-    
+}
+
+- (void)reportScore
+{
+    // TODO: Implement this with our real achievement name
+//    [[GameCenterManager sharedManager] saveAndReportScore:100
+//                                              leaderboard:@"com.jeffwritescode.holeinthewall.hiscore" sortOrder:GameCenterSortOrderHighToLow];
+//    if (_wallsPassed > 5) {
+//        [[GameCenterManager sharedManager] saveAndReportAchievement:@"com.jeffwritescode.holeinthewall.collisions" percentComplete:100.0 shouldDisplayNotification:YES];
+//    }
 }
 
 @end

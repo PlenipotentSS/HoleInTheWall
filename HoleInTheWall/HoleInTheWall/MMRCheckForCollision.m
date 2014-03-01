@@ -12,15 +12,11 @@
 
 - (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole
 {
-    
-    
-    if (!hole) {
+    if (playerShape.shapeType != hole.shapeType) {
         return YES;
-    }
-    
-    else if (playerShape.position.x <= hole.position.x - 8 || playerShape.position.x >= hole.position.x + 8 || playerShape.position.y <= hole.position.y - 8 || playerShape.position.y >= hole.position.y + 8) {
-        
-        NSLog(@"COLLISION");
+    } else if (!hole) {
+        return YES;
+    } else if (playerShape.position.x <= hole.position.x - 8 || playerShape.position.x >= hole.position.x + 8 || playerShape.position.y <= hole.position.y - 8 || playerShape.position.y >= hole.position.y + 8) {
         return YES;
     } else {
         return NO;
