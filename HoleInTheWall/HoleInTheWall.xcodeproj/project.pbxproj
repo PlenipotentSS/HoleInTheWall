@@ -45,7 +45,6 @@
 		6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */; };
 		6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4D918C17335004CC212 /* wood_1_@2X.png */; };
 		6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */; };
-		6B66B4DE18C1735A004CC212 /* random_grey_variations_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4DD18C1735A004CC212 /* random_grey_variations_@2X.png */; };
 		6BACD95F18BEB6530096B126 /* squaremask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BACD95E18BEB6530096B126 /* squaremask.png */; };
 		6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C018BECAD60098232E /* trianglemask.png */; };
 		6BAFC2C518BED6A60098232E /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAFC2C318BED6A60098232E /* square.png */; };
@@ -161,7 +160,6 @@
 		6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
 		6B66B4D918C17335004CC212 /* wood_1_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood_1_@2X.png"; sourceTree = "<group>"; };
 		6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bright_squares_@2X.png"; sourceTree = "<group>"; };
-		6B66B4DD18C1735A004CC212 /* random_grey_variations_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "random_grey_variations_@2X.png"; path = "../../../../../../Downloads/random_grey_variations/random_grey_variations_@2X.png"; sourceTree = "<group>"; };
 		6BACD95E18BEB6530096B126 /* squaremask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squaremask.png; path = JWC/shapemaskimages/squaremask.png; sourceTree = "<group>"; };
 		6BAFC2C018BECAD60098232E /* trianglemask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trianglemask.png; path = JWC/shapemaskimages/trianglemask.png; sourceTree = "<group>"; };
 		6BAFC2C318BED6A60098232E /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
@@ -506,7 +504,6 @@
 		D2A9741118BC6ABE00720098 /* testwalls */ = {
 			isa = PBXGroup;
 			children = (
-				6B66B4DD18C1735A004CC212 /* random_grey_variations_@2X.png */,
 				6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */,
 				6B66B4D918C17335004CC212 /* wood_1_@2X.png */,
 				D2A974B918BDADD500720098 /* food.png */,
@@ -615,7 +612,6 @@
 				6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */,
 				6B24A8A718BD746600974D81 /* triangle5.json in Resources */,
 				6B24A8A118BD746600974D81 /* square4.json in Resources */,
-				6B66B4DE18C1735A004CC212 /* random_grey_variations_@2X.png in Resources */,
 				6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
 				6B24A8A018BD746600974D81 /* square3.json in Resources */,

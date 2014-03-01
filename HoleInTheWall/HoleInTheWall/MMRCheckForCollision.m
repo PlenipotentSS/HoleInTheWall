@@ -12,6 +12,14 @@
 
 - (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole
 {
+    CGFloat xOff = abs(playerShape.position.x-hole.position.x);
+    CGFloat yOff = abs(playerShape.position.y-hole.position.y);
+    NSLog(@"shape off by x: %f and %f",xOff);
+    NSLog(@"shape off by y: %f",yOff);
+    
+    NSLog(@"shape size w: %f h: %f",playerShape.size.width,playerShape.size.height);
+    NSLog(@"hole size w: %f h: %f",hole.size.width,hole.size.height);
+    
     if (playerShape.shapeType != hole.shapeType) {
         return YES;
     } else if (!hole) {
