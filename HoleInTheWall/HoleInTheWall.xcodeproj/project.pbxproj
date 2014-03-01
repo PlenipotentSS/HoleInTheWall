@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EFF783518C17346009572B7 /* MMRWallOpeningScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
@@ -87,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EFF783318C17346009572B7 /* MMRWallOpeningScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRWallOpeningScene.h; sourceTree = "<group>"; };
+		3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRWallOpeningScene.m; sourceTree = "<group>"; };
 		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		6B24A88418BD69B400974D81 /* triangle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle1.json; sourceTree = "<group>"; };
 		6B24A88D18BD746600974D81 /* square1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square1.json; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				6B24A8AA18BD95A800974D81 /* OpeningScene.h */,
 				6B24A8AB18BD95A800974D81 /* OpeningScene.m */,
+				3EFF783318C17346009572B7 /* MMRWallOpeningScene.h */,
+				3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */,
 				D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */,
 				D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
@@ -692,6 +697,7 @@
 				6B54EB7E18BC0B5C00EE5604 /* WTMGlyphDefaults.m in Sources */,
 				6B54EB7D18BC0B5C00EE5604 /* WTMGlyph.m in Sources */,
 				6B54EB7218BC0B5C00EE5604 /* CDataScanner_Extensions.m in Sources */,
+				3EFF783518C17346009572B7 /* MMRWallOpeningScene.m in Sources */,
 				6B54EB7618BC0B5C00EE5604 /* CJSONSerializer.m in Sources */,
 				6B54EB7C18BC0B5C00EE5604 /* WTMDetectionResult.m in Sources */,
 				6B54EB7418BC0B5C00EE5604 /* CJSONDeserializer.m in Sources */,
