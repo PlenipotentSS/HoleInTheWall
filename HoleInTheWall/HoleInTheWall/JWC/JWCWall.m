@@ -9,7 +9,7 @@
 #import "JWCWall.h"
 
 #define MAX_SCALE 5
-#define SHAPE_SIZE 800
+#define SHAPE_SIZE 1000
 
 @interface JWCWall ()
 
@@ -56,6 +56,7 @@
         [self runAction:scaleOffAction completion:^{
             [self generateHole];
             [self setScale:.2];
+            [self setZPosition:0];
             [self startMovingWithDuration:5];
         }];
     }];
@@ -68,7 +69,6 @@
     }
     
     int randomHole = arc4random() % 3;
-    NSLog(@"%i", randomHole);
     
     switch (randomHole) {
         case 0:
