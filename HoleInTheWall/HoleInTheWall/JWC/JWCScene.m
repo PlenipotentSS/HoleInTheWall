@@ -141,8 +141,7 @@
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
         MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
     
-        if ([collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall] &&
-            !_collisionChecked) {
+        if (!_collisionChecked && [collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
             _collisionChecked = YES;
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
