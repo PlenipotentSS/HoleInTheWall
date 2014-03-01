@@ -16,6 +16,15 @@
  * @param UIImage image
  *
 **/
--(void) addBackgroundImage:(UIImage*) image;
+-(void) changeBackgroundImage:(UIImage*) image;
+
+
+-(void) addShadowForReferencePoint: (CGPoint) shapeLocation;
+
+-(void) removeShadow;
+
+-(void) moveShadowWithReferencePoint: (CGPoint) shapeLocation;
+
+-(void) shadowMoveFollowingHit;
 
 @end
