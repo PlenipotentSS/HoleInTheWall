@@ -16,6 +16,7 @@
  * initial hole;
  */
 - (instancetype)initWithScale:(CGFloat)scale;
+
 - (instancetype)initWithOpeningLabelAndScale:(CGFloat)scale;
 
 /**
