@@ -30,8 +30,8 @@
 {
     if (self = [super init]) {
         
-        self = [JWCWall spriteNodeWithImageNamed:@"bright_squares_@2X"];
-        self.wallImage = [UIImage imageNamed:@"bright_squares_@2X"];
+        self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
+        self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
         self.xScale = scale;
@@ -56,7 +56,6 @@
         [self runAction:scaleOffAction completion:^{
             [self generateHole];
             [self setScale:.2];
-            [self setZPosition:0];
             [self startMovingWithDuration:5];
         }];
     }];
