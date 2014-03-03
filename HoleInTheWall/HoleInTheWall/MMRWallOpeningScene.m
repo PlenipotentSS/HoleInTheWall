@@ -32,7 +32,7 @@
     if (self = [super initWithSize:size]) {
         self.anchorPoint = CGPointMake(0.5, 0.5);
         
-        self.wall = [[JWCWall alloc] initWithScale:.2];
+        self.wall = [[JWCWall alloc] initWithOpeningLabelAndScale:.2];
         
         [self addChild:self.wall];
         

@@ -16,6 +16,7 @@
  * initial hole;
  */
 - (instancetype)initWithScale:(CGFloat)scale;
+- (instancetype)initWithOpeningLabelAndScale:(CGFloat)scale;
 
 /**
  *  Currently a recursive method that causes the wall to start scaling to the size 
@@ -28,8 +29,6 @@
  * Generates random hole and position and places it in the wall.
  */
 - (void)generateHole;
-
-- (void)setWallWithOpeningLabel;
 
 @property (nonatomic) CGPoint holeCenter;
 @property (nonatomic) JWCHole *holeInWall;

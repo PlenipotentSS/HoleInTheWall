@@ -45,6 +45,22 @@
     return self;
 }
 
+- (instancetype)initWithOpeningLabelAndScale:(CGFloat)scale
+{
+    if (self = [super init]) {
+        self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
+        self.wallImage = [UIImage imageNamed:@"purty_wood"];
+        self.size = [UIScreen mainScreen].bounds.size;
+        self.position = CGPointZero;
+        self.xScale = scale;
+        self.yScale = scale;
+        
+        self.texture = [self setHoleInWallMaskWithShapeName:@"whiteWallText"];
+    }
+    
+    return self;
+}
+
 - (void)startMovingWithDuration:(CGFloat)duration
 {
     [self removeAllActions];
@@ -87,18 +103,12 @@
             break;
     }
 
-    self.holeInWall.color = [UIColor blackColor];
     self.holeInWall.position = [self convertHoleCenterFromMask:_holeCenter];
 
     [self addChild:self.holeInWall];
 }
 
 #pragma mark - Hole Making Methods
-- (void)setWallWithOpeningLabel
-{
-    [self setHoleInWallMaskWithShapeName:@"whiteWallText"];
-}
-
 - (SKTexture *)setHoleInWallMaskWithShapeName:(NSString *)shapeName
 {
     self.holeImage = [UIImage imageNamed:shapeName];

@@ -459,8 +459,8 @@
 			children = (
 				6BFF482518C01F4E00D5F628 /* Wallpapers */,
 				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
-				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
 				3EFF783618C51771009572B7 /* Buttons */,
+				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
 				6BB21DB718B82001005EEDA1 /* InfoPlist.strings */,
 				6BB21DBA18B82001005EEDA1 /* main.m */,
 				6BB21DBC18B82001005EEDA1 /* HoleInTheWall-Prefix.pch */,
@@ -641,7 +641,7 @@
 				6BFF482E18C026AA00D5F628 /* scapevegetable.jpg in Resources */,
 				6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */,
 				6B24A8A618BD746600974D81 /* triangle4.json in Resources */,
-				6BFF482918C0202000D5F628 /* spacescape.png in Resources */,
+				6BFF482918C0202000D5F628 /* scapespace.png in Resources */,
 				3EFF783918C5177B009572B7 /* startButton.png in Resources */,
 				6B24A8A518BD746600974D81 /* triangle3.json in Resources */,
 				6B48AF6B18C5002600BD50EC /* scapeartdeco.jpg in Resources */,
