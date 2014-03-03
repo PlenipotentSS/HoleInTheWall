@@ -57,7 +57,7 @@
         self.yScale = scale;
         
         [self setScale:MAX_SCALE];
-        self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeWallLabel shapeSize:CGSizeMake(250, 150)];
+        self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeWallLabel shapeSize:CGSizeMake(150, 100)];
         self.texture = [self setHoleInWallMaskWithShapeName:@"whiteWallText"];
         self.holeInWall.position = CGPointZero;
         [self addChild:self.holeInWall];
@@ -137,6 +137,10 @@
     randomY -= maxYChange/2;
     
     self.holeCenter = CGPointMake(CGRectGetMaxX(self.frame)+randomX, CGRectGetMaxY(self.frame)+randomY);
+    
+    if ([shapeName isEqualToString:@"whiteWallText"]) {
+        self.holeCenter = CGPointMake(CGRectGetWidth(self.frame)*.5, CGRectGetHeight(self.frame)*.5+20);
+    }
     
     CGFloat unscaledX = SHAPE_SIZE;
     CGFloat unscaledY = SHAPE_SIZE;
