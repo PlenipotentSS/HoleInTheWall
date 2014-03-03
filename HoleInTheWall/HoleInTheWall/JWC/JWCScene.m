@@ -15,14 +15,13 @@
 
 @interface JWCScene () <WTMGlyphDelegate, GameCenterManagerDelegate>
 {
-    int _wallsPassed;
+    NSInteger _wallsPassed;
+    
     BOOL _glyphDetected;
     BOOL _wallScaling;
-    
     BOOL _shadowRemoved;
     BOOL _collisionChecked;
 }
-
 
 @property (nonatomic) JWCShape *playerShape;
 @property (nonatomic) JWCHole *currentHole;
@@ -147,14 +146,10 @@
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
             
-            SKAction *rotation1 = [SKAction rotateByAngle: M_PI/4.0 duration:0];
             SKAction *sendToPoint = [SKAction moveTo:CGPointMake(xValue, yValue) duration:1.0];
             SKAction *scalePlayerSHape = [SKAction scaleBy:3 duration:1.0];
-            SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:2.0];
+            SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:1.0];
 
-            
-            SKAction *actions = [SKAction sequence:@[rotation1,rotation1,rotation1,rotation1,rotation1,rotation1,rotation1]];
-            
             SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
             [self.playerShape runAction:group];
             
@@ -163,12 +158,11 @@
                 [self removeShadow];
             }
         } else {
-            [self.wall setZPosition:2.f];
             [self reportScore];
             _wallsPassed++;
         }
-        
     }
+    
 }
 
 - (void)reportScore
