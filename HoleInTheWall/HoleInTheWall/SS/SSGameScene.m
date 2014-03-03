@@ -37,7 +37,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.backgroundImage = [UIImage imageNamed:@"spacescape"];
+        self.backgroundImage = [UIImage imageNamed:@"scapespace"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
@@ -57,7 +57,7 @@
     return self;
 }
 
--(void) addShadowWithSize:(CGSize) size
+- (void)addShadowWithSize:(CGSize)size
 {
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -92,7 +92,7 @@
     
 }
 
--(void) addShadowForReferencePoint: (CGPoint) shapeLocation
+- (void)addShadowForReferencePoint:(CGPoint)shapeLocation
 {
     [self addChild:self.shapeShadow];
     CGPoint thisLocation = shapeLocation;

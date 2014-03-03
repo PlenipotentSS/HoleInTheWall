@@ -16,17 +16,18 @@
         self.color = [UIColor colorWithWhite:0.171 alpha:1.000];
         switch (shapeType) {
             case JWCShapeTypeSquare:
-                self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
+                self = [JWCHole spriteNodeWithImageNamed:@"square"];
+                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
                 self.shapeType = shapeType;
                 break;
             case JWCShapeTypeTriangle:
                 self = [JWCHole spriteNodeWithImageNamed:@"triangle"];
-                self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
+                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
                 self.shapeType = shapeType;
                 break;
             case JWCShapeTypeCircle:
                 self = [JWCHole spriteNodeWithImageNamed:@"circle"];
-                self.size = CGSizeMake(shapeSize.width*1.1, shapeSize.height*1.1);
+                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
                 self.shapeType = shapeType;
             default:
                 break;
@@ -34,6 +35,7 @@
     }
     self.hidden = YES;
     return self;
+    
 }
 
 @end

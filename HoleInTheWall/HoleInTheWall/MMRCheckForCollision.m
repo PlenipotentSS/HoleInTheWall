@@ -24,7 +24,7 @@
         return YES;
     } else if (!hole) {
         return YES;
-    } else if (playerShape.position.x <= hole.position.x - 8 || playerShape.position.x >= hole.position.x + 8 || playerShape.position.y <= hole.position.y - 8 || playerShape.position.y >= hole.position.y + 8) {
+    } else if (playerShape.position.x <= hole.position.x - 12 || playerShape.position.x >= hole.position.x + 12 || playerShape.position.y <= hole.position.y - 12 || playerShape.position.y >= hole.position.y + 12) {
         return YES;
     } else {
         return NO;
