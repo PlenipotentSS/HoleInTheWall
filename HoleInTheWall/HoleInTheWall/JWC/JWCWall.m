@@ -138,6 +138,10 @@
     
     self.holeCenter = CGPointMake(CGRectGetMaxX(self.frame)+randomX, CGRectGetMaxY(self.frame)+randomY);
     
+    if ([shapeName isEqualToString:@"whiteWallText"]) {
+        self.holeCenter = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)*.5 + 20);
+    }
+    
     CGFloat unscaledX = SHAPE_SIZE;
     CGFloat unscaledY = SHAPE_SIZE;
     
