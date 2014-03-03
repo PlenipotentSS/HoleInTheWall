@@ -94,6 +94,11 @@
 }
 
 #pragma mark - Hole Making Methods
+- (void)setWallWithOpeningLabel
+{
+    [self setHoleInWallMaskWithShapeName:@"whiteWallText"];
+}
+
 - (SKTexture *)setHoleInWallMaskWithShapeName:(NSString *)shapeName
 {
     self.holeImage = [UIImage imageNamed:shapeName];
