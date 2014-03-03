@@ -139,9 +139,8 @@
 - (void)update:(CFTimeInterval)currentTime
 {
     if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
-        MMRCheckForCollision *collisionCheck = [[MMRCheckForCollision alloc] init];
     
-        if (!_collisionChecked && [collisionCheck checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
+        if (!_collisionChecked && [MMRCheckForCollision checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
             _collisionChecked = YES;
             
             float xValue = (arc4random() % (int)self.size.width) * 2;

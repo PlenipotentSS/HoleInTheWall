@@ -10,11 +10,11 @@
 
 @implementation MMRCheckForCollision
 
-- (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole
++ (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole
 {
     CGFloat xOff = abs(playerShape.position.x-hole.position.x);
     CGFloat yOff = abs(playerShape.position.y-hole.position.y);
-    NSLog(@"shape off by x: %f and %f",xOff);
+    NSLog(@"shape off by x: %f",xOff);
     NSLog(@"shape off by y: %f",yOff);
     
     NSLog(@"shape size w: %f h: %f",playerShape.size.width,playerShape.size.height);

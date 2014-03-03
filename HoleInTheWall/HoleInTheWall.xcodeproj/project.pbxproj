@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3EFF783518C17346009572B7 /* MMRWallOpeningScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */; };
+		3EFF783918C5177B009572B7 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF783718C5177B009572B7 /* startButton.png */; };
+		3EFF783A18C5177B009572B7 /* startButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF783818C5177B009572B7 /* startButton@2x.png */; };
+		3EFF783D18C5191C009572B7 /* gameCenterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF783B18C5191C009572B7 /* gameCenterButton@2x.png */; };
+		3EFF783E18C5191C009572B7 /* gameCenterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF783C18C5191C009572B7 /* gameCenterButton.png */; };
+		3EFF784518C5398C009572B7 /* whiteWallText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF784318C5398C009572B7 /* whiteWallText@2x.png */; };
+		3EFF784618C5398C009572B7 /* whiteWallText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF784418C5398C009572B7 /* whiteWallText.png */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
@@ -92,6 +98,12 @@
 /* Begin PBXFileReference section */
 		3EFF783318C17346009572B7 /* MMRWallOpeningScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRWallOpeningScene.h; sourceTree = "<group>"; };
 		3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRWallOpeningScene.m; sourceTree = "<group>"; };
+		3EFF783718C5177B009572B7 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
+		3EFF783818C5177B009572B7 /* startButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startButton@2x.png"; sourceTree = "<group>"; };
+		3EFF783B18C5191C009572B7 /* gameCenterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameCenterButton@2x.png"; sourceTree = "<group>"; };
+		3EFF783C18C5191C009572B7 /* gameCenterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameCenterButton.png; sourceTree = "<group>"; };
+		3EFF784318C5398C009572B7 /* whiteWallText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteWallText@2x.png"; sourceTree = "<group>"; };
+		3EFF784418C5398C009572B7 /* whiteWallText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteWallText.png; sourceTree = "<group>"; };
 		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		6B24A88418BD69B400974D81 /* triangle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle1.json; sourceTree = "<group>"; };
 		6B24A88D18BD746600974D81 /* square1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square1.json; sourceTree = "<group>"; };
@@ -261,6 +273,19 @@
 				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		3EFF783618C51771009572B7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3EFF783718C5177B009572B7 /* startButton.png */,
+				3EFF783818C5177B009572B7 /* startButton@2x.png */,
+				3EFF783B18C5191C009572B7 /* gameCenterButton@2x.png */,
+				3EFF783C18C5191C009572B7 /* gameCenterButton.png */,
+				3EFF784318C5398C009572B7 /* whiteWallText@2x.png */,
+				3EFF784418C5398C009572B7 /* whiteWallText.png */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		6B3D5FE518BA7C04006E4305 /* JSONShapes */ = {
@@ -433,6 +458,7 @@
 				6BFF482518C01F4E00D5F628 /* Wallpapers */,
 				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
 				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
+				3EFF783618C51771009572B7 /* Buttons */,
 				6BB21DB718B82001005EEDA1 /* InfoPlist.strings */,
 				6BB21DBA18B82001005EEDA1 /* main.m */,
 				6BB21DBC18B82001005EEDA1 /* HoleInTheWall-Prefix.pch */,
@@ -613,12 +639,14 @@
 				6B54EB6D18BC0B5C00EE5604 /* D.json in Resources */,
 				6B24A8A618BD746600974D81 /* triangle4.json in Resources */,
 				6BFF482918C0202000D5F628 /* spacescape.png in Resources */,
+				3EFF783918C5177B009572B7 /* startButton.png in Resources */,
 				6B24A8A518BD746600974D81 /* triangle3.json in Resources */,
 				6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */,
 				6B24A8A718BD746600974D81 /* triangle5.json in Resources */,
 				6B24A8A118BD746600974D81 /* square4.json in Resources */,
 				6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
+				3EFF783A18C5177B009572B7 /* startButton@2x.png in Resources */,
 				6B24A8A018BD746600974D81 /* square3.json in Resources */,
 				6BAFC2C618BED6A60098232E /* triangle.png in Resources */,
 				6B54EB7A18BC0B5C00EE5604 /* protractor-chi2010.pdf in Resources */,
@@ -626,12 +654,16 @@
 				6BAFC2CA18BEDCDA0098232E /* circlemask.png in Resources */,
 				D2A974BB18BDADD500720098 /* food.png in Resources */,
 				6B24A89F18BD746600974D81 /* square2.json in Resources */,
+				3EFF784618C5398C009572B7 /* whiteWallText.png in Resources */,
+				3EFF784518C5398C009572B7 /* whiteWallText@2x.png in Resources */,
 				6B54EB7918BC0B5C00EE5604 /* P.json in Resources */,
 				6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,
 				6B24A8A218BD746600974D81 /* square5.json in Resources */,
 				6B24A88518BD69B400974D81 /* circle.json in Resources */,
 				6BACD95F18BEB6530096B126 /* squaremask.png in Resources */,
+				3EFF783E18C5191C009572B7 /* gameCenterButton.png in Resources */,
+				3EFF783D18C5191C009572B7 /* gameCenterButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
