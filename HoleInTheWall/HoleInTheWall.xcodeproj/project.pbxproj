@@ -201,6 +201,9 @@
 		6BB21DD518B82001005EEDA1 /* HoleInTheWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoleInTheWallTests-Info.plist"; sourceTree = "<group>"; };
 		6BB21DD718B82001005EEDA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoleInTheWallTests.m; sourceTree = "<group>"; };
+		6BFC990C18C54F8800E11A4E /* jabjai_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jabjai_light.ttf; sourceTree = "<group>"; };
+		6BFC990D18C54F9A00E11A4E /* IceAge.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IceAge.ttf; sourceTree = "<group>"; };
+		6BFC990E18C54FA500E11A4E /* Nerd plus Dork=Nork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nerd plus Dork=Nork.ttf"; sourceTree = "<group>"; };
 		6BFF482818C0202000D5F628 /* scapespace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scapespace.png; sourceTree = "<group>"; };
 		6BFF482B18C0233A00D5F628 /* scapetown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scapetown.jpg; sourceTree = "<group>"; };
 		6BFF482D18C026AA00D5F628 /* scapevegetable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scapevegetable.jpg; sourceTree = "<group>"; };
@@ -272,7 +275,10 @@
 		3EC4F35A18BD795900E80C64 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6BFC990C18C54F8800E11A4E /* jabjai_light.ttf */,
 				6B24A8B118BD95CD00974D81 /* Prisma.ttf */,
+				6BFC990D18C54F9A00E11A4E /* IceAge.ttf */,
+				6BFC990E18C54FA500E11A4E /* Nerd plus Dork=Nork.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
