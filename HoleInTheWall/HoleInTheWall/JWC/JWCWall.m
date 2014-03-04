@@ -74,7 +74,7 @@
     
     NSInteger randomWallNumber = (arc4random() % 5) + 1;
     if (_wallsPassed > 2 && _wallsPassed % randomWallNumber == 0) {
-        duration = 2;
+        duration = randomWallNumber % 4 + 1;
     }
     _wallsPassed++;
     self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
