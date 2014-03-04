@@ -9,6 +9,7 @@
 #import "SSGameScene.h"
 #import "SSBackgroundView.h"
 #import <CoreImage/CoreImage.h>
+#import "JWCDimensions.h"
 
 #define OFF_CENTER_Y 70.f
 #define WALL_WIDTH_OFF_CENTER 20.f
@@ -31,8 +32,14 @@
 @property (nonatomic) CGRect backgroundFrame;
 
 @property (nonatomic) SKSpriteNode *backgroundNode;
-@property (nonatomic) SKSpriteNode *shapeShadow;
+
 @property (nonatomic) UIImage *backgroundImage;
+
+@property (nonatomic) SKSpriteNode *floorNode;
+
+@property (nonatomic) UIImage *floorImage;
+
+@property (nonatomic) SKSpriteNode *shapeShadow;
 
 @end
 
@@ -42,6 +49,7 @@
 {
     if (self = [super initWithSize:size]) {
         self.backgroundImage = [UIImage imageNamed:@"grey_wash_wall"];
+        self.floorImage = [UIImage imageNamed:@"retina_wood"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
@@ -57,10 +65,41 @@
         [self addShadowWithSize:CGSizeMake(150.f, 50.f)];
         
         [self createBackground];
+        [self createFloor];
     }
     return self;
 }
 
+-(void) resetFrameValues
+{
+    self.minX = 0.f;
+    self.maxX = CGRectGetMaxX(self.backgroundFrame);
+    
+    self.minY = 0.f;
+    self.maxY = CGRectGetMaxY(self.backgroundFrame);
+    
+    self.midX = CGRectGetMaxX(self.backgroundFrame)/2;
+    self.midY = CGRectGetMaxY(self.backgroundFrame)/2+OFF_CENTER_Y;
+}
+
+-(UIImage*) combineImages:(NSArray*) images
+{
+    CGSize finalImageSize = CGSizeMake(CGRectGetWidth(self.backgroundFrame), CGRectGetHeight(self.backgroundFrame));
+    UIGraphicsBeginImageContext(finalImageSize);
+    [[UIColor clearColor] setFill];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextFillRect(context, self.backgroundFrame);
+    
+    
+    for (UIImage *image in images) {
+        [image drawInRect:self.backgroundFrame];
+    }
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(context);
+    return newImage;
+}
+
+#pragma mark - object shadow
 - (void)addShadowWithSize:(CGSize)size
 {
     UIGraphicsBeginImageContext(size);
@@ -98,6 +137,7 @@
 
 - (void)addShadowForReferencePoint:(CGPoint)shapeLocation
 {
+    [self addShadowWithSize:[[JWCDimensions sharedController] size]];
     [self addChild:self.shapeShadow];
     CGPoint thisLocation = shapeLocation;
     thisLocation.y = -CGRectGetHeight(self.frame)/2+15.f;
@@ -136,50 +176,11 @@
     self.shapeShadow.position = thisLocation;
 }
 
--(void) createBackground
-{
-    
-    //ceiling
-    UIImage *ceiling = [self makeCeiling];
-
-    //floor
-    UIImage *floor1 = [self makeFloor1];
-    UIImage *floor2 = [self makeFloor2];
-
-    //left wall
-    UIImage *leftWall1 = [self makeLeftWall1];
-    UIImage *leftWall2 = [self makeLeftWall2];
-    
-    //right wall
-    UIImage *rightWall1 = [self makeRightWall1];
-    UIImage *rightWall2 = [self makeRightWall2];
-    
-    NSArray *images = @[self.backgroundImage,ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
-//    NSArray *images = @[ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
-    
-    UIImage *background = [self combineImages:images];
-    SKTexture *backgroundTexture = [SKTexture textureWithImage:background];
-    if (self.backgroundNode) {
-        [self.backgroundNode removeFromParent];
-    }
-    self.backgroundNode = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
-    self.backgroundNode.position = CGPointMake(CGRectGetMidX(self.backgroundFrame), CGRectGetMidY(self.backgroundFrame));
-    self.backgroundNode.anchorPoint = CGPointMake(1.f,1.f);
-    [self.backgroundNode setZPosition:-1];
-    [self addChild:self.backgroundNode];
-}
-
+#pragma mark - Modifying Background Image
 -(void) changeBackgroundImage:(UIImage*) image
 {
     if (image) {
-        self.minX = 0.f;
-        self.maxX = CGRectGetMaxX(self.backgroundFrame);
-        
-        self.minY = 0.f;
-        self.maxY = CGRectGetMaxY(self.backgroundFrame);
-        
-        self.midX = CGRectGetMaxX(self.backgroundFrame)/2;
-        self.midY = CGRectGetMaxY(self.backgroundFrame)/2+OFF_CENTER_Y;
+        [self resetFrameValues];
         
         [self.backgroundNode removeFromParent];
         self.backgroundNode.anchorPoint = CGPointZero;
@@ -191,23 +192,74 @@
     }
 }
 
--(UIImage*) combineImages:(NSArray*) images
+-(void) createBackground
 {
-    CGSize finalImageSize = CGSizeMake(CGRectGetWidth(self.backgroundFrame), CGRectGetHeight(self.backgroundFrame));
-    UIGraphicsBeginImageContext(finalImageSize);
-    [[UIColor clearColor] setFill];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextFillRect(context, self.backgroundFrame);
     
+    //ceiling
+    UIImage *ceiling = [self makeCeiling];
     
-    for (UIImage *image in images) {
-        [image drawInRect:self.backgroundFrame];
+    //left wall
+    UIImage *leftWall1 = [self makeLeftWall1];
+    UIImage *leftWall2 = [self makeLeftWall2];
+    
+    //right wall
+    UIImage *rightWall1 = [self makeRightWall1];
+    UIImage *rightWall2 = [self makeRightWall2];
+    
+    NSArray *images = @[self.backgroundImage,ceiling,leftWall1,leftWall2,rightWall1,rightWall2];
+    //    NSArray *images = @[ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
+    
+    UIImage *background = [self combineImages:images];
+    SKTexture *backgroundTexture = [SKTexture textureWithImage:background];
+    if (self.backgroundNode) {
+        [self.backgroundNode removeFromParent];
     }
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    CGContextRelease(context);
-    return newImage;
+    self.backgroundNode = [SKSpriteNode spriteNodeWithTexture:backgroundTexture];
+    self.backgroundNode.position = CGPointMake(CGRectGetMidX(self.backgroundFrame), CGRectGetMidY(self.backgroundFrame));
+    self.backgroundNode.anchorPoint = CGPointMake(1.f,1.f);
+    [self.backgroundNode setZPosition:-2];
+    [self addChild:self.backgroundNode];
 }
 
+#pragma mark - Modyfying Floor Image
+-(void) changeFloorImage:(UIImage*) image
+{
+    if (image) {
+        [self resetFrameValues];
+        
+        [self.floorNode removeFromParent];
+        self.floorNode.anchorPoint = CGPointZero;
+        _floorImage = image;
+        [self createFloor];
+        self.floorNode.position = CGPointMake(self.midX, self.midY);
+    } else {
+        NSLog(@"attempting to add background with nil image");
+    }
+}
+
+- (void)createFloor
+{
+    //floor
+    UIImage *floorBG = [self makeFloorImage];
+    UIImage *floor1 = [self makeFloor1];
+    UIImage *floor2 = [self makeFloor2];
+    
+    NSArray *images = @[floorBG,floor1,floor2];
+    
+    UIImage *floor = [self combineImages:images];
+    SKTexture *floorTexture = [SKTexture textureWithImage:floor];
+    if (self.floorNode) {
+        [self.floorNode removeFromParent];
+    }
+    self.floorNode = [SKSpriteNode spriteNodeWithTexture:floorTexture];
+    self.floorNode.position = CGPointMake(CGRectGetMidX(self.backgroundFrame), CGRectGetMidY(self.backgroundFrame));
+    self.floorNode.anchorPoint = CGPointMake(1.f,1.f);
+    [self.floorNode setZPosition:-1];
+    [self addChild:self.floorNode];
+}
+
+#pragma mark - Drawing
+#pragma mark Draw Right Wall
 -(UIImage*) makeRightWall2
 {
     CGRect theFrame = self.backgroundFrame;
@@ -265,6 +317,8 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+
+#pragma mark Draw Right Wall
 -(UIImage*) makeRightWall1
 {
     CGRect theFrame = self.backgroundFrame;
@@ -321,6 +375,7 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+#pragma mark Draw Left Wall
 -(UIImage*) makeLeftWall1
 {
     CGRect theFrame = self.backgroundFrame;
@@ -379,6 +434,7 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+#pragma mark Draw Left Wall
 -(UIImage*) makeLeftWall2
 {
     CGRect theFrame = self.backgroundFrame;
@@ -437,6 +493,7 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+#pragma mark Draw Floor
 -(UIImage*) makeFloor2
 {
     CGRect theFrame = self.backgroundFrame;
@@ -448,7 +505,7 @@
     NSArray* sVGID_27_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_27_2Locations[] = {0.25, .5};
+    CGFloat sVGID_27_2Locations[] = {0.15, .4};
     CGGradientRef sVGID_27_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_27_2Colors, sVGID_27_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
@@ -494,7 +551,7 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
-
+#pragma mark Draw Floor
 -(UIImage*) makeFloor1
 {
     CGRect theFrame = self.backgroundFrame;
@@ -506,7 +563,7 @@
     NSArray* sVGID_26_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_26_2Locations[] = {0.25, .5};
+    CGFloat sVGID_26_2Locations[] = {0.15, .4};
     CGGradientRef sVGID_26_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_26_2Colors, sVGID_26_2Locations);
 
     UIGraphicsBeginImageContext(theFrame.size);
@@ -554,6 +611,54 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+- (UIImage*)makeFloorImage
+{
+    CGRect theFrame = self.backgroundFrame;
+    
+    //// General Declarations
+    UIGraphicsBeginImageContext(theFrame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetAllowsAntialiasing(context, YES);
+    
+    [[UIColor whiteColor] setFill];
+    CGContextFillRect(context, theFrame);
+    
+    //    CGFloat heightOffset = 20;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
+    CGContextMoveToPoint(context, self.minX, self.maxY);
+    CGContextAddLineToPoint(context, self.maxX, self.maxY);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.minX, self.maxY);
+    CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
+    
+    CGContextSetLineWidth(context, 0.5f);
+    [[UIColor blackColor] setFill];
+    CGContextDrawPath(context, kCGPathFillStroke);
+    
+    UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    CGContextRelease(context);
+
+    //draw floor image
+    UIGraphicsBeginImageContext(theFrame.size);
+    CGContextRef contextFloor = UIGraphicsGetCurrentContext();
+    
+    CGContextDrawImage(contextFloor, bezierBounds, [self.floorImage CGImage]);
+    
+    UIImage *floorImageCut = UIGraphicsGetImageFromCurrentImageContext();
+    
+    CGContextRelease(contextFloor);
+    
+    return [self maskImage:floorImageCut withMask:maskImage];
+}
+
+-(UIImage*)renderFloorWith3DTransform:(UIImage*)image
+{
+    return image;
+}
+
+#pragma mark Draw Ceiling Wall
 -(UIImage*) makeCeiling
 {
     CGRect theFrame = self.backgroundFrame;
@@ -596,6 +701,7 @@
     
     UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
     
+    
     CGContextRelease(context);
     
     //create image from mask
@@ -625,6 +731,8 @@
     return [self maskImage:shadowImage withMask:maskImage];
 }
 
+
+#pragma mark Drawing Helper
 - (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
     
     CGImageRef maskRef = maskImage.CGImage;
