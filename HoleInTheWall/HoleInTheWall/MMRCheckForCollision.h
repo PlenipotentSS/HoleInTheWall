@@ -13,6 +13,6 @@
 
 @interface MMRCheckForCollision : NSObject
 
-+ (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole;
++ (BOOL)checkForCollision:(JWCShape *)playerShape andHole:(JWCHole *)hole inWall:(JWCWall *)wall;
 
 @end

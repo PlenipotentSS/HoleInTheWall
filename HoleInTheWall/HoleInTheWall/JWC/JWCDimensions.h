@@ -11,7 +11,6 @@
 @interface JWCDimensions : NSObject
 
 @property (nonatomic) CGSize size;
-@property (nonatomic) CGPoint holePosition;
 
 + (JWCDimensions *)sharedController;
 
