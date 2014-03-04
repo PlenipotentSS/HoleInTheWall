@@ -32,7 +32,7 @@
                 break;
             case JWCShapeTypeWallLabel:
                 self = [JWCHole spriteNodeWithImageNamed:@"whiteWallText"];
-                self.size = CGSizeMake(250, 150);
+                self.size = shapeSize;
                 self.shapeType = shapeType;
             default:
                 break;
