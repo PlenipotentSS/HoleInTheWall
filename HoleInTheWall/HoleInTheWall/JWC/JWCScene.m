@@ -148,7 +148,7 @@
 
 - (void)update:(CFTimeInterval)currentTime
 {
-    if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
+    if (self.wall.yScale >= 0.85 && self.wall.yScale <= 0.86) {
     
         if (!_collisionChecked && [MMRCheckForCollision checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
             _collisionChecked = YES;
