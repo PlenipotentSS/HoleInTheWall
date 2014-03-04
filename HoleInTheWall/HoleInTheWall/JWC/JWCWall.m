@@ -14,6 +14,7 @@
 @interface JWCWall ()
 
 {
+    NSInteger _wallsPassed;
     BOOL _wallInitedWithSize;
     CGPoint _holeCenter;
 }
@@ -38,6 +39,8 @@
         [self setScale:MAX_SCALE];
         [self generateHole];
         [self setScale:.2];
+        
+        _wallsPassed = 0;
     }
 
     return self;
@@ -69,9 +72,14 @@
 {
     [self removeAllActions];
     
+    NSInteger randomWallNumber = (arc4random() % 5) + 1;
+    if (_wallsPassed > 2 && _wallsPassed % randomWallNumber == 0) {
+        duration = 2;
+    }
+    _wallsPassed++;
     self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
     
-    SKAction *moveForwardAction = [SKAction scaleTo:1 duration:duration];
+    SKAction *moveForwardAction = [SKAction scaleTo:.92 duration:duration];
     SKAction *moveToAction = [SKAction moveTo:CGPointMake(CGPointZero.x, CGPointZero.y) duration:duration];
     
     SKAction *scaleOffAction = [SKAction scaleTo:MAX_SCALE duration:.1];
@@ -85,7 +93,6 @@
             [self startMovingWithDuration:5];
         }];
     }];
-    
 
 }
 
