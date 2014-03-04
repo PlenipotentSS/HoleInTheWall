@@ -181,8 +181,9 @@
             [self reportScore];
             _wallsPassed++;
             
-            if (_wallsPassed != 0 && _wallsPassed % 2 == 0) {
-                
+            if (_wallsPassed != 0) {
+                int rndValue = 75 + arc4random() % (250 - 75);
+                [JWCDimensions sharedController].size = CGSizeMake(rndValue, rndValue);
             }
         }
     }

@@ -15,7 +15,7 @@
     CGFloat playerShapeRadius = playerShape.size.height / 2;
     CGFloat holeRadius = hole.size.height / 2;
     
-    CGFloat comparator = holeRadius - playerShapeRadius;
+    CGFloat comparator = (holeRadius - playerShapeRadius) + 10;
     
     NSLog(@"Comparator: %f Hole:%@\nPlayerShape:%@",comparator, hole, playerShape);
     
