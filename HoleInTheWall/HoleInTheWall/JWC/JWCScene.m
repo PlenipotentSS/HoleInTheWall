@@ -35,7 +35,7 @@
 
 @implementation JWCScene
 
--(id)initWithSize:(CGSize)size
+- (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
         self.anchorPoint = CGPointMake(0.5, 0.5);
@@ -44,7 +44,7 @@
         
         [self setupGlyphCollection];
         
-        self.wall = [[JWCWall alloc] initWithScale:.1];
+        self.wall = [[JWCWall alloc] initWithScale:.2];
         [self addChild:self.wall];
         
         [self.wall startMovingWithDuration:6];
@@ -147,9 +147,10 @@
 
 - (void)update:(CFTimeInterval)currentTime
 {
-    if (self.wall.yScale >= 0.91 && self.wall.yScale <= 0.92) {
+    if (self.wall.yScale >= 0.85 && self.wall.yScale <= 0.862) {
     
-        if (!_collisionChecked && [MMRCheckForCollision checkForCollision:self.playerShape andHoleInTheWall:self.wall.holeInWall]) {
+        if (!_collisionChecked && [MMRCheckForCollision checkForCollision:self.playerShape andHole:self.wall.holeInWall inWall:self.wall]) {
+            
             _collisionChecked = YES;
             
             float xValue = (arc4random() % (int)self.size.width) * 2;
@@ -158,9 +159,9 @@
             self.lives--;
             
             if (self.lives == 0) {
-//                MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
-//                gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
-//                [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
+                MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
+                gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
+                [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
             }
             
             NSLog(@"LIVES: %ld",(long)self.lives);
@@ -181,8 +182,9 @@
             [self reportScore];
             _wallsPassed++;
             
-            if (_wallsPassed != 0 && _wallsPassed % 2 == 0) {
-                
+            if (_wallsPassed != 0) {
+                int rndValue = 75 + arc4random() % (250 - 75);
+                [JWCDimensions sharedController].size = CGSizeMake(rndValue, rndValue);
             }
         }
     }

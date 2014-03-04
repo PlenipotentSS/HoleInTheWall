@@ -7,15 +7,16 @@
 //
 
 #import "MMRCheckForCollision.h"
+#import "JWCWall.h"
 
 @implementation MMRCheckForCollision
 
-+ (BOOL)checkForCollision:(JWCShape *)playerShape andHoleInTheWall:(JWCHole *)hole
++ (BOOL)checkForCollision:(JWCShape *)playerShape andHole:(JWCHole *)hole inWall:(JWCWall *)wall
 {
     CGFloat playerShapeRadius = playerShape.size.height / 2;
     CGFloat holeRadius = hole.size.height / 2;
     
-    CGFloat comparator = holeRadius - playerShapeRadius;
+    CGFloat comparator = (holeRadius - playerShapeRadius) + 10;
     
     NSLog(@"Comparator: %f Hole:%@\nPlayerShape:%@",comparator, hole, playerShape);
     
