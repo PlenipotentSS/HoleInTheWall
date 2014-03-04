@@ -50,7 +50,7 @@
         self.wallLabel.zPosition = 100;
         
         self.wallLabel.text = @"WALL";
-        self.wallLabel.position = CGPointMake(self.size.width / 2, self.size.height - 320);
+        self.wallLabel.position = CGPointMake(self.size.width / 2, self.size.height - 600);
         [self addChild:self.wallLabel];
         
         [self performSelector:@selector(performSKActions) withObject:nil afterDelay:.4];
@@ -69,16 +69,17 @@
 
 - (void)performSKActions
 {
-    SKAction *moveForwardAction = [SKAction scaleTo:1 duration:0.5];
-    SKAction *scaleOffAction = [SKAction scaleTo:100 duration:2.0];
     
-    SKAction *moveInHoleLabel = [SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height - 180) duration:.4];
-    SKAction *moveInInTheLabel = [SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height - 225) duration:.4];
+    SKAction *moveInHoleLabel = [SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height - 120) duration:.4];
+    SKAction *moveInInTheLabel = [SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height - 180) duration:.4];
+    SKAction *moveInWallLabel = [SKAction moveTo:CGPointMake(self.size.width / 2, self.size.height - 280) duration:.4];
     
     [self.holeLabel runAction:moveInHoleLabel completion:^{
         [self.inTheLabel runAction:moveInInTheLabel completion:^{
+            [self.wallLabel runAction:moveInWallLabel completion:^{
+                [self performSelector:@selector(scaleWallLabel) withObject:nil afterDelay:.5];
+            }];
             self.wallLabel.hidden = NO;
-            [self performSelector:@selector(scaleWallLabel) withObject:nil afterDelay:.5];
             
         }];
     }];

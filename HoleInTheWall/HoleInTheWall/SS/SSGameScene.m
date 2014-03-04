@@ -41,7 +41,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.backgroundImage = [UIImage imageNamed:@"scapespace"];
+        self.backgroundImage = [UIImage imageNamed:@"grey_wash_wall"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);

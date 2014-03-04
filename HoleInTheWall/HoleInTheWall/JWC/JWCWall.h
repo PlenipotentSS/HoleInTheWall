@@ -17,6 +17,8 @@
  */
 - (instancetype)initWithScale:(CGFloat)scale;
 
+- (instancetype)initWithOpeningLabelAndScale:(CGFloat)scale;
+
 /**
  *  Currently a recursive method that causes the wall to start scaling to the size 
  *  of the screen. When it reaches this point it quickly scales to offscreen and then

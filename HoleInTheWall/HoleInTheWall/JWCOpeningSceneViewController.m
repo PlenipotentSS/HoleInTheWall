@@ -8,6 +8,7 @@
 
 #import "JWCOpeningSceneViewController.h"
 #import "OpeningScene.h"
+#import "MMRWallOpeningScene.h"
 
 @interface JWCOpeningSceneViewController ()
 
@@ -43,7 +44,7 @@
     // Testing wall
     SKView *gameView = (SKView *)self.view;
     
-    OpeningScene *scene = [OpeningScene sceneWithSize:gameView.frame.size];
+    MMRWallOpeningScene *scene = [MMRWallOpeningScene sceneWithSize:gameView.frame.size];
     scene.scaleMode = SKSceneScaleModeFill;
     
     [gameView presentScene:scene];

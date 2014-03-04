@@ -34,14 +34,36 @@
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
-        self.xScale = scale;
-        self.yScale = scale;
+//        self.xScale = scale;
+//        self.yScale = scale;
         
         [self setScale:MAX_SCALE];
         [self generateHole];
         [self setScale:.2];
     }
 
+    return self;
+}
+
+- (instancetype)initWithOpeningLabelAndScale:(CGFloat)scale
+{
+    if (self = [super init]) {
+        
+        self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
+        self.wallImage = [UIImage imageNamed:@"purty_wood"];
+        self.size = [UIScreen mainScreen].bounds.size;
+        self.position = CGPointZero;
+        self.xScale = scale;
+        self.yScale = scale;
+        
+        [self setScale:MAX_SCALE];
+        self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeWallLabel shapeSize:CGSizeMake(100, 100)];
+        self.texture = [self setHoleInWallMaskWithShapeName:@"whiteWallText"];
+        self.holeInWall.position = CGPointZero;
+        [self addChild:self.holeInWall];
+        [self setScale:.2];
+    }
+    
     return self;
 }
 
@@ -87,7 +109,6 @@
             break;
     }
 
-    self.holeInWall.color = [UIColor blackColor];
     self.holeInWall.position = [self convertHoleCenterFromMask:_holeCenter];
 
     [self addChild:self.holeInWall];
@@ -119,6 +140,12 @@
     
     CGFloat unscaledX = SHAPE_SIZE;
     CGFloat unscaledY = SHAPE_SIZE;
+    
+    if ([shapeName isEqualToString:@"whiteWallText"]) {
+        self.holeCenter = CGPointMake(CGRectGetWidth(self.frame)*.5-45, CGRectGetHeight(self.frame)*.5-30);
+        unscaledX -= 150;
+        unscaledY -= 150;
+    }
     
     [[UIColor whiteColor] setFill];
     [self.holeImage drawInRect:CGRectMake(_holeCenter.x-unscaledX/2, _holeCenter.y-unscaledY/2, unscaledX, unscaledY)];
