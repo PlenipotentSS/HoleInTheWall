@@ -39,6 +39,8 @@
         [self setScale:MAX_SCALE];
         [self generateHole];
         [self setScale:.2];
+        
+        _wallsPassed = 0;
     }
 
     return self;
@@ -71,7 +73,7 @@
     [self removeAllActions];
     
     NSInteger randomWallNumber = (arc4random() % 5) + 1;
-    if (_wallsPassed != 0 && _wallsPassed % randomWallNumber == 0) {
+    if (_wallsPassed > 2 && _wallsPassed % randomWallNumber == 0) {
         duration = 2;
     }
     _wallsPassed++;

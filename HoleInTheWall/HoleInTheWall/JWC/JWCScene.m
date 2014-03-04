@@ -35,7 +35,7 @@
 
 @implementation JWCScene
 
--(id)initWithSize:(CGSize)size
+- (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
         self.anchorPoint = CGPointMake(0.5, 0.5);
