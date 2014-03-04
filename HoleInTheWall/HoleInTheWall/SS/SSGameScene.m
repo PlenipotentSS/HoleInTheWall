@@ -10,6 +10,10 @@
 #import "SSBackgroundView.h"
 #import <CoreImage/CoreImage.h>
 
+#define OFF_CENTER_Y 70.f
+#define WALL_WIDTH_OFF_CENTER 20.f
+#define SHADOW_OFF_INTERSECT OFF_CENTER_Y
+
 @interface SSGameScene()
 
 @property (nonatomic) CGFloat zScale;
@@ -46,7 +50,7 @@
         self.maxY = CGRectGetMaxY(self.frame);
         
         self.midX = CGRectGetMidX(self.frame);
-        self.midY = CGRectGetMidY(self.frame);
+        self.midY = CGRectGetMidY(self.frame)+OFF_CENTER_Y;
         
         self.backgroundFrame = self.frame;
         
@@ -151,6 +155,7 @@
     UIImage *rightWall2 = [self makeRightWall2];
     
     NSArray *images = @[self.backgroundImage,ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
+//    NSArray *images = @[ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
     
     UIImage *background = [self combineImages:images];
     SKTexture *backgroundTexture = [SKTexture textureWithImage:background];
@@ -174,7 +179,7 @@
         self.maxY = CGRectGetMaxY(self.backgroundFrame);
         
         self.midX = CGRectGetMaxX(self.backgroundFrame)/2;
-        self.midY = CGRectGetMaxY(self.backgroundFrame)/2;
+        self.midY = CGRectGetMaxY(self.backgroundFrame)/2+OFF_CENTER_Y;
         
         [self.backgroundNode removeFromParent];
         self.backgroundNode.anchorPoint = CGPointZero;
@@ -193,6 +198,7 @@
     [[UIColor clearColor] setFill];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextFillRect(context, self.backgroundFrame);
+    
     
     for (UIImage *image in images) {
         [image drawInRect:self.backgroundFrame];
@@ -213,7 +219,7 @@
     NSArray* sVGID_23_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_23_2Locations[] = {0.89, 1};
+    CGFloat sVGID_23_2Locations[] = {0.50, 1};
     CGGradientRef sVGID_23_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_23_2Colors, sVGID_23_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
@@ -223,7 +229,7 @@
     [[UIColor whiteColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat widthOffset = 10;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
     CGContextMoveToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.maxX, self.maxY);
     CGContextAddLineToPoint(context, self.maxX, self.minY);
@@ -243,9 +249,10 @@
     UIGraphicsBeginImageContext(theFrame.size);
     context = UIGraphicsGetCurrentContext();
     
+    //bottom shadow
     CGContextDrawLinearGradient(context, sVGID_23_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 422.7 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + -196.24 * CGRectGetHeight(bezierBounds) / 1136),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -117.5 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + 196.24 * CGRectGetHeight(bezierBounds) / 1136),
+                                CGPointMake(CGRectGetMaxX(bezierBounds), CGRectGetMidY(bezierBounds)/2),
+                                CGPointMake(CGRectGetMinX(bezierBounds), (CGRectGetMidY(bezierBounds)+SHADOW_OFF_INTERSECT)),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -269,7 +276,7 @@
     NSArray* sVGID_22_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_22_2Locations[] = {0.91, 1};
+    CGFloat sVGID_22_2Locations[] = {0.7, 1};
     CGGradientRef sVGID_22_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_22_2Colors, sVGID_22_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
@@ -279,7 +286,7 @@
     [[UIColor whiteColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat widthOffset = 10;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
     CGContextMoveToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.maxX, self.maxY);
     CGContextAddLineToPoint(context, self.maxX, self.minY);
@@ -300,8 +307,8 @@
     context = UIGraphicsGetCurrentContext();
     
     CGContextDrawLinearGradient(context, sVGID_22_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 419.47 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + 186.87 * CGRectGetHeight(bezierBounds) / 1136),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -114.27 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + -186.87 * CGRectGetHeight(bezierBounds) / 1136),
+                                CGPointMake(CGRectGetMaxX(bezierBounds), CGRectGetMaxY(bezierBounds) - CGRectGetMidY(bezierBounds)/2),
+                                CGPointMake(CGRectGetMinX(bezierBounds), CGRectGetMidY(bezierBounds)+SHADOW_OFF_INTERSECT),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -325,7 +332,7 @@
     NSArray* sVGID_24_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_24_2Locations[] = {0.92, 1};
+    CGFloat sVGID_24_2Locations[] = {0.50, 1};
     CGGradientRef sVGID_24_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_24_2Colors, sVGID_24_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
@@ -335,13 +342,13 @@
     [[UIColor whiteColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat heightOffset = 20;
-    CGFloat widthOffset = 10;
-    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+//    CGFloat heightOffset = 20;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
+    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGContextAddLineToPoint(context, self.minX, self.minY);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-heightOffset/2-8);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-widthOffset-8);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -358,8 +365,8 @@
     context = UIGraphicsGetCurrentContext();
     
     CGContextDrawLinearGradient(context, sVGID_24_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -412.05 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + 168.49 * CGRectGetHeight(bezierBounds) / 1136),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 106.85 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + -168.49 * CGRectGetHeight(bezierBounds) / 1136),
+                                CGPointMake(CGRectGetMinX(bezierBounds), CGRectGetMidY(bezierBounds)/2),
+                                CGPointMake(CGRectGetMaxX(bezierBounds), (CGRectGetMidY(bezierBounds)+SHADOW_OFF_INTERSECT)),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -383,7 +390,7 @@
     NSArray* sVGID_25_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_25_2Locations[] = {0.91, 1};
+    CGFloat sVGID_25_2Locations[] = {0.7, 1};
     CGGradientRef sVGID_25_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_25_2Colors, sVGID_25_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
@@ -393,13 +400,13 @@
     [[UIColor whiteColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat heightOffset = 20;
-    CGFloat widthOffset = 10;
-    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+//    CGFloat heightOffset = 20;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
+    CGContextMoveToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGContextAddLineToPoint(context, self.minX, self.minY);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-heightOffset/2-8);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY-widthOffset-8);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
 
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -416,8 +423,8 @@
     context = UIGraphicsGetCurrentContext();
     
     CGContextDrawLinearGradient(context, sVGID_25_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -415.92 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + -177.61 * CGRectGetHeight(bezierBounds) / 1136),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 110.72 * CGRectGetWidth(bezierBounds) / 305.2, CGRectGetMidY(bezierBounds) + 177.61 * CGRectGetHeight(bezierBounds) / 1136),
+                                CGPointMake(CGRectGetMinX(bezierBounds), CGRectGetMaxY(bezierBounds) - CGRectGetMidY(bezierBounds)/2),
+                                CGPointMake(CGRectGetMaxX(bezierBounds), CGRectGetMidY(bezierBounds)+SHADOW_OFF_INTERSECT),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -441,22 +448,22 @@
     NSArray* sVGID_27_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_27_2Locations[] = {0.88, 1};
+    CGFloat sVGID_27_2Locations[] = {0.25, .5};
     CGGradientRef sVGID_27_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_27_2Colors, sVGID_27_2Locations);
     
     UIGraphicsBeginImageContext(theFrame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetAllowsAntialiasing(context, YES);
     
-    [[UIColor whiteColor] setFill];
+    [[UIColor lightGrayColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat heightOffset = 20;
-    CGFloat widthOffset = 10;
+//    CGFloat heightOffset = 20;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
     CGContextMoveToPoint(context, self.minX, self.maxY);
     CGContextAddLineToPoint(context, self.maxX, self.maxY);
-    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+heightOffset);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -473,8 +480,8 @@
     context = UIGraphicsGetCurrentContext();
     
     CGContextDrawLinearGradient(context, sVGID_27_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 342.46 * CGRectGetWidth(bezierBounds) / 640, CGRectGetMidY(bezierBounds) + 220.42 * CGRectGetHeight(bezierBounds) / 541.75),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -191.66 * CGRectGetWidth(bezierBounds) / 640, CGRectGetMidY(bezierBounds) + -17.39 * CGRectGetHeight(bezierBounds) / 541.75),
+                                CGPointMake(CGRectGetMidX(bezierBounds), CGRectGetMaxY(bezierBounds)),
+                                CGPointMake(CGRectGetMinX(bezierBounds), (CGRectGetMinY(bezierBounds)-SHADOW_OFF_INTERSECT)),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -499,22 +506,22 @@
     NSArray* sVGID_26_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
-    CGFloat sVGID_26_2Locations[] = {0.88, 1};
+    CGFloat sVGID_26_2Locations[] = {0.25, .5};
     CGGradientRef sVGID_26_2 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_26_2Colors, sVGID_26_2Locations);
 
     UIGraphicsBeginImageContext(theFrame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetAllowsAntialiasing(context, YES);
     
-    [[UIColor whiteColor] setFill];
+    [[UIColor lightGrayColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat heightOffset = 20;
-    CGFloat widthOffset = 10;
+//    CGFloat heightOffset = 20;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
     CGContextMoveToPoint(context, self.minX, self.maxY);
     CGContextAddLineToPoint(context, self.maxX, self.maxY);
-    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+heightOffset);
-    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+heightOffset);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+2*widthOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+2*widthOffset);
     CGContextAddLineToPoint(context, self.minX, self.maxY);
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -529,10 +536,10 @@
     //create image from mask
     UIGraphicsBeginImageContext(theFrame.size);
     context = UIGraphicsGetCurrentContext();
-
+    
     CGContextDrawLinearGradient(context, sVGID_26_2,
-                                CGPointMake(CGRectGetMidX(bezierBounds) + -342.47 * CGRectGetWidth(bezierBounds) / 640, CGRectGetMidY(bezierBounds) + 220.42 * CGRectGetHeight(bezierBounds) / 541.75),
-                                CGPointMake(CGRectGetMidX(bezierBounds) + 191.66 * CGRectGetWidth(bezierBounds) / 640, CGRectGetMidY(bezierBounds) + -17.39 * CGRectGetHeight(bezierBounds) / 541.75),
+                                CGPointMake(CGRectGetMidX(bezierBounds), CGRectGetMaxY(bezierBounds)),
+                                CGPointMake(CGRectGetMaxX(bezierBounds), (CGRectGetMinY(bezierBounds)-SHADOW_OFF_INTERSECT)),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     
@@ -558,8 +565,11 @@
     NSArray* sVGID_1_4Colors = [NSArray arrayWithObjects:
                                 (id)color23.CGColor,
                                 (id)color24.CGColor, nil];
-    CGFloat sVGID_1_4Locations[] = {0.6, 1};
+    CGFloat sVGID_1_4Locations[] = {0.3, 1};
     CGGradientRef sVGID_1_4 = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_1_4Colors, sVGID_1_4Locations);
+    
+    CGFloat sVGID_linearLocations[] = {0.4, .6};
+    CGGradientRef sVGIDlinear = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)sVGID_1_4Colors, sVGID_linearLocations);
     
     UIGraphicsBeginImageContext(theFrame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -568,13 +578,15 @@
     [[UIColor whiteColor] setFill];
     CGContextFillRect(context, theFrame);
     
-    CGFloat widthOffset = 10;
+    CGFloat widthOffset = WALL_WIDTH_OFF_CENTER;
     CGRect frame = theFrame;
-    CGContextMoveToPoint(context, self.minX + CGRectGetWidth(frame), self.minY);
+    CGContextMoveToPoint(context, self.maxX, self.minY);
     CGContextAddLineToPoint(context,self.minX, self.minY);
     CGContextAddLineToPoint(context,self.midX-widthOffset, self.midY-widthOffset);
+    CGContextAddLineToPoint(context, self.midX-widthOffset, self.midY+widthOffset*2);
+    CGContextAddLineToPoint(context, self.midX+widthOffset, self.midY+widthOffset*2);
     CGContextAddLineToPoint(context,self.midX+widthOffset, self.midY-widthOffset);
-    CGContextAddLineToPoint(context,self.minX + CGRectGetWidth(frame), self.minY);
+    CGContextAddLineToPoint(context,self.maxX, self.minY);
     
     CGRect bezierBounds = CGPathGetPathBoundingBox( CGContextCopyPath(context) );
     
@@ -596,6 +608,10 @@
                                 CGPointMake(CGRectGetMidX(bezierBounds) + -0 * bezierResizeRatio, CGRectGetMidY(bezierBounds) + -0 * bezierResizeRatio), 444.69 * bezierResizeRatio,
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
+    CGContextDrawLinearGradient(context, sVGIDlinear,
+                                CGPointMake(CGRectGetMidX(bezierBounds), CGRectGetMinY(bezierBounds)),
+                                CGPointMake(CGRectGetMidX(bezierBounds), CGRectGetMaxY(bezierBounds)),
+                                kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     
     //    CGContextClipToMask(context, self.view.bounds, textureImage.CGImage);
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -603,6 +619,7 @@
     CGContextRelease(context);
     
     CGGradientRelease(sVGID_1_4);
+    CGGradientRelease(sVGIDlinear);
     CGColorSpaceRelease(colorSpace);
     
     return [self maskImage:shadowImage withMask:maskImage];
