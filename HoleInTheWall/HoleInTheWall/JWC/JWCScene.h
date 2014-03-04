@@ -14,4 +14,6 @@
 
 @property (nonatomic) JWCWall *wall;
 
+- (void)removeShape:(id)sender;
+
 @end

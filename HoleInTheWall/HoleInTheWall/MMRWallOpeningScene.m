@@ -38,7 +38,7 @@
         
         [self.wall startMovingWithDuration:6];
         _wallScaling = YES;
-        self.holeLabel = [SKLabelNode labelNodeWithFontNamed:@"AvenirNext-Heavy"];
+        self.holeLabel = [SKLabelNode labelNodeWithFontNamed:@"Prisma"];
         self.holeLabel.fontSize = 30;
         self.holeLabel.fontColor = [SKColor purpleColor];
         self.holeLabel.zPosition = 100;
@@ -48,7 +48,7 @@
         self.holeLabel.position = CGPointMake(0, 150);
         [self addChild:self.holeLabel];
         
-        self.inTheLabel = [SKLabelNode labelNodeWithFontNamed:@"AvenirNext-Heavy"];
+        self.inTheLabel = [SKLabelNode labelNodeWithFontNamed:@"Prisma"];
         self.inTheLabel.fontSize = 30; 
         self.inTheLabel.fontColor = [SKColor purpleColor];
         self.inTheLabel.zPosition = 100;
