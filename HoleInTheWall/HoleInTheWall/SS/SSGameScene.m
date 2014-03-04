@@ -62,8 +62,6 @@
         
         self.backgroundFrame = self.frame;
         
-        [self addShadowWithSize:CGSizeMake(150.f, 50.f)];
-        
         [self createBackground];
         [self createFloor];
     }
@@ -123,7 +121,7 @@
     
     CGPoint centerShadow =CGPointMake(size.width/2 *invS.x, size.height/2*invS.y);
     
-    CGContextDrawRadialGradient(context, shadowGradient, centerShadow, 0.f, centerShadow, size.height/2, kCGGradientDrawsBeforeStartLocation);
+    CGContextDrawRadialGradient(context, shadowGradient, centerShadow, 0.f, centerShadow, size.width/8, kCGGradientDrawsBeforeStartLocation);
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRelease(context);
@@ -137,7 +135,7 @@
 
 - (void)addShadowForReferencePoint:(CGPoint)shapeLocation
 {
-    [self addShadowWithSize:[[JWCDimensions sharedController] size]];
+    [self addShadowWithSize:CGSizeMake([[JWCDimensions sharedController] size].width,50.f)];
     [self addChild:self.shapeShadow];
     CGPoint thisLocation = shapeLocation;
     thisLocation.y = -CGRectGetHeight(self.frame)/2+15.f;
