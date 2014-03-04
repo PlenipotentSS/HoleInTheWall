@@ -38,7 +38,7 @@
                 break;
         }
     }
-    self.hidden = NO;
+    self.hidden = YES;
     return self;
     
 }

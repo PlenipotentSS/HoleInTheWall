@@ -9,7 +9,7 @@
 #import "JWCWall.h"
 
 #define MAX_SCALE 5
-#define SHAPE_SIZE 1000
+#define SHAPE_SIZE [JWCDimensions sharedController].size.width*6;
 
 @interface JWCWall ()
 
@@ -33,7 +33,7 @@
         self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
-        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
+        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-70);
         
         [self setScale:MAX_SCALE];
         [self generateHole];
@@ -50,7 +50,7 @@
         self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
-        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-60);
+        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
         self.xScale = scale;
         self.yScale = scale;
         
@@ -85,7 +85,11 @@
             [self startMovingWithDuration:5];
         }];
     }];
+    
+
 }
+
+
 
 - (void)generateHole
 {
