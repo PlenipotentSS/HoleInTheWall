@@ -25,7 +25,6 @@
 }
 
 @property (nonatomic) JWCShape *playerShape;
-@property (nonatomic) JWCHole *currentHole;
 
 @property (nonatomic) NSMutableArray *glyphs;
 @property (nonatomic) WTMGlyphDetector *glyphDetector;
