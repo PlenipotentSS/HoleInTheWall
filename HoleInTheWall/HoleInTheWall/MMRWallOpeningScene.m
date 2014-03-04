@@ -36,7 +36,7 @@
         
         [self addChild:self.wall];
         
-        [self.wall startMovingWithDuration:6];
+        [self.wall startMovingWithDuration:2];
         _wallScaling = YES;
         self.holeLabel = [SKLabelNode labelNodeWithFontNamed:@"Prisma"];
         self.holeLabel.fontSize = 30;
@@ -81,7 +81,7 @@
 {
     //NSLog(@"WALL Y Sscale:%f",self.wall.yScale);
     
-    if (self.wall.yScale >= .7 && self.wall.yScale <= .705 ) {
+    if (self.wall.yScale >= .7 && self.wall.yScale <= .8 ) {
         _wallScaling = NO;
         //[self.wall removeAllActions];
         //scale wall
