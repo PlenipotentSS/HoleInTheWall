@@ -14,6 +14,7 @@
 		3EFF783E18C5191C009572B7 /* gameCenterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF783C18C5191C009572B7 /* gameCenterButton.png */; };
 		3EFF784518C5398C009572B7 /* whiteWallText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF784318C5398C009572B7 /* whiteWallText@2x.png */; };
 		3EFF784618C5398C009572B7 /* whiteWallText.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF784418C5398C009572B7 /* whiteWallText.png */; };
+		3EFF784918C5583F009572B7 /* MMRGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF784818C5583F009572B7 /* MMRGameOverScene.m */; };
 		6B24A88518BD69B400974D81 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88218BD69B400974D81 /* circle.json */; };
 		6B24A88718BD69B400974D81 /* triangle1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88418BD69B400974D81 /* triangle1.json */; };
 		6B24A89E18BD746600974D81 /* square1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A88D18BD746600974D81 /* square1.json */; };
@@ -105,6 +106,8 @@
 		3EFF783C18C5191C009572B7 /* gameCenterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameCenterButton.png; sourceTree = "<group>"; };
 		3EFF784318C5398C009572B7 /* whiteWallText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteWallText@2x.png"; sourceTree = "<group>"; };
 		3EFF784418C5398C009572B7 /* whiteWallText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteWallText.png; sourceTree = "<group>"; };
+		3EFF784718C5583F009572B7 /* MMRGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRGameOverScene.h; sourceTree = "<group>"; };
+		3EFF784818C5583F009572B7 /* MMRGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRGameOverScene.m; sourceTree = "<group>"; };
 		6B24A88218BD69B400974D81 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		6B24A88418BD69B400974D81 /* triangle1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle1.json; sourceTree = "<group>"; };
 		6B24A88D18BD746600974D81 /* square1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square1.json; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				3EFF783418C17346009572B7 /* MMRWallOpeningScene.m */,
 				D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */,
 				D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */,
+				3EFF784718C5583F009572B7 /* MMRGameOverScene.h */,
+				3EFF784818C5583F009572B7 /* MMRGameOverScene.m */,
 				6B24A8AD18BD95BA00974D81 /* JWCOpeningSceneViewController.h */,
 				6B24A8AE18BD95BA00974D81 /* JWCOpeningSceneViewController.m */,
 			);
@@ -728,6 +733,7 @@
 				6B3D5FE118BA763C006E4305 /* JWCWall.m in Sources */,
 				6B24A8AC18BD95A800974D81 /* OpeningScene.m in Sources */,
 				D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */,
+				3EFF784918C5583F009572B7 /* MMRGameOverScene.m in Sources */,
 				6B54EB7018BC0B5C00EE5604 /* CJSONSerialization.m in Sources */,
 				6B54EB6C18BC0B5C00EE5604 /* CDataScanner.m in Sources */,
 				6B54EB7F18BC0B5C00EE5604 /* WTMGlyphDetector.m in Sources */,

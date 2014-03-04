@@ -10,6 +10,7 @@
 #import "JWCShapeType.h"
 #import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
+#import "MMRGameOverScene.h"
 
 #import <GameCenterManager/GameCenterManager.h>
 
@@ -29,6 +30,8 @@
 @property (nonatomic) NSMutableArray *glyphs;
 @property (nonatomic) WTMGlyphDetector *glyphDetector;
 
+@property (nonatomic) NSInteger lives;
+
 @end
 
 @implementation JWCScene
@@ -37,6 +40,8 @@
 {
     if (self = [super initWithSize:size]) {
         self.anchorPoint = CGPointMake(0.5, 0.5);
+        
+        self.lives = 3;
         
         [self setupGlyphCollection];
         
@@ -144,6 +149,16 @@
             
             float xValue = (arc4random() % (int)self.size.width) * 2;
             float yValue = (arc4random() % (int)self.size.height) * 2;
+            
+            self.lives--;
+            
+            if (self.lives == 0) {
+//                MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
+//                gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
+//                [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
+            }
+            
+            NSLog(@"LIVES: %ld",(long)self.lives);
             
             SKAction *sendToPoint = [SKAction moveTo:CGPointMake(xValue, yValue) duration:1.0];
             SKAction *scalePlayerSHape = [SKAction scaleBy:3 duration:1.0];
