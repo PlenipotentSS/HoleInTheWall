@@ -73,6 +73,7 @@
 		6BB21DD018B82001005EEDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB21DB218B82001005EEDA1 /* UIKit.framework */; };
 		6BB21DD818B82001005EEDA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BB21DD618B82001005EEDA1 /* InfoPlist.strings */; };
 		6BB21DDA18B82001005EEDA1 /* HoleInTheWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB21DD918B82001005EEDA1 /* HoleInTheWallTests.m */; };
+		6BF9204218C554020019E86B /* Prisma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B24A8B118BD95CD00974D81 /* Prisma.ttf */; };
 		6BFF482918C0202000D5F628 /* scapespace.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482818C0202000D5F628 /* scapespace.png */; };
 		6BFF482C18C0233A00D5F628 /* scapetown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482B18C0233A00D5F628 /* scapetown.jpg */; };
 		6BFF482E18C026AA00D5F628 /* scapevegetable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482D18C026AA00D5F628 /* scapevegetable.jpg */; };
@@ -641,6 +642,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF9204218C554020019E86B /* Prisma.ttf in Resources */,
 				6BFF483218C0277E00D5F628 /* circle.png in Resources */,
 				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				D2A974BC18BDADD500720098 /* skulls.png in Resources */,

@@ -34,8 +34,6 @@
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
         self.position = CGPointZero;
-//        self.xScale = scale;
-//        self.yScale = scale;
         
         [self setScale:MAX_SCALE];
         [self generateHole];

@@ -50,7 +50,7 @@
         
         [self.wall startMovingWithDuration:6];
         _wallScaling = YES;
-        
+   
         self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
     }
     
@@ -59,6 +59,7 @@
     return self;
 }
 
+#pragma mark - Touch Recognizers
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
@@ -82,10 +83,16 @@
         [self.glyphDetector addPoint:[[touches anyObject] locationInView:self.view]];
         [self.glyphDetector detectGlyph];
     } else {
-        _glyphDetected = NO;
-        [self.playerShape removeFromParent];
-        [self removeShadow];
+        [self removeShape:nil];
     }
+}
+
+- (void)removeShape:(id)sender
+{
+    _glyphDetected = NO;
+    _shadowRemoved = NO;
+    [self.playerShape removeFromParent];
+    [self removeShadow];
 }
 
 #pragma mark - Glyph Setup
@@ -112,6 +119,7 @@
     [self.glyphDetector addGlyphFromJSON:glyphData name:shapeName];
 }
 
+#pragma mark - WTMGlyphDetector Callback
 - (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
     if (!_glyphDetected) {
@@ -132,11 +140,8 @@
             self.playerShape.position = CGPointZero;
         }
         
-        
-        
         [self addChild:self.playerShape];
         [self addShadowForReferencePoint:CGPointZero];
-        _shadowRemoved = YES;
     }
 }
 
@@ -165,28 +170,29 @@
             SKAction *oneRevolution = [SKAction rotateByAngle:-M_PI*2 duration:1.0];
 
             SKAction *group = [SKAction group:@[sendToPoint,scalePlayerSHape,oneRevolution]];
-            [self.playerShape runAction:group];
+            [self.playerShape runAction:group completion:^{
+                [self removeShape:nil];
+            }];
             
             if (self.playerShape.parent && !_shadowRemoved) {
                 _shadowRemoved = NO;
-                [self removeShadow];
             }
         } else {
             [self reportScore];
             _wallsPassed++;
+            
+            if (_wallsPassed != 0 && _wallsPassed % 2 == 0) {
+                [self changeBackgroundImage:[UIImage imageNamed:@"tree_bark"]];
+            }
         }
     }
-    
 }
 
 - (void)reportScore
 {
-    // TODO: Implement this with our real achievement name
-//    [[GameCenterManager sharedManager] saveAndReportScore:100
+//    // TODO: Implement this with our real achievement name
+//    [[GameCenterManager sharedManager] saveAndReportScore:_wallsPassed
 //                                              leaderboard:@"com.jeffwritescode.holeinthewall.hiscore" sortOrder:GameCenterSortOrderHighToLow];
-//    if (_wallsPassed > 5) {
-//        [[GameCenterManager sharedManager] saveAndReportAchievement:@"com.jeffwritescode.holeinthewall.collisions" percentComplete:100.0 shouldDisplayNotification:YES];
-//    }
 }
 
 @end
