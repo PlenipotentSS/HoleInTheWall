@@ -10,8 +10,9 @@
 
 @interface JWCDimensions : NSObject
 
-+ (JWCDimensions *)sharedController;
-
 @property (nonatomic) CGSize size;
+@property (nonatomic) CGPoint holePosition;
+
++ (JWCDimensions *)sharedController;
 
 @end
