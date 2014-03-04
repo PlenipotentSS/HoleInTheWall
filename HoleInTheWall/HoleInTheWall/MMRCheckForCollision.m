@@ -22,8 +22,6 @@
     
     if (playerShape.shapeType != hole.shapeType) {
         return YES;
-    } else if (!hole) {
-        return YES;
     } else if (playerShape.position.x <= hole.position.x - 12 || playerShape.position.x >= hole.position.x + 12 || playerShape.position.y <= hole.position.y - 12 || playerShape.position.y >= hole.position.y + 12) {
         return YES;
     } else {

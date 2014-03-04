@@ -33,7 +33,7 @@
         self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
-        self.position = CGPointZero;
+        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
         
         [self setScale:MAX_SCALE];
         [self generateHole];
@@ -50,7 +50,7 @@
         self = [JWCWall spriteNodeWithImageNamed:@"purty_wood"];
         self.wallImage = [UIImage imageNamed:@"purty_wood"];
         self.size = [UIScreen mainScreen].bounds.size;
-        self.position = CGPointZero;
+        self.position = CGPointMake(CGPointZero.x, CGPointZero.y-60);
         self.xScale = scale;
         self.yScale = scale;
         
@@ -69,10 +69,16 @@
 {
     [self removeAllActions];
     
+    self.position = CGPointMake(CGPointZero.x, CGPointZero.y-65);
+    
     SKAction *moveForwardAction = [SKAction scaleTo:1 duration:duration];
+    SKAction *moveToAction = [SKAction moveTo:CGPointMake(CGPointZero.x, CGPointZero.y) duration:duration];
+    
     SKAction *scaleOffAction = [SKAction scaleTo:MAX_SCALE duration:.1];
     
-    [self runAction:moveForwardAction completion:^{
+    SKAction *groupOfActions = [SKAction group:@[moveForwardAction, moveToAction]];
+    
+    [self runAction:groupOfActions completion:^{
         [self runAction:scaleOffAction completion:^{
             [self generateHole];
             [self setScale:.2];
@@ -89,20 +95,22 @@
     
     int randomHole = arc4random() % 3;
     
+    CGSize holeSize = [JWCDimensions sharedController].size;
+    
     switch (randomHole) {
         case 0:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeSquare
-                                                       shapeSize:CGSizeMake(150, 150)];
+                                                       shapeSize:holeSize];
             self.texture = [self setHoleInWallMaskWithShapeName:@"squaremask"];
             break;
         case 1:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeTriangle
-                                                       shapeSize:CGSizeMake(150, 150)];
+                                                       shapeSize:holeSize];
             self.texture = [self setHoleInWallMaskWithShapeName:@"trianglemask"];
             break;
         case 2:
             self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeCircle
-                                                       shapeSize:CGSizeMake(150, 150)];
+                                                       shapeSize:holeSize];
             self.texture = [self setHoleInWallMaskWithShapeName:@"circlemask"];
             break;
     }

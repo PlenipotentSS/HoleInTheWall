@@ -52,6 +52,7 @@
 		6B54EB8018BC0B5C00EE5604 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6718BC0B5C00EE5604 /* WTMGlyphStroke.m */; };
 		6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */; };
 		6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */; };
+		6B56871318C666C6003A6052 /* JWCDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56871218C666C6003A6052 /* JWCDimensions.m */; };
 		6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4D918C17335004CC212 /* wood_1_@2X.png */; };
 		6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */; };
 		6BACD95F18BEB6530096B126 /* squaremask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BACD95E18BEB6530096B126 /* squaremask.png */; };
@@ -179,6 +180,8 @@
 		6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTemplate.m; sourceTree = "<group>"; };
 		6B54EB6A18BC0B5C00EE5604 /* WTMGlyphUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphUtilities.h; sourceTree = "<group>"; };
 		6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
+		6B56871118C666C6003A6052 /* JWCDimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCDimensions.h; path = JWC/JWCDimensions.h; sourceTree = "<group>"; };
+		6B56871218C666C6003A6052 /* JWCDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCDimensions.m; path = JWC/JWCDimensions.m; sourceTree = "<group>"; };
 		6B66B4D918C17335004CC212 /* wood_1_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood_1_@2X.png"; sourceTree = "<group>"; };
 		6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bright_squares_@2X.png"; sourceTree = "<group>"; };
 		6BACD95E18BEB6530096B126 /* squaremask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squaremask.png; path = JWC/shapemaskimages/squaremask.png; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 			children = (
 				6BB21DBD18B82001005EEDA1 /* JWCAppDelegate.h */,
 				6BB21DBE18B82001005EEDA1 /* JWCAppDelegate.m */,
+				6B56871118C666C6003A6052 /* JWCDimensions.h */,
+				6B56871218C666C6003A6052 /* JWCDimensions.m */,
 				6BB21DC018B82001005EEDA1 /* Main.storyboard */,
 				3EC4F35918BD795300E80C64 /* Resources */,
 				6BFF482A18C0211000D5F628 /* iPad */,
@@ -735,6 +740,7 @@
 				D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */,
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				6B56871318C666C6003A6052 /* JWCDimensions.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
 				6BB21DBF18B82001005EEDA1 /* JWCAppDelegate.m in Sources */,
 				6B3D5FEE18BA7C7C006E4305 /* JWCScene.m in Sources */,

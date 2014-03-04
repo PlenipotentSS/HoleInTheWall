@@ -17,17 +17,17 @@
         switch (shapeType) {
             case JWCShapeTypeSquare:
                 self = [JWCHole spriteNodeWithImageNamed:@"square"];
-                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
+                self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);
                 self.shapeType = shapeType;
                 break;
             case JWCShapeTypeTriangle:
                 self = [JWCHole spriteNodeWithImageNamed:@"triangle"];
-                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
+                self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);
                 self.shapeType = shapeType;
                 break;
             case JWCShapeTypeCircle:
                 self = [JWCHole spriteNodeWithImageNamed:@"circle"];
-                self.size = CGSizeMake(shapeSize.width*1.3, shapeSize.height*1.3);
+                self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);
                 self.shapeType = shapeType;
                 break;
             case JWCShapeTypeWallLabel:
@@ -38,7 +38,7 @@
                 break;
         }
     }
-    self.hidden = YES;
+    self.hidden = NO;
     return self;
     
 }

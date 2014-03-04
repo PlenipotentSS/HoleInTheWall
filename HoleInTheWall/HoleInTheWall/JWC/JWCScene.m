@@ -45,13 +45,14 @@
         
         [self setupGlyphCollection];
         
-        self.wall = [[JWCWall alloc] initWithScale:.2];
+        self.wall = [[JWCWall alloc] initWithScale:.1];
         [self addChild:self.wall];
         
         [self.wall startMovingWithDuration:6];
         _wallScaling = YES;
    
         self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
+        
     }
     
     [GameCenterManager sharedManager].delegate = self;
@@ -127,16 +128,16 @@
         _glyphDetected = YES;
         [self.glyphDetector reset];
             
-        NSLog(@"%@, %f", glyph.name, score);
+        CGSize playerShapeSize = [JWCDimensions sharedController].size;
         
         if ([glyph.name isEqualToString:@"square"]) {
-            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:CGSizeMake(150, 150)];
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeSquare size:playerShapeSize];
             self.playerShape.position = CGPointZero;
         } else if ([glyph.name isEqualToString:@"triangle"]) {
-            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeTriangle size:CGSizeMake(150, 150)];
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeTriangle size:playerShapeSize];
             self.playerShape.position = CGPointZero;
         } else if ([glyph.name isEqualToString:@"circle"]) {
-            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:CGSizeMake(150, 150)];
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:playerShapeSize];
             self.playerShape.position = CGPointZero;
         }
         
@@ -182,7 +183,7 @@
             _wallsPassed++;
             
             if (_wallsPassed != 0 && _wallsPassed % 2 == 0) {
-                [self changeBackgroundImage:[UIImage imageNamed:@"tree_bark"]];
+                
             }
         }
     }
