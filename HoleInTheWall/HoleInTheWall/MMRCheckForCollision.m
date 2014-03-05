@@ -18,8 +18,6 @@
     
     CGFloat comparator = (holeRadius - playerShapeRadius) + 10;
     
-    NSLog(@"Comparator: %f Hole:%@\nPlayerShape:%@",comparator, hole, playerShape);
-    
     if (playerShape.shapeType != hole.shapeType) {
         return YES;
     }

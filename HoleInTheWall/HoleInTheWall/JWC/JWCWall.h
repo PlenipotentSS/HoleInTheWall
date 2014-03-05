@@ -11,6 +11,8 @@
 
 @interface JWCWall : SKSpriteNode
 
+@property (nonatomic) BOOL wallPassed;
+
 /**
  * Creates a wall with initial scale, positioned at center of screen, with a random
  * initial hole;
