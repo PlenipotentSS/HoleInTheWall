@@ -22,6 +22,7 @@
     BOOL _wallScaling;
     BOOL _shadowRemoved;
     BOOL _collisionChecked;
+    BOOL _wallsPassedIncremented;
 }
 
 @property (nonatomic) JWCShape *playerShape;
@@ -30,6 +31,9 @@
 @property (nonatomic) WTMGlyphDetector *glyphDetector;
 
 @property (nonatomic) NSInteger lives;
+
+@property (nonatomic) SKLabelNode *labelLives;
+@property (nonatomic) SKLabelNode *labelWallsPassed;
 
 @end
 
@@ -52,6 +56,24 @@
    
         self.backgroundColor = [UIColor colorWithRed:0.000 green:0.816 blue:1.000 alpha:1.000];
         
+        self.labelLives = [SKLabelNode labelNodeWithFontNamed:@"Prisma"];
+        self.labelLives.text = [NSString stringWithFormat:@"Lives Left: %i", self.lives];
+        self.labelLives.fontSize = 15;
+        
+        self.labelWallsPassed = [SKLabelNode labelNodeWithFontNamed:@"Prisma"];
+        self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
+        self.labelWallsPassed.fontSize = 15;
+
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+            self.labelLives.position = CGPointMake(-60, 230);
+            self.labelWallsPassed.position = CGPointMake(60, 230);
+        } else {
+            self.labelLives.position = CGPointMake(-120, 500);
+            self.labelLives.position = CGPointMake(120, 500);
+        }
+
+        [self addChild:self.labelLives];
+        [self addChild:self.labelWallsPassed];
     }
     
     [GameCenterManager sharedManager].delegate = self;
@@ -72,6 +94,7 @@
         CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
         [self.glyphDetector addPoint:touchPoint];
     } else {
+        _wallsPassedIncremented = NO;
         self.playerShape.position = [[touches anyObject] locationInNode:self];
         [self moveShadowWithReferencePoint:[[touches anyObject] locationInNode:self]];
     }
@@ -148,7 +171,7 @@
 - (void)update:(CFTimeInterval)currentTime
 {
     if (self.wall.yScale >= 0.85 && self.wall.yScale <= 0.862) {
-    
+        
         if (!_collisionChecked && [MMRCheckForCollision checkForCollision:self.playerShape andHole:self.wall.holeInWall inWall:self.wall]) {
             
             _collisionChecked = YES;
@@ -157,14 +180,13 @@
             float yValue = (arc4random() % (int)self.size.height) * 2;
             
             self.lives--;
+            self.labelLives.text = [NSString stringWithFormat:@"Lives Left: %i", self.lives];
             
             if (self.lives == 0) {
                 MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
                 gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
                 [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
             }
-            
-            NSLog(@"LIVES: %ld",(long)self.lives);
             
             SKAction *sendToPoint = [SKAction moveTo:CGPointMake(xValue, yValue) duration:1.0];
             SKAction *scalePlayerSHape = [SKAction scaleBy:3 duration:1.0];
@@ -179,15 +201,24 @@
                 _shadowRemoved = NO;
             }
         } else {
-            [self reportScore];
-            _wallsPassed++;
+            if (!self.wall.wallPassed) {
+                _wallsPassed++;
+                self.wall.wallPassed = YES;
+                self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
+            }
             
             if (_wallsPassed != 0) {
-                int rndValue = 75 + arc4random() % (250 - 75);
-                [JWCDimensions sharedController].size = CGSizeMake(rndValue, rndValue);
+                int randomValue = 75 + arc4random() % (250 - 75);
+                [JWCDimensions sharedController].size = CGSizeMake(randomValue, randomValue);
             }
         }
     }
+}
+
+#pragma mark - GameCenterManagerDelegate
+- (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    
 }
 
 - (void)reportScore
