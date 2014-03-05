@@ -79,6 +79,7 @@
 		6BFF482C18C0233A00D5F628 /* scapetown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482B18C0233A00D5F628 /* scapetown.jpg */; };
 		6BFF482E18C026AA00D5F628 /* scapevegetable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF482D18C026AA00D5F628 /* scapevegetable.jpg */; };
 		6BFF483218C0277E00D5F628 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF483118C0277E00D5F628 /* circle.png */; };
+		D21B34BC18C6FC1D00F46DFD /* warning_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = D21B34BB18C6FC1D00F46DFD /* warning_floor.png */; };
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
 		D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */; };
@@ -217,6 +218,7 @@
 		6BFF482D18C026AA00D5F628 /* scapevegetable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scapevegetable.jpg; sourceTree = "<group>"; };
 		6BFF483118C0277E00D5F628 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		7920F700CE3C4F34833D363E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21B34BB18C6FC1D00F46DFD /* warning_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning_floor.png; sourceTree = "<group>"; };
 		D222469E18B8227A00D0FB43 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D22246A018B822B100D0FB43 /* SSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSGameScene.h; path = SS/SSGameScene.h; sourceTree = "<group>"; };
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
 				D2EA8F1218C6A21500A42F99 /* UIImage+SSImageShadow.h */,
 				D2EA8F1318C6A21500A42F99 /* UIImage+SSImageShadow.m */,
+				D21B34BB18C6FC1D00F46DFD /* warning_floor.png */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				6BAFC2C118BECAD60098232E /* trianglemask.png in Resources */,
 				6BB21DC218B82001005EEDA1 /* Main.storyboard in Resources */,
 				6B24A8A218BD746600974D81 /* square5.json in Resources */,
+				D21B34BC18C6FC1D00F46DFD /* warning_floor.png in Resources */,
 				6B24A88518BD69B400974D81 /* circle.json in Resources */,
 				6BACD95F18BEB6530096B126 /* squaremask.png in Resources */,
 				3EFF783E18C5191C009572B7 /* gameCenterButton.png in Resources */,

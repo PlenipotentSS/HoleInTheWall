@@ -14,10 +14,11 @@
  *
  * Creates UIImage with a shadow effect on the 4 sides of the given uiimage's frame
  * @param UIImage an image
+ * @param CGSize size to fit
  * @return UIImage with shadow box
  *
 **/
-+ (UIImage*)createShadowBoxImageWithImage:(UIImage*) image;
++ (UIImage *)createShadowBoxImageWithImage:(UIImage *)image forSize:(CGSize) theSize;
 
 /**
  *

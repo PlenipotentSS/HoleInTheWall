@@ -49,6 +49,7 @@
         [self setupGlyphCollection];
         
         self.wall = [[JWCWall alloc] initWithScale:.2];
+        self.wall.zPosition = 2;
         [self addChild:self.wall];
         
         [self.wall startMovingWithDuration:6];
@@ -162,8 +163,8 @@
             self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:playerShapeSize];
             self.playerShape.position = CGPointZero;
         }
-        
         [self addChild:self.playerShape];
+        self.playerShape.zPosition = 2;
         [self addShadowForReferencePoint:CGPointZero];
     }
 }
@@ -201,8 +202,9 @@
                 _shadowRemoved = NO;
             }
         } else {
-            if (!self.wall.wallPassed) {
+            if (!_collisionChecked && !self.wall.wallPassed) {
                 _wallsPassed++;
+                self.playerShape.zPosition = 1;
                 self.wall.wallPassed = YES;
                 self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
             }

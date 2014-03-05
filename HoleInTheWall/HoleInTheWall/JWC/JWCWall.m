@@ -10,7 +10,7 @@
 #import "UIImage+SSImageShadow.h"
 
 #define MAX_SCALE 5
-#define SHAPE_SIZE [JWCDimensions sharedController].size.width*6;
+#define SHAPE_SIZE [JWCDimensions sharedController].size.width*6
 
 @interface JWCWall ()
 
@@ -145,10 +145,10 @@
     UIGraphicsBeginImageContext(contextFrame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [[UIColor blackColor] setFill];
-    CGContextFillRect(context, contextFrame);
+    CGContextFillRect(context, CGRectMake(WALL_OUTER_SHADOW_SIDE/2,WALL_OUTER_SHADOW_TOPBOTTOM/2,CGRectGetWidth(contextFrame)-WALL_OUTER_SHADOW_SIDE,CGRectGetHeight(contextFrame)-WALL_OUTER_SHADOW_TOPBOTTOM));
     
-    NSInteger maxXChange = CGRectGetWidth(self.frame)-SHAPE_SIZE;
-    NSInteger maxYChange = CGRectGetHeight(self.frame)-SHAPE_SIZE;
+    NSInteger maxXChange = CGRectGetWidth(self.frame)-(SHAPE_SIZE+WALL_OUTER_SHADOW_SIDE);
+    NSInteger maxYChange = CGRectGetHeight(self.frame)-(SHAPE_SIZE+WALL_OUTER_SHADOW_TOPBOTTOM);
     
     CGFloat randomX = arc4random() % maxXChange;
     randomX -= maxXChange/2;
@@ -175,28 +175,33 @@
     CGContextRelease(context);
 
     //back wall mask
-    unscaledX = unscaledX*.95f;
-    unscaledY = unscaledY*.95f;
+    unscaledX = unscaledX*.95;
+    unscaledY = unscaledY*.95;
     UIGraphicsBeginImageContext(contextFrame.size);
     CGContextRef backImageContext = UIGraphicsGetCurrentContext();
     
     [[UIColor blackColor] setFill];
-    CGContextFillRect(backImageContext, contextFrame);
+    CGContextFillRect(backImageContext, CGRectMake(WALL_OUTER_SHADOW_SIDE/2,WALL_OUTER_SHADOW_TOPBOTTOM/2,CGRectGetWidth(contextFrame)-WALL_OUTER_SHADOW_SIDE,CGRectGetHeight(contextFrame)-WALL_OUTER_SHADOW_TOPBOTTOM));
     
     CGFloat xPos =_holeCenter.x-unscaledX/2;
     CGFloat yPos = _holeCenter.y-unscaledY/2;
     
-    NSLog(@"%f",unscaledX/2/_holeCenter.x);
-    if (xPos < CGRectGetMidX(contextFrame)) {
-        xPos *= _holeCenter.x/unscaledX/2;
+    CGFloat backWallOffValue = 100.f;
+    
+    if (_holeCenter.x < CGRectGetMidX(contextFrame)) {
+        CGFloat xOff = (CGRectGetMidX(contextFrame)-_holeCenter.x)/CGRectGetMidX(contextFrame);
+        xPos += backWallOffValue*xOff;
     } else {
-        xPos *= unscaledX/2/_holeCenter.x;
+        CGFloat xOff = (_holeCenter.x-CGRectGetMidX(contextFrame))/_holeCenter.x;
+        xPos -= backWallOffValue*xOff;
     }
     
-    if (yPos < CGRectGetMidY(contextFrame)) {
-        yPos *= unscaledY/2/_holeCenter.y;
+    if (_holeCenter.y < CGRectGetMidY(contextFrame)) {
+        CGFloat yOff = (CGRectGetMidY(contextFrame)-_holeCenter.y )/CGRectGetMidY(contextFrame);
+        yPos += backWallOffValue*yOff;
     } else {
-        yPos *= _holeCenter.y/unscaledY/2;
+        CGFloat yOff = (_holeCenter.y-CGRectGetMidY(contextFrame))/_holeCenter.y;
+        yPos -= backWallOffValue*yOff;
     }
     
     [[UIColor whiteColor] setFill];
@@ -209,18 +214,19 @@
     UIGraphicsBeginImageContext(contextFrame.size);
     CGContextRef fullFillContext = UIGraphicsGetCurrentContext();
     
-    [[UIColor blackColor] setFill];
-    CGContextFillRect(fullFillContext, contextFrame);
+    [self.wallImage drawInRect:CGRectMake(WALL_OUTER_SHADOW_SIDE/2,WALL_OUTER_SHADOW_TOPBOTTOM/2,CGRectGetWidth(contextFrame)-WALL_OUTER_SHADOW_SIDE,CGRectGetHeight(contextFrame)-WALL_OUTER_SHADOW_TOPBOTTOM)];
+    
+    [[UIColor colorWithRed:0.1f green:0.1f blue:.1f alpha:.85f] setFill];
+    CGContextFillRect(fullFillContext, CGRectMake(25.f,2.5f,CGRectGetWidth(contextFrame)-50.f,CGRectGetHeight(contextFrame)-5.f));
     
     UIImage *blackImage = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRelease(fullFillContext);
     
     //combine images and masks
     UIImage *backWallImage = [self maskImage:blackImage withMask:backWallImageMask];
-    UIImage *shadowWallImage = [UIImage createShadowBoxImageWithImage:self.wallImage];
+    UIImage *shadowWallImage = [UIImage createShadowBoxImageWithImage:self.wallImage forSize:contextFrame.size];
     UIImage *theWall = [self maskImage:shadowWallImage withMask:maskImage];
     theWall = [UIImage combineImages:@[backWallImage,theWall] withSize:contextFrame.size];
-    
     
     return [SKTexture textureWithImage:theWall];
 }

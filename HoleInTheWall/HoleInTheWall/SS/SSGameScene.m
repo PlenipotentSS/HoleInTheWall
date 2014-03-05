@@ -648,7 +648,16 @@
     
     CGContextRelease(contextFloor);
     
-    return [self maskImage:floorImageCut withMask:maskImage];
+    UIGraphicsBeginImageContext(theFrame.size);
+
+    UIImage *warningImage = [UIImage imageNamed:@"warning_floor"];
+    [warningImage drawInRect:CGRectMake(0.f, CGRectGetMaxY(theFrame)-40.f, CGRectGetWidth(theFrame), 40.f)];
+    UIImage *warningFloor = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImage *floorWarning = [self maskImage:warningFloor withMask:maskImage];
+    UIImage *floorFinal = [self maskImage:floorImageCut withMask:maskImage];
+    return [self combineImages:@[floorFinal,floorWarning]];
 }
 
 -(UIImage*)renderFloorWith3DTransform:(UIImage*)image

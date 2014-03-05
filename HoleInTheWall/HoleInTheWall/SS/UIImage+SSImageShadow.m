@@ -8,34 +8,51 @@
 
 #import "UIImage+SSImageShadow.h"
 
-#define SHADOW_START_HORIZONTAL_PERCENT .7
-#define SHADOW_START_VERTICAL_PERCENT .8
+#define SHADOW_START_HORIZONTAL_PERCENT .5
+#define SHADOW_START_VERTICAL_PERCENT .4
 
 @implementation UIImage (SSImageShadow)
 
-+ (UIImage *)createShadowBoxImageWithImage:(UIImage *)image
++ (UIImage *)createShadowBoxImageWithImage:(UIImage *)image forSize:(CGSize) theSize
 {
-    UIImage *leftShadow = [self createLeftShadowWithSize:image.size];
-    UIImage *rightShadow = [self createRightShadowWithSize:image.size];
-    UIImage *topShadow = [self createTopShadowWithSize:image.size];
-//    UIImage *bottomShadow = [self createBottomShadowWithSize:image.size];
+    UIImage *leftShadow = [self createLeftShadowWithSize:theSize];
+    UIImage *rightShadow = [self createRightShadowWithSize:theSize];
+    UIImage *topShadow = [self createTopShadowWithSize:theSize];
+    UIImage *bottomShadow = [self createBottomShadowWithSize:theSize];
 
-    NSArray *allImages = @[image,leftShadow,rightShadow,topShadow];
-    UIImage *combinedImage =[self combineImages:allImages withSize:image.size];
+    UIImage *wallImage = [self smallifyImage:image fromSize:theSize];
+    
+    NSArray *allImages = @[wallImage,leftShadow,rightShadow,topShadow,bottomShadow];
+    UIImage *combinedImage =[self combineImages:allImages withSize:theSize];
+    
+    
     return combinedImage;
+}
+
++ (UIImage*)smallifyImage:(UIImage*)image fromSize:(CGSize) size
+{
+    UIGraphicsBeginImageContext(size);
+    [[UIColor clearColor] setFill];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextFillRect(context, CGRectMake(0., 0.f, size.width, size.height));
+    
+    [image drawInRect:CGRectMake(WALL_OUTER_SHADOW_SIDE/2, WALL_OUTER_SHADOW_TOPBOTTOM/2, size.width-WALL_OUTER_SHADOW_SIDE, size.height-WALL_OUTER_SHADOW_TOPBOTTOM)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(context);
+    return newImage;
 }
 
 + (UIImage*)combineImages:(NSArray*)images withSize:(CGSize) size
 {
-    CGSize finalImageSize = CGSizeMake(size.width, size.height);
-    UIGraphicsBeginImageContext(finalImageSize);
+    UIGraphicsBeginImageContext(size);
     [[UIColor clearColor] setFill];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextFillRect(context, CGRectMake(0., 0.f, size.width, size.height));
     
     
     for (UIImage *image in images) {
-        [image drawInRect:CGRectMake(0., 0.f, size.width, size.height)];
+        [image drawInRect:CGRectMake((size.width-image.size.width)/2, (size.height-image.size.height)/2, size.width, size.height)];
     }
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRelease(context);
@@ -46,7 +63,7 @@
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     UIColor* noneColor2 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0];
-    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.5];
+    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.2];
     NSArray* sVGID_24_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
@@ -73,7 +90,7 @@
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     UIColor* noneColor2 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0];
-    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.5];
+    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.2];
     NSArray* sVGID_24_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
@@ -100,7 +117,7 @@
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     UIColor* noneColor2 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0];
-    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.5];
+    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.1];
     NSArray* sVGID_24_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];
@@ -127,7 +144,7 @@
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     UIColor* noneColor2 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0];
-    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.5];
+    UIColor* color15 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.1];
     NSArray* sVGID_24_2Colors = [NSArray arrayWithObjects:
                                  (id)noneColor2.CGColor,
                                  (id)color15.CGColor, nil];

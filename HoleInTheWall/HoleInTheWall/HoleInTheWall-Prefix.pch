@@ -14,4 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "JWCDimensions.h"
+
+
+    #define WALL_OUTER_SHADOW_SIDE 50.0
+    #define WALL_OUTER_SHADOW_TOPBOTTOM 5.0
 #endif
