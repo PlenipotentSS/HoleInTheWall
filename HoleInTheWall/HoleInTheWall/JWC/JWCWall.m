@@ -72,6 +72,8 @@
 {
     [self removeAllActions];
     
+    self.wallPassed = NO;
+    
     NSInteger randomWallNumber = (arc4random() % 5) + 1;
     if (_wallsPassed > 2 && _wallsPassed % randomWallNumber == 0) {
         duration = randomWallNumber % 4 + 1;
