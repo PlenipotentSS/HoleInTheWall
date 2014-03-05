@@ -7,6 +7,7 @@
 //
 
 #import "JWCWall.h"
+#import "UIImage+SSImageShadow.h"
 
 #define MAX_SCALE 5
 #define SHAPE_SIZE [JWCDimensions sharedController].size.width*6;
@@ -170,8 +171,55 @@
     UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+
+    //back wall mask
+    unscaledX = unscaledX*.95f;
+    unscaledY = unscaledY*.95f;
+    UIGraphicsBeginImageContext(contextFrame.size);
+    CGContextRef backImageContext = UIGraphicsGetCurrentContext();
     
-    UIImage *theWall = [self maskImage:self.wallImage withMask:maskImage];
+    [[UIColor blackColor] setFill];
+    CGContextFillRect(backImageContext, contextFrame);
+    
+    CGFloat xPos =_holeCenter.x-unscaledX/2;
+    CGFloat yPos = _holeCenter.y-unscaledY/2;
+    
+    NSLog(@"%f",unscaledX/2/_holeCenter.x);
+    if (xPos < CGRectGetMidX(contextFrame)) {
+        xPos *= _holeCenter.x/unscaledX/2;
+    } else {
+        xPos *= unscaledX/2/_holeCenter.x;
+    }
+    
+    if (yPos < CGRectGetMidY(contextFrame)) {
+        yPos *= unscaledY/2/_holeCenter.y;
+    } else {
+        yPos *= _holeCenter.y/unscaledY/2;
+    }
+    
+    [[UIColor whiteColor] setFill];
+    [self.holeImage drawInRect:CGRectMake(xPos, yPos, unscaledX, unscaledY)];
+    
+    UIImage *backWallImageMask = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(backImageContext);
+    
+    //full black mask
+    UIGraphicsBeginImageContext(contextFrame.size);
+    CGContextRef fullFillContext = UIGraphicsGetCurrentContext();
+    
+    [[UIColor blackColor] setFill];
+    CGContextFillRect(fullFillContext, contextFrame);
+    
+    UIImage *blackImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(fullFillContext);
+    
+    //combine images and masks
+    UIImage *backWallImage = [self maskImage:blackImage withMask:backWallImageMask];
+    UIImage *shadowWallImage = [UIImage createShadowBoxImageWithImage:self.wallImage];
+    UIImage *theWall = [self maskImage:shadowWallImage withMask:maskImage];
+    theWall = [UIImage combineImages:@[backWallImage,theWall] withSize:contextFrame.size];
+    
+    
     return [SKTexture textureWithImage:theWall];
 }
 

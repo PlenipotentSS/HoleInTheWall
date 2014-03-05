@@ -10,6 +10,7 @@
 #import "SSBackgroundView.h"
 #import <CoreImage/CoreImage.h>
 #import "JWCDimensions.h"
+#import "UIImage+SSImageShadow.h"
 
 #define OFF_CENTER_Y 70.f
 #define WALL_WIDTH_OFF_CENTER 20.f
@@ -192,7 +193,6 @@
 
 -(void) createBackground
 {
-    
     //ceiling
     UIImage *ceiling = [self makeCeiling];
     

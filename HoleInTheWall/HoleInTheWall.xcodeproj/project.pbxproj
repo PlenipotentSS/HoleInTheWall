@@ -86,6 +86,7 @@
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
 		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
 		D2A974BC18BDADD500720098 /* skulls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974BA18BDADD500720098 /* skulls.png */; };
+		D2EA8F1418C6A21500A42F99 /* UIImage+SSImageShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EA8F1318C6A21500A42F99 /* UIImage+SSImageShadow.m */; };
 		D454FF273D16437DBB23F350 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7920F700CE3C4F34833D363E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +226,8 @@
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		D2A974BA18BDADD500720098 /* skulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skulls.png; sourceTree = "<group>"; };
+		D2EA8F1218C6A21500A42F99 /* UIImage+SSImageShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SSImageShadow.h"; path = "SS/UIImage+SSImageShadow.h"; sourceTree = "<group>"; };
+		D2EA8F1318C6A21500A42F99 /* UIImage+SSImageShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SSImageShadow.m"; path = "SS/UIImage+SSImageShadow.m"; sourceTree = "<group>"; };
 		ECA1F79F0D3D4B78A9B60630 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -509,6 +512,8 @@
 				D2A9741118BC6ABE00720098 /* testwalls */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
+				D2EA8F1218C6A21500A42F99 /* UIImage+SSImageShadow.h */,
+				D2EA8F1318C6A21500A42F99 /* UIImage+SSImageShadow.m */,
 			);
 			name = Steven;
 			sourceTree = "<group>";
@@ -739,6 +744,7 @@
 			files = (
 				D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */,
 				6BB21DBB18B82001005EEDA1 /* main.m in Sources */,
+				D2EA8F1418C6A21500A42F99 /* UIImage+SSImageShadow.m in Sources */,
 				6B54EB6F18BC0B5C00EE5604 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				6B56871318C666C6003A6052 /* JWCDimensions.m in Sources */,
 				6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */,
