@@ -13,6 +13,7 @@ typedef enum : int {
     JWCShapeTypeSquare = 0,
     JWCShapeTypeTriangle = 1,
     JWCShapeTypeCircle = 2,
+    JWCShapeTypeW = 3,
     JWCShapeTypeWallLabel = 69
 } JWCShapeType;
 

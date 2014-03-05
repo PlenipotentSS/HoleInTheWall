@@ -30,6 +30,10 @@
                 self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);
                 self.shapeType = shapeType;
                 break;
+            case JWCShapeTypeW:
+                self = [JWCHole spriteNodeWithImageNamed:@"w"];
+                self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);
+                self.shapeType = shapeType;
             case JWCShapeTypeWallLabel:
                 self = [JWCHole spriteNodeWithImageNamed:@"whiteWallText"];
                 self.size = CGSizeMake(shapeSize.width*1.2, shapeSize.height*1.2);

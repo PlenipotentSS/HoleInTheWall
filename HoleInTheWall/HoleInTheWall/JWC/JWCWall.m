@@ -107,7 +107,7 @@
         [self.holeInWall removeFromParent];
     }
     
-    int randomHole = arc4random() % 3;
+    int randomHole = arc4random() % 4;
     
     CGSize holeSize = [JWCDimensions sharedController].size;
     
@@ -127,6 +127,10 @@
                                                        shapeSize:holeSize];
             self.texture = [self setHoleInWallMaskWithShapeName:@"circlemask"];
             break;
+        case 3:
+            self.holeInWall = [[JWCHole alloc] initWithShapeType:JWCShapeTypeW
+                                                       shapeSize:holeSize];
+            self.texture = [self setHoleInWallMaskWithShapeName:@"wmask"];
     }
 
     self.holeInWall.position = [self convertHoleCenterFromMask:_holeCenter];

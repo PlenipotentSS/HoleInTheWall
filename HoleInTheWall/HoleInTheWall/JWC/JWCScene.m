@@ -11,8 +11,11 @@
 #import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
 #import "MMRGameOverScene.h"
+#import "JWCResetScene.h"
 
+#import "JSGameMenu.h"
 #import <GameCenterManager/GameCenterManager.h>
+@import AVFoundation;
 
 @interface JWCScene () <WTMGlyphDelegate, GameCenterManagerDelegate>
 {
@@ -35,6 +38,10 @@
 @property (nonatomic) SKLabelNode *labelLives;
 @property (nonatomic) SKLabelNode *labelWallsPassed;
 
+@property (nonatomic) AVAudioPlayer *backgroundMusicPlayer;
+
+@property (nonatomic) JSGameMenu *pauseMenu;
+
 @end
 
 @implementation JWCScene
@@ -47,6 +54,8 @@
         self.lives = 3;
         
         [self setupGlyphCollection];
+        [self setupBackgroundMusic];
+        [GameCenterManager sharedManager].delegate = self;
         
         self.wall = [[JWCWall alloc] initWithScale:.2];
         self.wall.zPosition = 2;
@@ -65,19 +74,30 @@
         self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
         self.labelWallsPassed.fontSize = 15;
 
+        self.pauseMenu = [[JSGameMenu alloc] initWithSize:CGSizeMake(50, 50) withReplayHandler:^{
+            JWCResetScene *resetScene = [[JWCResetScene alloc] initWithSize:self.size];
+            resetScene.scaleMode = SKSceneScaleModeAspectFill;
+            [self.view presentScene:resetScene];
+        } withExitHandler:^{
+            NSLog(@"Exited");
+        }];
+        
+        [self addChild:self.pauseMenu];
+        
         if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
             self.labelLives.position = CGPointMake(-60, 230);
             self.labelWallsPassed.position = CGPointMake(60, 230);
+            self.pauseMenu.position = CGPointMake(-60, 230);
         } else {
             self.labelLives.position = CGPointMake(-120, 500);
             self.labelLives.position = CGPointMake(120, 500);
+            self.pauseMenu.position = CGPointMake(-120, 500);
         }
 
         [self addChild:self.labelLives];
         [self addChild:self.labelWallsPassed];
     }
     
-    [GameCenterManager sharedManager].delegate = self;
     
     return self;
 }
@@ -85,8 +105,12 @@
 #pragma mark - Touch Recognizers
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
-    [self.glyphDetector addPoint:touchPoint];
+    [self.pauseMenu handleTouch:touches withEvent:event];
+    
+    if (!self.isPaused) {
+        CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
+        [self.glyphDetector addPoint:touchPoint];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -133,6 +157,7 @@
         [self addGlyphWithJSONFileName:triangleFileName withShapeName:@"triangle"];
     }
     [self addGlyphWithJSONFileName:@"circle" withShapeName:@"circle"];
+    [self addGlyphWithJSONFileName:@"w" withShapeName:@"w"];
 }
 
 - (void)addGlyphWithJSONFileName:(NSString *)fileName withShapeName:(NSString *)shapeName
@@ -162,7 +187,11 @@
         } else if ([glyph.name isEqualToString:@"circle"]) {
             self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeCircle size:playerShapeSize];
             self.playerShape.position = CGPointZero;
+        } else if ([glyph.name isEqualToString:@"w"]) {
+            self.playerShape = [[JWCShape alloc] initWithShapeType:JWCShapeTypeW size:playerShapeSize];
+            self.playerShape.position = CGPointZero;
         }
+        
         [self addChild:self.playerShape];
         self.playerShape.zPosition = 2;
         [self addShadowForReferencePoint:CGPointZero];
@@ -184,6 +213,7 @@
             self.labelLives.text = [NSString stringWithFormat:@"Lives Left: %i", self.lives];
             
             if (self.lives == 0) {
+                [self.backgroundMusicPlayer stop];
                 MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
                 gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
                 [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
@@ -215,6 +245,17 @@
             }
         }
     }
+}
+
+#pragma mark - Background Music player
+- (void)setupBackgroundMusic
+{
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"Pamgaea" withExtension:@"mp3"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
 }
 
 #pragma mark - GameCenterManagerDelegate
