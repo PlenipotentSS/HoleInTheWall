@@ -106,9 +106,6 @@
         [self.holeLabel runAction:holeLabelGroup];
         [self.inTheLabel runAction:inTheLabelGroup];
         
-        
-        
-        //scale labels with wall
     }
 }
 
@@ -132,6 +129,8 @@
     }
     
     //TODO: REMOVE THIS TESTING CODE!!!
+    [[JWCMultipeerController sharedController] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+    [self startAdvertising];
     [self startBrowsing];
     
 }
@@ -139,27 +138,18 @@
 #pragma mark - MultiHole Methods
 - (void)startBrowsing
 {
-    MCNearbyServiceBrowser *browser = [JWCMultipeerController sharedController].browser;
-    MCSession *session = [JWCMultipeerController sharedController].session;
-    
+    [[JWCMultipeerController sharedController] setupMCBrowser];
     UIViewController *rootViewController = self.view.window.rootViewController;
     
-    MCBrowserViewController *browserViewController =
-    [[MCBrowserViewController alloc] initWithBrowser:browser
-                                             session:session];
+    MCBrowserViewController *browserViewController = [JWCMultipeerController sharedController].browser;
     
     browserViewController.delegate = [JWCMultipeerController sharedController];
-    [rootViewController presentViewController:browserViewController
-                       animated:YES
-                     completion:
-     ^{
-         [browser startBrowsingForPeers];
-     }];
+    [rootViewController presentViewController:browserViewController animated:YES completion:nil];
 }
 
 - (void)startAdvertising
 {
-    [[JWCMultipeerController sharedController] advertiseService];
+    [[JWCMultipeerController sharedController] advertiseSelf:YES];
 }
 
 @end

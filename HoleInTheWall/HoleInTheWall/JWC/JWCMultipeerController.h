@@ -13,13 +13,22 @@
 @interface JWCMultipeerController : NSObject
 <MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate, MCBrowserViewControllerDelegate, MCSessionDelegate, NSStreamDelegate>
 
-@property (nonatomic) MCNearbyServiceBrowser *browser;
+@property (nonatomic) MCPeerID *peerID;
 @property (nonatomic) MCSession *session;
-@property (nonatomic) MCPeerID *multiHolePartnerPeerID;
+@property (nonatomic) MCBrowserViewController *browser;
+@property (nonatomic) MCAdvertiserAssistant *advertiser;
+
+@property (nonatomic) MCPeerID *connectedPeerId;
+@property (nonatomic) NSInputStream *inputStream;
+@property (nonatomic) NSOutputStream *outputStream;
 
 + (JWCMultipeerController *)sharedController;
 
-- (void)advertiseService;
-
+- (void)setupPeerAndSessionWithDisplayName:(NSString *)displayName;
+- (void)setupMCBrowser;
+- (void)advertiseSelf:(BOOL)shouldAdvertise;
 
 @end
+
+
+

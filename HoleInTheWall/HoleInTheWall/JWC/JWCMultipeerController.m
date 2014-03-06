@@ -23,76 +23,51 @@
     return sharedController;
 }
 
-- (MCSession *)session
-{
-    if (!_session) {
-        _session = [[MCSession alloc] initWithPeer:[JWCDimensions sharedController].localPeerID
-                                  securityIdentity:nil
-                              encryptionPreference:MCEncryptionNone];
-    }
-    return _session;
-}
-
-#pragma mark MCNearybyServiceAdvertiser methods
-- (void)advertiseService
-{
-    MCNearbyServiceAdvertiser *advertiser = [[MCNearbyServiceAdvertiser alloc]
-                                             initWithPeer:[JWCDimensions sharedController].localPeerID
-                                            discoveryInfo:Nil
-                                              serviceType:MultiHoleServiceType];
-    advertiser.delegate = self;
-    [advertiser startAdvertisingPeer];
-}
-
-- (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser
-didReceiveInvitationFromPeer:(MCPeerID *)peerID
-       withContext:(NSData *)context
- invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
-{
-    self.session = [[MCSession alloc] initWithPeer:[JWCDimensions sharedController].localPeerID
-                                  securityIdentity:nil
-                              encryptionPreference:MCEncryptionNone];
-    self.session.delegate = self;
-    self.multiHolePartnerPeerID = peerID;
-}
-
-#pragma mark - MCNearbyServiceBrowser Methods
-- (MCNearbyServiceBrowser *)browser
-{
-    if (!_browser) {
-        _browser = [[MCNearbyServiceBrowser alloc]
-                                        initWithPeer:[JWCDimensions sharedController].localPeerID
-                                         serviceType:MultiHoleServiceType];
-    }
-    _browser.delegate = self;
-    return _browser;
-}
-
-- (void)browser:(MCNearbyServiceBrowser *)browser
-      foundPeer:(MCPeerID *)peerID
-withDiscoveryInfo:(NSDictionary *)info
-{
+- (id)init{
+    self = [super init];
     
+    if (self) {
+        _peerID = nil;
+        _session = nil;
+        _browser = nil;
+        _advertiser = nil;
+    }
+    
+    return self;
 }
 
-- (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
-{
+
+#pragma mark - Public method implementation
+
+- (void)setupPeerAndSessionWithDisplayName:(NSString *)displayName{
+    _peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
     
+    _session = [[MCSession alloc] initWithPeer:_peerID];
+    _session.delegate = self;
+}
+
+
+- (void)setupMCBrowser{
+    _browser = [[MCBrowserViewController alloc] initWithServiceType:MultiHoleServiceType session:_session];
+}
+
+
+- (void)advertiseSelf:(BOOL)shouldAdvertise{
+    if (shouldAdvertise) {
+        _advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:MultiHoleServiceType
+                                                           discoveryInfo:nil
+                                                                 session:_session];
+        [_advertiser start];
+    }
+    else{
+        [_advertiser stop];
+        _advertiser = nil;
+    }
 }
 
 #pragma mark - MCBrowserViewControllerDelegate
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController
 {
-    NSOutputStream *outputStream =
-    [self.session startStreamWithName:MultiHoleStreamName
-                               toPeer:self.multiHolePartnerPeerID
-                                error:nil];
-    
-    outputStream.delegate = self;
-    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [outputStream open];
-    
     [browserViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -101,22 +76,38 @@ withDiscoveryInfo:(NSDictionary *)info
     [browserViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - MCSessionDelegate
-- (void)session:(MCSession *)session
-didReceiveStream:(NSInputStream *)stream
-       withName:(NSString *)streamName
-       fromPeer:(MCPeerID *)peerID
-{
-    stream.delegate = self;
-    [stream scheduleInRunLoop:[NSRunLoop mainRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [stream open];
-}
-
-#pragma mark - NSStreamDelegate
+#pragma mark - NSStreamDelegate Methods
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
     
 }
+
+- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream
+       withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
+{
+    self.inputStream = stream;
+    self.inputStream.delegate = self;
+    [self.inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                      forMode:NSDefaultRunLoopMode];
+    [self.inputStream open];
+}
+
+- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
+{
+    if (state == MCSessionStateConnected) {
+        
+        self.connectedPeerId = peerID;
+        
+        self.outputStream =
+        [session startStreamWithName:MultiHoleOutputStreamName toPeer:self.connectedPeerId error:nil];
+        
+        self.outputStream.delegate = self;
+        [self.outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                          forMode:NSDefaultRunLoopMode];
+        [self.outputStream open];
+
+    }
+}
+
 
 @end

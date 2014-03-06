@@ -12,6 +12,7 @@
 #import "WTMGlyphDetector.h"
 #import "MMRGameOverScene.h"
 #import "MMRWallOpeningScene.h"
+#import "JWCMultipeerController.h"
 
 #import "JSGameMenu.h"
 #import <GameCenterManager/GameCenterManager.h>
@@ -29,6 +30,7 @@
 }
 
 @property (nonatomic) JWCShape *playerShape;
+@property (nonatomic) JWCShape *playerTwoShape;
 
 @property (nonatomic) NSMutableArray *glyphs;
 @property (nonatomic) WTMGlyphDetector *glyphDetector;
@@ -125,6 +127,12 @@
         _wallsPassedIncremented = NO;
         self.playerShape.position = [[touches anyObject] locationInNode:self];
         [self moveShadowWithReferencePoint:[[touches anyObject] locationInNode:self]];
+        
+        if ([JWCMultipeerController sharedController].inputStream) {
+            
+        } else if ([JWCMultipeerController sharedController].outputStream) {
+            
+        }
     }
 }
 
@@ -200,6 +208,12 @@
         
         [self addChild:self.playerShape];
         [self addShadowForReferencePoint:CGPointZero];
+        
+        if ([JWCMultipeerController sharedController].inputStream) {
+            
+        } else if ([JWCMultipeerController sharedController].outputStream) {
+            
+        }
     }
 }
 

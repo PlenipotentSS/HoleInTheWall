@@ -9,7 +9,8 @@
 #ifndef HoleInTheWall_Constants_h
 #define HoleInTheWall_Constants_h
 
-static NSString *const MultiHoleServiceType = @"multihole-service";
-static NSString *const MultiHoleStreamName = @"multihole-stream";
+static NSString *const MultiHoleServiceType = @"multihole-multi";
+static NSString *const MultiHoleOutputStreamName = @"multiholeoutstream";
+static NSString *const MultiHoleInputStreamName = @"multiholeinstream";
 
 #endif
