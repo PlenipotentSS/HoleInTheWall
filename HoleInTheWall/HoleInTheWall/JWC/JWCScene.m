@@ -42,6 +42,8 @@
 
 @property (nonatomic) JSGameMenu *pauseMenu;
 
+@property (nonatomic) MMRGameOverScene *gameOverScene;
+
 @end
 
 @implementation JWCScene
@@ -217,9 +219,13 @@
             
             if (self.lives == 0) {
                 [self.backgroundMusicPlayer stop];
-                MMRGameOverScene* gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
-                gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
-                [self.view presentScene:gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
+                
+                if (!self.gameOverScene) {
+                    self.gameOverScene = [[MMRGameOverScene alloc] initWithSize:self.size];
+                    self.gameOverScene.gameScene = self;
+                }
+                self.gameOverScene.scaleMode = SKSceneScaleModeAspectFill;
+                [self.view presentScene:self.gameOverScene transition:[SKTransition doorwayWithDuration:1.0]];
             }
             
             SKAction *sendToPoint = [SKAction moveTo:CGPointMake(xValue, yValue) duration:1.0];

@@ -49,8 +49,8 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.backgroundImage = [UIImage imageNamed:@"grey_wash_wall"];
-        self.floorImage = [UIImage imageNamed:@"retina_wood"];
+        self.backgroundImage = [UIImage imageNamed:@"geometry"];
+        self.floorImage = [UIImage imageNamed:@"food"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
@@ -126,6 +126,7 @@
     
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRelease(context);
+    context = nil;
     
     SKTexture *shadowTexture = [SKTexture textureWithImage:shadowImage];
     self.shapeShadow = [SKSpriteNode spriteNodeWithTexture:shadowTexture];
@@ -208,6 +209,14 @@
     //    NSArray *images = @[ceiling,floor1,floor2,leftWall1,leftWall2,rightWall1,rightWall2];
     
     UIImage *background = [self combineImages:images];
+    
+    ceiling = nil;
+    leftWall1 = nil;
+    leftWall2 = nil;
+    rightWall1 = nil;
+    rightWall2 = nil;
+    images = nil;
+    
     SKTexture *backgroundTexture = [SKTexture textureWithImage:background];
     if (self.backgroundNode) {
         [self.backgroundNode removeFromParent];
@@ -308,6 +317,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_23_2);
     CGColorSpaceRelease(colorSpace);
@@ -366,6 +376,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_22_2);
     CGColorSpaceRelease(colorSpace);
@@ -425,6 +436,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_24_2);
     CGColorSpaceRelease(colorSpace);
@@ -484,6 +496,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_25_2);
     CGColorSpaceRelease(colorSpace);
@@ -542,6 +555,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_27_2);
     CGColorSpaceRelease(colorSpace);
@@ -602,6 +616,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_26_2);
     CGColorSpaceRelease(colorSpace);
@@ -647,6 +662,7 @@
     UIImage *floorImageCut = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(contextFloor);
+    context = nil;
     
     UIGraphicsBeginImageContext(theFrame.size);
 
@@ -730,6 +746,7 @@
     UIImage *shadowImage = UIGraphicsGetImageFromCurrentImageContext();
     
     CGContextRelease(context);
+    context = nil;
     
     CGGradientRelease(sVGID_1_4);
     CGGradientRelease(sVGIDlinear);

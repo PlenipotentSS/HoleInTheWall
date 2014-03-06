@@ -123,7 +123,7 @@
         JWCScene* gameScene = [[JWCScene alloc] initWithSize:self.size];
         gameScene.scaleMode = SKSceneScaleModeAspectFill;
         [self.view presentScene:gameScene transition:[SKTransition doorwayWithDuration:1.0]];
-        
+        [self removeFromParent];
     }
     
     if ([node.name isEqualToString:@"gameCenterButton"]) {

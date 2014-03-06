@@ -54,7 +54,6 @@
 		6B54EB8118BC0B5C00EE5604 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6918BC0B5C00EE5604 /* WTMGlyphTemplate.m */; };
 		6B54EB8218BC0B5C00EE5604 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */; };
 		6B56871318C666C6003A6052 /* JWCDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B56871218C666C6003A6052 /* JWCDimensions.m */; };
-		6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4D918C17335004CC212 /* wood_1_@2X.png */; };
 		6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */; };
 		6B855BB518C7ADA9003ADA91 /* w1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B855BB418C7ADA9003ADA91 /* w1.json */; };
 		6B855BB718C7AF1D003ADA91 /* wmask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B855BB618C7AF1D003ADA91 /* wmask.png */; };
@@ -90,7 +89,6 @@
 		D222469F18B8227A00D0FB43 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D222469E18B8227A00D0FB43 /* SpriteKit.framework */; };
 		D22246A218B822B100D0FB43 /* SSGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D22246A118B822B100D0FB43 /* SSGameScene.m */; };
 		D2801BD318BF42A1009DC621 /* MMRCheckForCollision.m in Sources */ = {isa = PBXBuildFile; fileRef = D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */; };
-		D2A974AB18BD45B500720098 /* bluewalls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974AA18BD45B500720098 /* bluewalls.png */; };
 		D2A974B418BD734B00720098 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A974B318BD734B00720098 /* CoreImage.framework */; };
 		D2A974BB18BDADD500720098 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974B918BDADD500720098 /* food.png */; };
 		D2A974BC18BDADD500720098 /* skulls.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A974BA18BDADD500720098 /* skulls.png */; };
@@ -194,7 +192,6 @@
 		6B54EB6B18BC0B5C00EE5604 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
 		6B56871118C666C6003A6052 /* JWCDimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWCDimensions.h; path = JWC/JWCDimensions.h; sourceTree = "<group>"; };
 		6B56871218C666C6003A6052 /* JWCDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWCDimensions.m; path = JWC/JWCDimensions.m; sourceTree = "<group>"; };
-		6B66B4D918C17335004CC212 /* wood_1_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wood_1_@2X.png"; sourceTree = "<group>"; };
 		6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bright_squares_@2X.png"; sourceTree = "<group>"; };
 		6B855BB418C7ADA9003ADA91 /* w1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = w1.json; sourceTree = "<group>"; };
 		6B855BB618C7AF1D003ADA91 /* wmask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wmask.png; path = JSONShapes/wmask.png; sourceTree = "<group>"; };
@@ -241,7 +238,6 @@
 		D22246A118B822B100D0FB43 /* SSGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSGameScene.m; path = SS/SSGameScene.m; sourceTree = "<group>"; };
 		D2801BD118BF42A1009DC621 /* MMRCheckForCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRCheckForCollision.h; sourceTree = "<group>"; };
 		D2801BD218BF42A1009DC621 /* MMRCheckForCollision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRCheckForCollision.m; sourceTree = "<group>"; };
-		D2A974AA18BD45B500720098 /* bluewalls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewalls.png; sourceTree = "<group>"; };
 		D2A974B318BD734B00720098 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		D2A974B918BDADD500720098 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		D2A974BA18BDADD500720098 /* skulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skulls.png; sourceTree = "<group>"; };
@@ -506,7 +502,6 @@
 			isa = PBXGroup;
 			children = (
 				6BE4252318C7D76C00DCD2CC /* Music:Sounds */,
-				6BFF482518C01F4E00D5F628 /* Wallpapers */,
 				6B54EB3D18BC0B5C00EE5604 /* WTMGlyph */,
 				3EFF783618C51771009572B7 /* Buttons */,
 				6BB21DB618B82001005EEDA1 /* HoleInTheWall-Info.plist */,
@@ -538,7 +533,7 @@
 		6BB21DE518B8233F005EEDA1 /* Steven */ = {
 			isa = PBXGroup;
 			children = (
-				D2A9741118BC6ABE00720098 /* testwalls */,
+				D2A9741118BC6ABE00720098 /* testFloors */,
 				D22246A018B822B100D0FB43 /* SSGameScene.h */,
 				D22246A118B822B100D0FB43 /* SSGameScene.m */,
 				D2EA8F1218C6A21500A42F99 /* UIImage+SSImageShadow.h */,
@@ -596,16 +591,14 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
-		D2A9741118BC6ABE00720098 /* testwalls */ = {
+		D2A9741118BC6ABE00720098 /* testFloors */ = {
 			isa = PBXGroup;
 			children = (
 				6B66B4DB18C17346004CC212 /* bright_squares_@2X.png */,
-				6B66B4D918C17335004CC212 /* wood_1_@2X.png */,
 				D2A974B918BDADD500720098 /* food.png */,
 				D2A974BA18BDADD500720098 /* skulls.png */,
-				D2A974AA18BD45B500720098 /* bluewalls.png */,
 			);
-			name = testwalls;
+			name = testFloors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -693,7 +686,6 @@
 			files = (
 				6BF9204218C554020019E86B /* Prisma.ttf in Resources */,
 				6BFF483218C0277E00D5F628 /* circle.png in Resources */,
-				D2A974AB18BD45B500720098 /* bluewalls.png in Resources */,
 				D2A974BC18BDADD500720098 /* skulls.png in Resources */,
 				6BB21DC718B82001005EEDA1 /* Images.xcassets in Resources */,
 				6B24A88718BD69B400974D81 /* triangle1.json in Resources */,
@@ -709,7 +701,6 @@
 				6B66B4DC18C17346004CC212 /* bright_squares_@2X.png in Resources */,
 				6B24A8A718BD746600974D81 /* triangle5.json in Resources */,
 				6B24A8A118BD746600974D81 /* square4.json in Resources */,
-				6B66B4DA18C17335004CC212 /* wood_1_@2X.png in Resources */,
 				6BB21DB918B82001005EEDA1 /* InfoPlist.strings in Resources */,
 				6BE4255218C80C5F00DCD2CC /* w2.json in Resources */,
 				3EFF783A18C5177B009572B7 /* startButton@2x.png in Resources */,
