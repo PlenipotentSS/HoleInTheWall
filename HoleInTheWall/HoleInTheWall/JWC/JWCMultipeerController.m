@@ -82,30 +82,15 @@
     
 }
 
-- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream
-       withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    self.inputStream = stream;
-    self.inputStream.delegate = self;
-    [self.inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop]
-                      forMode:NSDefaultRunLoopMode];
-    [self.inputStream open];
+    
 }
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
 {
     if (state == MCSessionStateConnected) {
-        
         self.connectedPeerId = peerID;
-        
-        self.outputStream =
-        [session startStreamWithName:MultiHoleOutputStreamName toPeer:self.connectedPeerId error:nil];
-        
-        self.outputStream.delegate = self;
-        [self.outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop]
-                          forMode:NSDefaultRunLoopMode];
-        [self.outputStream open];
-
     }
 }
 
