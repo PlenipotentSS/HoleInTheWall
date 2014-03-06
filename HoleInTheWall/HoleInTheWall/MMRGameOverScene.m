@@ -7,7 +7,6 @@
 //
 
 #import "MMRGameOverScene.h"
-#import "JWCScene.h"
 
 @implementation MMRGameOverScene
 
@@ -24,9 +23,8 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    JWCScene* gameScene = [[JWCScene alloc] initWithSize:self.size];
-    gameScene.scaleMode = SKSceneScaleModeAspectFill;
-    [self.view presentScene:gameScene transition:[SKTransition doorwayWithDuration:1.0]];
+    self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
+    [self.view presentScene:self.gameScene transition:[SKTransition doorwayWithDuration:1.0]];
 }
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "JWCScene.h"
 
 @interface MMRGameOverScene : SKScene
+
+@property (nonatomic,weak) JWCScene *gameScene;
 
 @end

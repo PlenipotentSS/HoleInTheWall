@@ -56,6 +56,7 @@
     }
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     CGContextRelease(context);
+    context = nil;
     return newImage;
 }
 
