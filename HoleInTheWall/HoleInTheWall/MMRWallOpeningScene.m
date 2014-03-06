@@ -10,6 +10,7 @@
 #import "JWCWall.h"
 #import "JWCScene.h"
 #import "JWCHole.h"
+#import "JWCMultipeerController.h"
 
 @interface MMRWallOpeningScene() <UIGestureRecognizerDelegate> {
     BOOL _wallScaling;
@@ -79,11 +80,10 @@
 
 - (void)update:(NSTimeInterval)currentTime
 {
-    //NSLog(@"WALL Y Sscale:%f",self.wall.yScale);
-    
     if (self.wall.yScale >= .7 && self.wall.yScale <= .8 ) {
         _wallScaling = NO;
         //[self.wall removeAllActions];
+        
         //scale wall
         SKAction *scaleWall = [SKAction scaleTo:2.0f duration:0.2f];
         SKAction *scaleHoleLabel = [SKAction scaleTo:3.0f duration:0.2f];
@@ -109,7 +109,6 @@
         
         
         //scale labels with wall
-        NSLog(@"WALL SCALE");
     }
 }
 
@@ -130,9 +129,37 @@
     if ([node.name isEqualToString:@"gameCenterButton"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"gamecenter:/me/account"]];
         //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"gamecenter:/games/recommendations"]];
-
-
     }
+    
+    //TODO: REMOVE THIS TESTING CODE!!!
+    [self startBrowsing];
+    
+}
+
+#pragma mark - MultiHole Methods
+- (void)startBrowsing
+{
+    MCNearbyServiceBrowser *browser = [JWCMultipeerController sharedController].browser;
+    MCSession *session = [JWCMultipeerController sharedController].session;
+    
+    UIViewController *rootViewController = self.view.window.rootViewController;
+    
+    MCBrowserViewController *browserViewController =
+    [[MCBrowserViewController alloc] initWithBrowser:browser
+                                             session:session];
+    
+    browserViewController.delegate = [JWCMultipeerController sharedController];
+    [rootViewController presentViewController:browserViewController
+                       animated:YES
+                     completion:
+     ^{
+         [browser startBrowsingForPeers];
+     }];
+}
+
+- (void)startAdvertising
+{
+    [[JWCMultipeerController sharedController] advertiseService];
 }
 
 @end

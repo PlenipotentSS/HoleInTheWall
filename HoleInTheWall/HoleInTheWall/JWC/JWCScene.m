@@ -11,7 +11,7 @@
 #import "MMRCheckForCollision.h"
 #import "WTMGlyphDetector.h"
 #import "MMRGameOverScene.h"
-#import "JWCResetScene.h"
+#import "MMRWallOpeningScene.h"
 
 #import "JSGameMenu.h"
 #import <GameCenterManager/GameCenterManager.h>
@@ -58,7 +58,6 @@
         [GameCenterManager sharedManager].delegate = self;
         
         self.wall = [[JWCWall alloc] initWithScale:.2];
-        self.wall.zPosition = 2;
         [self addChild:self.wall];
         
         [self.wall startMovingWithDuration:6];
@@ -74,20 +73,22 @@
         self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
         self.labelWallsPassed.fontSize = 15;
 
-        self.pauseMenu = [[JSGameMenu alloc] initWithSize:CGSizeMake(50, 50) withReplayHandler:^{
-            JWCResetScene *resetScene = [[JWCResetScene alloc] initWithSize:self.size];
-            resetScene.scaleMode = SKSceneScaleModeAspectFill;
-            [self.view presentScene:resetScene];
+        self.pauseMenu = [[JSGameMenu alloc] initWithSize:self.size withReplayHandler:^{
+            
         } withExitHandler:^{
-            NSLog(@"Exited");
+            // Go back to opening scene
+            [self.backgroundMusicPlayer stop];
+            MMRWallOpeningScene *openingScene = [[MMRWallOpeningScene alloc] initWithSize:self.size];
+            openingScene.scaleMode = SKSceneScaleModeAspectFill;
+            [self.view presentScene:openingScene];
         }];
-        
+        self.pauseMenu.anchorPoint = CGPointMake(.5, .5);
         [self addChild:self.pauseMenu];
         
         if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
             self.labelLives.position = CGPointMake(-60, 230);
             self.labelWallsPassed.position = CGPointMake(60, 230);
-            self.pauseMenu.position = CGPointMake(-60, 230);
+            self.pauseMenu.position = CGPointMake(-120, 245);
         } else {
             self.labelLives.position = CGPointMake(-120, 500);
             self.labelLives.position = CGPointMake(120, 500);
@@ -155,9 +156,12 @@
         
         NSString *triangleFileName = [NSString stringWithFormat:@"triangle%d",i];
         [self addGlyphWithJSONFileName:triangleFileName withShapeName:@"triangle"];
+        
+        NSString *wFileName = [NSString stringWithFormat:@"w%d",i];
+        [self addGlyphWithJSONFileName:wFileName withShapeName:@"w"];
     }
     [self addGlyphWithJSONFileName:@"circle" withShapeName:@"circle"];
-    [self addGlyphWithJSONFileName:@"w" withShapeName:@"w"];
+    
 }
 
 - (void)addGlyphWithJSONFileName:(NSString *)fileName withShapeName:(NSString *)shapeName
@@ -193,7 +197,6 @@
         }
         
         [self addChild:self.playerShape];
-        self.playerShape.zPosition = 2;
         [self addShadowForReferencePoint:CGPointZero];
     }
 }
@@ -234,7 +237,6 @@
         } else {
             if (!_collisionChecked && !self.wall.wallPassed) {
                 _wallsPassed++;
-                self.playerShape.zPosition = 1;
                 self.wall.wallPassed = YES;
                 self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
             }

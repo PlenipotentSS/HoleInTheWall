@@ -23,4 +23,12 @@
     return sharedController;
 }
 
+- (MCPeerID *)localPeerID
+{
+    if (!_localPeerID) {
+        _localPeerID = [[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name];
+    }
+    return _localPeerID;
+}
+
 @end

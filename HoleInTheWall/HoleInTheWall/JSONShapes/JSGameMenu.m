@@ -28,25 +28,20 @@
         [self addButtonWithSprite:&_pause withImageName:@"pause" withColor:theme withSize:CGSizeMake(50,50)  withPosition:CGPointMake(_pause.position.x, _pause.position.y - 10)];
         
         /* Set up PLAY button */
-        [self addButtonWithSprite:&_play withImageName:@"play" withColor:theme withSize:CGSizeMake(44,44)  withPosition:CGPointMake(-15, -30)];
-        
-        /* Set up REPLAY button */
-        [self addButtonWithSprite:&_replay withImageName:@"replay" withColor:theme withSize:CGSizeMake(44,44)  withPosition:CGPointMake(-15, -74)];
+        [self addButtonWithSprite:&_play withImageName:@"play" withColor:theme withSize:CGSizeMake(44,44)  withPosition:CGPointMake(_pause.position.x+2, -20)];
         
         /* Set up EXIT button */
-        [self addButtonWithSprite:&_exit withImageName:@"exit" withColor:theme withSize:CGSizeMake(44,44)  withPosition:CGPointMake(-15, -118)];
+        [self addButtonWithSprite:&_exit withImageName:@"exit" withColor:theme withSize:CGSizeMake(44,44)  withPosition:CGPointMake(_pause.position.x+2, -50)];
         
         /* The PLAY, REPLAY and EXIT button start out hidden */
         [_play   setHidden:YES];
-        [_replay setHidden:YES];
         [_exit   setHidden:YES];
         
         /* Make sure all of the buttons show up above the current scene and in the correct order */
         _pause.zPosition = FRONT;
-        _play.zPosition = _replay.zPosition = _exit.zPosition = BACK;
+        _play.zPosition = _exit.zPosition = BACK;
         
         /* Set the handlers for use later */
-        _replayHandler = replay;
         _exitHandler   = exit;
         
     }
@@ -59,8 +54,6 @@
         CGPoint location = [touch locationInNode:self];
         SKNode *node = [self nodeAtPoint:location];
         
-        NSLog(@"%@",node.name);
-        
         if (self.parent.isPaused == NO) {
             if ([node.name isEqualToString:@"pause"]) {
                 
@@ -71,7 +64,6 @@
 
                 [_pause  setHidden:YES];
                 [_play   setHidden:NO];
-                [_replay setHidden:NO];
                 [_exit   setHidden:NO];
 
             }
@@ -85,7 +77,6 @@
                 
                 [_pause  setHidden:NO];
                 [_play   setHidden:YES];
-                [_replay setHidden:YES];
                 [_exit   setHidden:YES];
                 
             } else if ([node.name isEqualToString:@"replay"]) {

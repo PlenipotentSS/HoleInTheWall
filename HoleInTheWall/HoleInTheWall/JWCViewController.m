@@ -8,6 +8,7 @@
 
 #import "JWCViewController.h"
 #import "JWCScene.h"
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 @interface JWCViewController ()
 

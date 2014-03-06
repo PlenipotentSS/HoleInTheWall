@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 @interface JWCDimensions : NSObject
+
+@property (nonatomic) MCPeerID *localPeerID;
 
 @property (nonatomic) CGSize size;
 
 + (JWCDimensions *)sharedController;
+
 
 @end
