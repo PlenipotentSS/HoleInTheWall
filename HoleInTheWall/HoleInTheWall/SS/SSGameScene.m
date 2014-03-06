@@ -49,8 +49,8 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        self.backgroundImage = [UIImage imageNamed:@"grey_wash_wall"];
-        self.floorImage = [UIImage imageNamed:@"retina_wood"];
+        self.backgroundImage = [UIImage imageNamed:@"geometry"];
+        self.floorImage = [UIImage imageNamed:@"food"];
         
         self.minX = CGRectGetMinX(self.frame);
         self.maxX = CGRectGetMaxX(self.frame);
