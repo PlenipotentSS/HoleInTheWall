@@ -217,6 +217,7 @@
     }
 }
 
+
 - (void)update:(CFTimeInterval)currentTime
 {
     if (self.wall.yScale >= 0.85 && self.wall.yScale <= 0.862) {
