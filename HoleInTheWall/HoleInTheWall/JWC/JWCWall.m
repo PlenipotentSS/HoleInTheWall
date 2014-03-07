@@ -72,7 +72,7 @@
 - (void)startMovingWithDuration:(CGFloat)duration
 {
     [self removeAllActions];
-    
+    self.zPosition = 2;
     self.wallPassed = NO;
     
     NSInteger randomWallNumber = (arc4random() % 5) + 1;
@@ -96,7 +96,6 @@
             [self startMovingWithDuration:5];
         }];
     }];
-
 }
 
 

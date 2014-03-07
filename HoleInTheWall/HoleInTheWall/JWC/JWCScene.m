@@ -207,6 +207,7 @@
         }
         
         [self addChild:self.playerShape];
+        self.playerShape.zPosition = 2;
         [self addShadowForReferencePoint:CGPointZero];
         
         if ([JWCMultipeerController sharedController].inputStream) {
@@ -232,7 +233,7 @@
             self.lives--;
             self.labelLives.text = [NSString stringWithFormat:@"Lives Left: %i", self.lives];
             
-            if (self.lives == 0) {
+            if (self.lives < 0) {
                 [self.backgroundMusicPlayer stop];
                 
                 if (!self.gameOverScene) {
@@ -258,11 +259,12 @@
         } else {
             if (!_collisionChecked && !self.wall.wallPassed) {
                 _wallsPassed++;
+                self.wall.zPosition = 3;
                 self.wall.wallPassed = YES;
                 self.labelWallsPassed.text = [NSString stringWithFormat:@"Walls Passed:%i", _wallsPassed];
             }
             
-            if (_wallsPassed != 0) {
+            if (_wallsPassed >= 0) {
                 int randomValue = 75 + arc4random() % (250 - 75);
                 [JWCDimensions sharedController].size = CGSizeMake(randomValue, randomValue);
             }
